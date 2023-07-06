@@ -35,14 +35,6 @@ def display():
 
 
 def register():
-    """
-    Collects user's details and stores it into a dictonay, then stores
-    username of the user as a variable u and pops the username (key)
-    from the dictionary converts the dictionay into a string and then
-    converts the string into a list of key, value pair as one element
-    of the list.Then writes into the file first the username u and then
-    in next lines the each item of the list
-    """
     id = {}
     details = [
         "Name",
