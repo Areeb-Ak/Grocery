@@ -77,7 +77,7 @@ def register():
                     "Password:\nSet a strong and secure password for your account. This password will be used to log in to your account."
                 )
                 create_password(id)
-                continue
+                break
             id[i] = input(f"{i}: ")
             if id[i].strip() == "":
                 print("This field is compulsory")

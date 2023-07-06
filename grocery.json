@@ -7,6 +7,14 @@
             "Security Question": "helo",
             "Answer": "hi",
             "Password": "Blueflame.14"
+        },
+        {
+            "Name": "Akshay Nagamlla",
+            "Email Id": "akshay@gmail.com",
+            "Phone Number": "9876543210",
+            "Security Question": "helo how are you?",
+            "Answer": "noice..",
+            "Password": "Topper.1"
         }
     ]
 }
