@@ -1,15 +1,81 @@
-atta,kg,56,2000
-idle rawa,kg,54,500
-jowar flour,kg,78,200
-ragi flour,kg,69,500
-rice flour,kg,40,250
-corn flour,kg,41,980
-sooji,kg,44,500
-maida,kg,82,400
-besan,kg,89,200
-toor dal,kg,180,100
-channa dal,kg,100,99
-moong dal,kg,168,201
-urad dal,kg,207,39
-peanuts,kg,173,100
-rice,kg,82,200
+item number,section,subsection,item,type,price
+1,kirana ,rice,basmati,1kg
+2,kirana,rice,basmati,500g
+3,kirana ,rice,sona masouri,1kg
+4,kirana ,rice,sona masouri,500g
+5,kirana ,rice,normal,1kg
+6,kirana ,rice,normal,500g
+7,kirana ,flours,multigrain atta ,1kg
+8,kirana ,flours,multigrain atta ,500g
+9,kirana ,flours,maida,1kg
+10,kirana ,flours,maida,500g
+11,kirana ,flours,atta,1kg
+12,kirana ,flours,atta,500g
+13,kirana ,flours,besan,1kg
+14,kirana ,flours,besan,500g
+15,kirana,flours,ragi flour,500g
+16,kirana,flours,ragi flour,250g
+17,kirana,dal,tuar dal,1kg
+18,kirana,dal,tuar dal,500g
+19,kirana,dal,tuar dal,250g
+20,kirana,dal,moong dal,1kg
+21,kirana,dal,moong dal,500g
+22,kirana,dal,moong dal,250g
+23,kirana,dal,chana dal,500g
+24,kirana,dal,chana dal,250g
+25,kirana,dal,urad dal,500g
+26,kirana,dal,urad dal,250g
+27,instant and frozen foods,fries,1kg
+28,instant and frozen foods,fries,500g
+29,instant and frozen foods,fries,250g
+30,instant and frozen foods,potato shots,1kg
+31,instant and frozen foods,potato shots,500g
+32,instant and frozen foods,potato shots,250g
+33,instant and frozen foods,momos,12pc pack
+34,instant and frozen foods,momos,8pc pack
+35,instant and frozen foods,chicken momos,12pc pack
+36,instant and frozen foods,chicken momos,8pc pack
+37,instant and frozen foods,instant noodles,8pc pack,96
+38,instant and frozen foods,instant noodles,4pc pack,48
+39,instant and frozen foods,instant noodles,2pc pack,24
+40,instant and frozen foods,insant noodles,1pc pack,12
+41,instant and frozen foods,cup noodles,1 cup,48
+42,instant and frozen foods,dosa and idle batter,750g
+43,instant and frozen foods,dosa and idle batter,500g
+44,instant and frozen foods,sweet corn soup,42gm,55
+45,instant and frozen foods,manchow soup,42g,55
+46,instant and frozen foods,tomato soup,42g,55
+47,juices and cold drinks,cold drink,thumps up,250ml,35
+48,juices and cold drinks,cold drink,coco cola,250mk,35
+49,juices and cold drinks,cold drink,mountain dew,250ml,40
+50,juices and cold drinks,cold drink,pepsi,250ml,40
+51,juices and cold drinks,energy drink,red bull,250ml,125
+52,juices and cold drinks,energy drink,beats energy,250ml,99
+53,juices and cold drinks,energy drink,sting,200ml,20
+54,juices and cold drinks,juice,apple juice,1L,104
+55,juices and cold drinks,juice,apple juice,200ml,50
+56,juices and cold drinks,juice,orange juice,1L,110
+57,juices and cold drinks,juice,orange juice,200ml,50
+58,juices and cold drinks,juice,guava juice,1L,105
+59,juices and cold drinks,juice,guava juice,200ml,50
+60,dairy bread and eggs,dairy,milk,1L,60
+61,dairy bread and eggs,dairy,milk,500ml,30
+62,dairy bread and eggs,dairy,milk,250ml,20
+63,dairy bread and eggs,dairy,butter,500g,300
+64,dairy bread and eggs,dairy,butter,100g,57
+65,dairy bread and eggs,dairy,paneer,200g,110
+66,dairy bread and eggs,dairy,cheese,200g,140
+67,dairy bread and eggs,dairy,curd,500g,45
+68,dairy bread and eggs,bread,brown bread,450g,50
+69,dairy bread and eggs,bread,sandwich bread,400,50
+70,dairy bread and eggs,bread,buns,6pc,30
+71,dairy bread and eggs,eggs,12pc,150
+72,dairy bread and eggs,eggs,6pc,50
+73,snacks,chips,potato chips,100g,50
+74,snacks,chips,potato chips,50g,25
+75,snacks,chips,potato chips,20g,10
+76,snacks,chips,banana chips,50g,50
+77,snacks,chips,banana chips,20g,25
+78,snacks,chips,nachos,100g,44
+79,snacks,chips,nachos,50g,36
+
