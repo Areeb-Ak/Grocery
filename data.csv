@@ -1,10 +1,10 @@
 item number,section,subsection,item,type,price
-1,kirana ,rice,basmati,1kg,191
-2,kirana,rice,basmati,500g,100
-3,kirana ,rice,sona masouri,1kg,85
-4,kirana ,rice,sona masouri,500g,50
-5,kirana ,rice,normal,1kg,80
-6,kirana ,rice,normal,500g,40
+1,kirana ,rice,basmati rice,1kg,191
+2,kirana,rice,basmati rice ,500g,100
+3,kirana ,rice,sona masouri rice,1kg,85
+4,kirana ,rice,sona masouri rice,500g,50
+5,kirana ,rice,brown rice,1kg,80
+6,kirana ,rice,brown rice,500g,40
 7,kirana ,flours,multigrain atta,1kg
 8,kirana ,flours,multigrain atta,500g
 9,kirana ,flours,maida,1kg,46
