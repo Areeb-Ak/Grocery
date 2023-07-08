@@ -58,22 +58,22 @@ def print_section(choice):
         print(b)
         print_section(b)
         selection()
-    elif choice == 0:
+    elif choice == A:
         search(input("search : ").lower())
         selection()
-    elif choice == 1:
+    elif choice == B:
         retriever("kirana")
         selection()
-    elif choice == 2:
+    elif choice == C:
         retriever("instant and frozen foods")
         selection()
-    elif choice == 3:
+    elif choice == D:
         retriever('juices and cold drinks')
         selection()
-    elif choice == 4:
+    elif choice == E:
         retriever('dairy bread and eggs')
         selection()
-    elif choice == 5:
+    elif choice == F:
         retriever('snacks')
         selection()
     else:
@@ -103,10 +103,11 @@ def command(selection):
     else:
         print("incorrect command")
 
-
+def print_commands():
+    print("-add\n-view cart\n-search\n-exit")
 def menu():
-    print("MENU:\n0.Search\n1.Kirana\n2.Instant and Frozen Foods\n3.Juices and Cold drinks\n4.Dairy , Bread and Eggs\n5.Snacks\n6.Dry Fruits , Oils and Masalas\n")
-    choice = int(input("Enter your choice:"))
+    print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
+    choice = (input("Enter your choice:"))
     print_section(choice)
 
 
@@ -116,3 +117,7 @@ def selection():
 
 
 menu()
+
+
+
+
