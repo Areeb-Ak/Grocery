@@ -13,8 +13,7 @@ osname = os.name
 
 
 def clear_screen():
-    os.system('cls' if osname == 'nt' else 'clear')
-
+    os.system("cls" if osname == "nt" else "clear")
 
 
 def display():
@@ -36,7 +35,7 @@ def display():
 
 
 def register():
-    figlet.setFont(font='slant')
+    figlet.setFont(font="slant")
     print("\033[95m\033[41m")
     print(figlet.renderText("Sign up"))
     print("\033[0m")
@@ -49,12 +48,14 @@ def register():
         "Answer",
         "Password",
     ]
-    figlet.setFont(font='small')
+    figlet.setFont(font="small")
     for i in details:
         flag = True
         while flag:
             if i == "Name":
-                print("\033[95m"+figlet.renderText("Personal Information")+"\033[0m")
+                print(
+                    "\033[95m" + figlet.renderText("Personal Information") + "\033[0m"
+                )
             elif i == "Email Id":
                 id[i] = input(f"{i}: ")
                 while not validate_email(id[i]):
@@ -66,7 +67,9 @@ def register():
             elif i == "Security Question":
                 sleep(2)
                 clear_screen()
-                print("\033[36m"+figlet.renderText("Security Key")+"\033[0m\n", end="")
+                print(
+                    "\033[36m" + figlet.renderText("Security Key") + "\033[0m\n", end=""
+                )
                 print(
                     "Choose a security question and provide the corresponding answer. This information will be used for identity verification during the password recovery process."
                 )
@@ -80,7 +83,9 @@ def register():
                 sleep(2)
                 clear_screen()
                 print(
-                    "\033[31m"+figlet.renderText("Password")+"\033[0m\nSet a strong and secure password for your account. This password will be used to log in to your account."
+                    "\033[31m"
+                    + figlet.renderText("Password")
+                    + "\033[0m\nSet a strong and secure password for your account. This password will be used to log in to your account."
                 )
                 create_password(id)
                 break
@@ -144,8 +149,11 @@ def validate_password(password):
     return False
 
 
-validate_email = lambda email: True if re.search(r'^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$', email) else False
-
+validate_email = (
+    lambda email: True
+    if re.search(r"^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$", email)
+    else False
+)
 
 
 def login():
@@ -154,7 +162,7 @@ def login():
     username in the file) and it asks for password and checks the
     password from the file if it is correct or not
     """
-    figlet.setFont(font='slant')
+    figlet.setFont(font="slant")
     print("\033[95m\033[42m")
     print(figlet.renderText("Login"))
     print("\033[0m")
@@ -233,7 +241,6 @@ def reglog():
         if choice.lower() == "yes":
             clear_screen()
             login()
-
 
 
 reglog()
