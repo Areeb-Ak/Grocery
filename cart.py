@@ -3,7 +3,7 @@ import sys
 
 
 def search(item):
-    with open('data1.csv', 'r') as item_retriever:
+    with open('data.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
         for row in reader:
             if item in row:
