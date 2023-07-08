@@ -1,4 +1,5 @@
 import csv
+import sys
 
 
 def search(item):
@@ -32,13 +33,15 @@ def add_():
             if number == row[0]:
                 l = row.copy()
         l.append(quantity)
+        item_retriever.close()
     with open('cart.csv','a') as adder:
-        adding = csv.writer(adder)
+        adding=csv.writer(adder)
         adding.writerow(l)
+        adder.close()
     selection()
 
 
-def veiw_cart():
+def view_cart():
     c = 0
     with open('cart.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
@@ -80,23 +83,23 @@ def print_section(choice):
 
 def wrong_choice(choice):
 
-    if choice <7:
-        c = choice
-        print(c)
-        return c
-    else:
+    while choice > 7:
         print("Wrong Input")
         choice = int(input("Enter your choice:"))
-        wrong_choice(choice)
+    return choice
 
 
 def command(selection):
     if selection == 'add':
         add_()
-    elif selection == 'veiw cart':
-        veiw_cart()
+    elif selection == 'view cart':
+        view_cart()
     elif selection == 'menu':
         menu()
+    elif selection == 'exit':
+        sys.exit()
+    elif selection == 'search':
+        search(input("search : ").lower())
     else:
         print("incorrect command")
 
@@ -108,7 +111,7 @@ def menu():
 
 
 def selection():
-    select_ = input("enter commmand : ").lower()
+    select_ = input("enter command : ").lower()
     command(select_)
 
 
