@@ -1,16 +1,19 @@
 import json
+import os
+from pyfiglet import Figlet
+import re
 from sys import exit
 from time import sleep
-from os import name, system
 
 file = "grocery.json"
 
+figlet = Figlet()
 
-osname = name
+osname = os.name
 
 
-def clear():
-    system('cls' if osname == 'nt' else 'clear')
+def clear_screen():
+    os.system('cls' if osname == 'nt' else 'clear')
 
 
 
@@ -33,6 +36,10 @@ def display():
 
 
 def register():
+    figlet.setFont(font='slant')
+    print("\033[95m\033[41m")
+    print(figlet.renderText("Sign up"))
+    print("\033[0m")
     id = {}
     details = [
         "Name",
@@ -42,15 +49,24 @@ def register():
         "Answer",
         "Password",
     ]
-    for n, i in enumerate(details, start=1):
+    figlet.setFont(font='small')
+    for i in details:
         flag = True
         while flag:
-            if n == 1:
-                print("Personal Information")
-            elif n == 4:
+            if i == "Name":
+                print("\033[95m"+figlet.renderText("Personal Information")+"\033[0m")
+            elif i == "Email Id":
+                id[i] = input(f"{i}: ")
+                while not validate_email(id[i]):
+                    print("Invalid Email")
+                    print("Email format: user123@example.com\n")
+                    id[i] = input(f"{i}: ")
+                flag = False
+                break
+            elif i == "Security Question":
                 sleep(2)
-                clear()
-                print("Security Key:\n", end="")
+                clear_screen()
+                print("\033[36m"+figlet.renderText("Security Key")+"\033[0m\n", end="")
                 print(
                     "Choose a security question and provide the corresponding answer. This information will be used for identity verification during the password recovery process."
                 )
@@ -60,11 +76,11 @@ def register():
                 print(
                     "The answer should be something known only to you, avoiding easily discoverable information."
                 )
-            elif n == 6:
+            elif i == "Password":
                 sleep(2)
-                clear()
+                clear_screen()
                 print(
-                    "Password:\nSet a strong and secure password for your account. This password will be used to log in to your account."
+                    "\033[31m"+figlet.renderText("Password")+"\033[0m\nSet a strong and secure password for your account. This password will be used to log in to your account."
                 )
                 create_password(id)
                 break
@@ -84,7 +100,7 @@ def register():
 def create_password(id):
     i = "Password"
     id[i] = input(f"{i}: ")
-    while validate(id[i]):
+    while not validate_password(id[i]):
         id[i] = input(f"\n{i}: ")
     c = input("Confirm Password: ")
     if c != id[i]:
@@ -94,7 +110,7 @@ def create_password(id):
             exit("Wrong Password")
 
 
-def validate(password):
+def validate_password(password):
     """
     Validates the password returns False if the password is validated(correct)
     or else returns false and also outputs the requirements of the password
@@ -102,7 +118,7 @@ def validate(password):
     """
     if password == "":
         print("Password must contain atleast 8 character")
-        return True
+        return False
     elif len(password) >= 8 and password[0].isupper():
         num = False
         sp = False
@@ -119,13 +135,17 @@ def validate(password):
         elif not sp:
             print("Password must contain atleast 1 special character")
         if num and sp:
-            return False
+            return True
     else:
         if not password[0].isupper():
             print("Password must start with a capital alphabet")
         if len(password) < 8:
             print("Password must contain atleast 8 character")
-    return True
+    return False
+
+
+validate_email = lambda email: True if re.search(r'^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$', email) else False
+
 
 
 def login():
@@ -134,6 +154,10 @@ def login():
     username in the file) and it asks for password and checks the
     password from the file if it is correct or not
     """
+    figlet.setFont(font='slant')
+    print("\033[95m\033[42m")
+    print(figlet.renderText("Login"))
+    print("\033[0m")
     for _ in range(3):
         email = input("Enter your Email Id: ")
         if check_id(email):
@@ -150,20 +174,19 @@ def login():
                                     ans = input("Answer: ")
                                     if ans == i["Answer"]:
                                         sleep(2)
-                                        clear()
+                                        clear_screen()
                                         print("Create new password: ")
                                         create_password(i)
-                                        print(type(i))
                                         change(i)
                                         print("Password Changed")
                                         sleep(2)
-                                        clear()
+                                        clear_screen()
                                         login()
                                     print("Invalid Answer")
                             elif password == passw:
                                 exit("Logged in")
                             print(
-                                "Invalid password. \t\t If you forgot your password enter 'forgot'"
+                                "Invalid password. \t\t If you forgot your password enter '\033[31mforgot\033[0m'"
                             )
             exit("Try again later")
         else:
@@ -197,17 +220,18 @@ def check_id(email):
 
 
 def reglog():
-    clear()
+    clear_screen()
     choice = display()
-    clear()
+    clear_screen()
     if choice == 1:
         login()
     elif choice == 2:
         register()
         sleep(2)
-        clear()
+        clear_screen()
         choice = input("\n\nDo you want to login now? ")
         if choice.lower() == "yes":
+            clear_screen()
             login()
 
 
