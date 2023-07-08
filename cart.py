@@ -37,8 +37,8 @@ def add_():
     with open('cart.csv','a') as adder:
         adding=csv.writer(adder)
         adding.writerow(l)
-        adder.close()
-        print(l[3],"("+str(l[4])+")has been added to cart")
+    adder.close()
+    print(l[3],"("+str(l[4])+")has been added to cart")
     selection()
 
 
@@ -89,27 +89,28 @@ def wrong_choice(choice):
     return choice
 
 
-def command(selection):
-    if selection == 'add':
+def command(select__):
+    if select__ == 'add':
         add_()
-    elif selection == 'view cart':
+    elif select__ == 'view cart':
         view_cart()
-    elif selection == 'menu':
+    elif select__ == 'menu':
         menu()
-    elif selection == 'exit':
+    elif select__ == 'exit':
         sys.exit()
-    elif selection == 'search':
+    elif select__ == 'search':
         search(input("search : ").lower())
-    elif selection == 'print commands':
+    elif select__ == 'print commands':
         print_commands()
     else:
         print("incorrect command")
+        selection()
 
 def print_commands():
     print("COMMANDS:\n-add\n-view cart\n-search\n-print commands\n-exit\n")
 def menu():
     print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
-    choice = (input("Enter your choice:"))
+    choice = (input("Enter your choice:")).upper()
     print_section(choice)
 
 
