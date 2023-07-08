@@ -56,7 +56,6 @@ animation = ["""
 ╚██████╔╝    ██║  ██║    ╚██████╔╝    ╚██████╗    ███████╗    ██║  ██║       ██║       
  ╚═════╝     ╚═╝  ╚═╝     ╚═════╝      ╚═════╝    ╚══════╝    ╚═╝  ╚═╝       ╚═╝     """]
 
-
 from time import sleep
 import os
 
@@ -65,7 +64,11 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-for i in animation:
-    print(i)
-    sleep(1)
-    clear_screen()
+def print_animation():
+    for i in animation:
+        print(i)
+        sleep(0.3)
+        clear_screen()
+
+
+logo = animation[-1]
