@@ -100,11 +100,13 @@ def command(selection):
         sys.exit()
     elif selection == 'search':
         search(input("search : ").lower())
+    elif selection == 'print commands':
+        print_commands()
     else:
         print("incorrect command")
 
 def print_commands():
-    print("-add\n-view cart\n-search\n-exit")
+    print("-add\n-view cart\n-search\n-print commands\n-exit")
 def menu():
     print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
     choice = (input("Enter your choice:"))
@@ -115,9 +117,8 @@ def selection():
     select_ = input("enter command : ").lower()
     command(select_)
 
-
 menu()
-
+print_commands()
 
 
 
