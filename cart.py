@@ -15,7 +15,7 @@ def search(item):
 
 def retriever(item):
     print("Item no. Item (Quantity) : Price")
-    with open('data1.csv', 'r') as item_retriever:
+    with open('data.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
         for row in reader:
             if item == row[1]:
@@ -27,7 +27,7 @@ def retriever(item):
 def add_():
     number, quantity = input("enter item number and quantity :").split()
     l = []
-    with open('data1.csv', 'r') as item_retriever:
+    with open('data.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
         for row in reader:
             if number == row[0]:
