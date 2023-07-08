@@ -1,6 +1,8 @@
+import emoji
 import json
 import os
 from pyfiglet import Figlet
+import random
 import re
 from sys import exit
 from time import sleep
@@ -36,9 +38,10 @@ def display():
 
 def register():
     figlet.setFont(font="slant")
-    print("\033[95m\033[41m")
-    print(figlet.renderText("Sign up"))
-    print("\033[0m")
+    for i in figlet.renderText("Sign up").splitlines():
+        if i.strip() == "":
+            continue
+        print("\t\t\t\t\033[32m\033[42m" + i + "\033[0m")
     id = {}
     details = [
         "Name",
@@ -56,14 +59,32 @@ def register():
                 print(
                     "\033[95m" + figlet.renderText("Personal Information") + "\033[0m"
                 )
-            elif i == "Email Id":
-                id[i] = input(f"{i}: ")
+            if details.index(i) < 3:
+                id[i] = input(f"{i}: \033[31m")
+                print("\033[0m", end="")
+            if i == "Email Id":
+                while check_id(id[i]):
+                    print("You already have an account with this gmail")
+                    x = input("Enter '\033[32mlogin\033[0m' to go to login page\nEnter '\033[32mcontinue\033[0m' to create new id\nEnter: \033[31m")
+                    print("\033[0m", end="")
+                    if x == "login":
+                        login()
+                    else:
+                        print("Please enter another Email id: ")
+                        id[i] = input(f"{i}: \033[31m")
+                        print("\033[0m", end="")
                 while not validate_email(id[i]):
-                    print("Invalid Email")
+                    print("\033[0mInvalid Email")
                     print("Email format: user123@example.com\n")
-                    id[i] = input(f"{i}: ")
+                    id[i] = input(f"{i}: \033[31m")
+                print("\033[0m", end="")
                 flag = False
                 break
+            elif i == "Phone Number":
+                while not re.search(r"^[0-9]{10}$",id[i]):
+                    print("Invalid Phone number. Enter a valid number")
+                    id[i] = input(f"{i}: \033[31m")
+                    print("\033[0m", end="")
             elif i == "Security Question":
                 sleep(2)
                 clear_screen()
@@ -79,6 +100,11 @@ def register():
                 print(
                     "The answer should be something known only to you, avoiding easily discoverable information."
                 )
+                id[i] = input(f"{i}: \033[31m")
+                print("\033[0m", end="")
+            elif i == "Answer":
+                id[i] = input(f"{i}: \033[31m")
+                print("\033[0m", end="")   
             elif i == "Password":
                 sleep(2)
                 clear_screen()
@@ -89,28 +115,34 @@ def register():
                 )
                 create_password(id)
                 break
-            id[i] = input(f"{i}: ")
             if id[i].strip() == "":
                 print("This field is compulsory")
             else:
                 flag = False
     with open(file) as fh:
         temp = json.load(fh)
-    temp["users"].append(id)
+    x = random.randint(0,999999)
+    while x in temp["users"]:
+        x = random.randit(0,999999)
+    temp["users"][f"{x:06}"] = id
     with open(file, "w") as fh:
         json.dump(temp, fh, indent=4)
-    print("Registrations Successful")
+    print("\033[33mRegistrations Successful\033[0m")
 
 
 def create_password(id):
     i = "Password"
-    id[i] = input(f"{i}: ")
+    id[i] = input(f"{i}: \033[31m")
+    print("\033[0m", end="")
     while not validate_password(id[i]):
-        id[i] = input(f"\n{i}: ")
-    c = input("Confirm Password: ")
+        id[i] = input(f"\033[0m\n{i}: \033[31m")
+        print("\033[0m", end="")
+    c = input("Confirm Password: \033[31m")
+    print("\033[0m", end="")
     if c != id[i]:
-        print("Password should be same as previous password")
-        q = input("Confirm Password: ")
+        print("\033[0mPassword should be same as previous password")
+        q = input("Confirm Password: \033[31m")
+        print("\033[0m", end="")
         if q != id[i]:
             exit("Wrong Password")
 
@@ -162,36 +194,47 @@ def login():
     username in the file) and it asks for password and checks the
     password from the file if it is correct or not
     """
-    figlet.setFont(font="slant")
-    print("\033[95m\033[42m")
-    print(figlet.renderText("Login"))
-    print("\033[0m")
+    figlet.setFont(font="larry3d")
+    print("\033[95m\033[41m")
+    for i in figlet.renderText("Login").splitlines():
+        if i.strip() == "":
+            break
+        print("\t\t\t\t" + i)
+    print("\033[0m\n")
     for _ in range(3):
-        email = input("Enter your Email Id: ")
+        email = input("Enter your Email Id: \033[36m")
+        print("\033[0m")
         if check_id(email):
-            with open(file, "r+") as fh:
+            with open(file) as fh:
                 temp = json.load(fh)["users"]
-                for i in temp:
-                    if i["Email Id"] == email:
-                        passw = i["Password"]
+                for i in temp.keys():
+                    if temp[i]["Email Id"] == email:
+                        passw = temp[i]["Password"]
                         for _ in range(3):
-                            password = input("Enter your password: ")
+                            password = input("Enter your Password: \033[36m")
+                            print("\033[0m")
                             if password == "forgot":
-                                print(i["Security Question"])
+                                print(temp[i]["Security Question"])
                                 for _ in range(3):
                                     ans = input("Answer: ")
-                                    if ans == i["Answer"]:
+                                    if ans == temp[i]["Answer"]:
                                         sleep(2)
                                         clear_screen()
                                         print("Create new password: ")
-                                        create_password(i)
-                                        change(i)
+                                        create_password(temp[i])
+                                        change(i,temp[i])
                                         print("Password Changed")
                                         sleep(2)
                                         clear_screen()
                                         login()
                                     print("Invalid Answer")
                             elif password == passw:
+                                figlet.setFont(font="small")
+                                for i in figlet.renderText("Captcha").splitlines():
+                                    if i.strip() == "":
+                                        continue
+                                    print("\033[30m\033[47m" + i + "\033[0m")
+                                captcha()
                                 exit("Logged in")
                             print(
                                 "Invalid password. \t\t If you forgot your password enter '\033[31mforgot\033[0m'"
@@ -201,14 +244,47 @@ def login():
             print("username not found")
 
 
-def change(id):
+def captcha():
+    numbers = [
+        ":keycap_0:",
+        ":keycap_1:",
+        ":keycap_2:",
+        ":keycap_3:",
+        ":keycap_4:",
+        ":keycap_5:",
+        ":keycap_6:",
+        ":keycap_7:",
+        ":keycap_8:",
+        ":keycap_9:",
+    ]
+    x = numbers.index(random.choice(numbers))
+    y = numbers.index(random.choice(numbers))
+    z = x + y
+    print(f"\n{emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = ", end="")
+    if len(str(z)) == 1:
+        print(emoji.emojize(numbers[z]))
+    else:
+        z = str(z)
+        print(
+            emoji.emojize(numbers[int(z[0])]), emoji.emojize(numbers[int(z[1])]), sep=""
+        )
+    ans = input(f" {x}  +  {y} = \033[031m")
+    print("\033[0m")
+    if ans == str(z):
+        return True
+    else:
+        captcha()
+
+
+def change(key,id):
     with open(file) as fh:
         temp = json.load(fh)
-        u = []
-    for i in temp["users"]:
-        if i["Email Id"] != id["Email Id"]:
-            u.append(i)
-    u.append(id)
+        u = {}
+    for i in temp["users"].keys():
+        if temp["users"][i]["Email Id"] != id["Email Id"]:
+            u[i] = temp["users"][i]
+    
+    u[key] = id
     temp["users"] = u
     with open(file, "w") as fh:
         json.dump(temp, fh, indent=4)
@@ -221,8 +297,10 @@ def check_id(email):
     """
     flag = False
     with open(file) as fh:
-        for i in json.load(fh)["users"]:
-            if i["Email Id"] == email:
+        t = json.load(fh)
+        m = t["users"]
+        for i in m.keys():
+            if m[i]["Email Id"] == email:
                 flag = True
     return flag
 
@@ -237,7 +315,7 @@ def reglog():
         register()
         sleep(2)
         clear_screen()
-        choice = input("\n\nDo you want to login now? ")
+        choice = input("\n\nDo you want to login now?(yes/no) ")
         if choice.lower() == "yes":
             clear_screen()
             login()
