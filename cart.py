@@ -34,7 +34,7 @@ def add_():
                 l = row.copy()
         l.append(quantity)
         item_retriever.close()
-    with open('cart.csv','a') as adder:
+    with open('cart.csv','a',newline='') as adder:
         adding=csv.writer(adder)
         adding.writerow(l)
     adder.close()
@@ -47,7 +47,10 @@ def view_cart():
     with open('cart.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
         for row in reader:
-            print(row[3], "(", row[4], ") . Quantity : ", row[6])
+            if c%2==0:
+                print(row[3], "(", row[4], ") --> Quantity : ", row[6])
+            else:
+                pass
         print("---------------------------")
         item_retriever.close()
     selection()
