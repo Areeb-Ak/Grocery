@@ -10,10 +10,8 @@ osname = name
 
 
 def clear():
-    if osname == "nt":
-        system("cls")
-    elif osname == "posix":
-        system("clear")
+    system('cls' if osname == 'nt' else 'clear')
+
 
 
 def display():
@@ -21,7 +19,7 @@ def display():
     Gets whether the user wants to login or register
     """
     while True:
-        x = input("Enter 1 to Login\nEnter 2 to registration\nEnter: ")
+        x = input("Enter choice: ")
         try:
             x = int(x)
             if x != 1 and x != 2:
@@ -155,7 +153,6 @@ def login():
                                         clear()
                                         print("Create new password: ")
                                         create_password(i)
-                                        print(i)
                                         print(type(i))
                                         change(i)
                                         print("Password Changed")
@@ -174,7 +171,6 @@ def login():
 
 
 def change(id):
-    print(id)
     with open(file) as fh:
         temp = json.load(fh)
         u = []
@@ -200,7 +196,7 @@ def check_id(email):
     return flag
 
 
-def main():
+def reglog():
     clear()
     choice = display()
     clear()
@@ -215,4 +211,5 @@ def main():
             login()
 
 
-main()
+
+reglog()
