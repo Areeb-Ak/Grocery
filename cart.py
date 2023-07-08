@@ -38,6 +38,7 @@ def add_():
         adding=csv.writer(adder)
         adding.writerow(l)
         adder.close()
+        print(l[3],"("+str(l[4])+")has been added to cart")
     selection()
 
 
@@ -53,27 +54,26 @@ def view_cart():
 
 
 def print_section(choice):
-    if choice not in range(7):
+    if choice not in ['A','B','C','D','E','F','G']:
         b = wrong_choice(choice)
-        print(b)
         print_section(b)
         selection()
-    elif choice == 0:
+    elif choice == 'A':
         search(input("search : ").lower())
         selection()
-    elif choice == 1:
+    elif choice == 'B':
         retriever("kirana")
         selection()
-    elif choice == 2:
+    elif choice == 'C':
         retriever("instant and frozen foods")
         selection()
-    elif choice == 3:
+    elif choice == 'D':
         retriever('juices and cold drinks')
         selection()
-    elif choice == 4:
+    elif choice == 'E':
         retriever('dairy bread and eggs')
         selection()
-    elif choice == 5:
+    elif choice == 'F':
         retriever('snacks')
         selection()
     else:
@@ -83,9 +83,9 @@ def print_section(choice):
 
 def wrong_choice(choice):
 
-    while choice > 7:
+    while choice not in['A','B','C','D','E','F','G'] :
         print("Wrong Input")
-        choice = int(input("Enter your choice:"))
+        choice = (input("Enter your choice:"))
     return choice
 
 
@@ -100,13 +100,16 @@ def command(selection):
         sys.exit()
     elif selection == 'search':
         search(input("search : ").lower())
+    elif selection == 'print commands':
+        print_commands()
     else:
         print("incorrect command")
 
-
+def print_commands():
+    print("COMMANDS:\n-add\n-view cart\n-search\n-print commands\n-exit\n")
 def menu():
-    print("MENU:\n0.Search\n1.Kirana\n2.Instant and Frozen Foods\n3.Juices and Cold drinks\n4.Dairy , Bread and Eggs\n5.Snacks\n6.Dry Fruits , Oils and Masalas\n")
-    choice = int(input("Enter your choice:"))
+    print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
+    choice = (input("Enter your choice:"))
     print_section(choice)
 
 
@@ -115,7 +118,9 @@ def selection():
     command(select_)
 
 
+print_commands()
 menu()
+
 
 
 
