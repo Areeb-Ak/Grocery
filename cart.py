@@ -7,19 +7,19 @@ def search(item):
         reader = csv.reader(item_retriever)
         for row in reader:
             if item in row:
-                print("{:3}. {:20} ({:4}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
+                print("{:3}. {:20} ({:5}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
         print("---------------------------")
         item_retriever.close()
     selection()
 
 
 def retriever(item):
-    print("Item no. Item  : Price")
+    print("Item no.         Item             : Price")
     with open('data1.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
         for row in reader:
             if item == row[1]:
-                print("{:3}. {:20} ({:4}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
+                print("{:3}. {:20} ({:5}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
         print("---------------------------")
         item_retriever.close()
 
@@ -128,6 +128,7 @@ def command(select__):
 def menu():
     print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
     choice = (input("Enter your choice:")).upper()
+    print()
     print_section(choice)
 
 
@@ -137,5 +138,4 @@ def selection():
     command(select_)
 
 
-print("COMMANDS:\n-add\n-view cart\n-search\n-print commands\n-exit\n")
 menu()
