@@ -7,50 +7,67 @@ def search(item):
         reader = csv.reader(item_retriever)
         for row in reader:
             if item in row:
-                print(row[0],".",row[3],"(",row[4],") : Rs.",row[5])
+                print("{:3}. {:20} ({:4}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
         print("---------------------------")
         item_retriever.close()
     selection()
 
 
 def retriever(item):
-    print("Item no. Item (Quantity) : Price")
+    print("Item no. Item  : Price")
     with open('data1.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
         for row in reader:
             if item == row[1]:
-                print(row[0], ".", row[3], "(", row[4], ") : Rs.", row[5])
+                print("{:3}. {:20} ({:4}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
         print("---------------------------")
         item_retriever.close()
 
 
+def check_if_in_cart(number):
+    checker = open('cart.csv', 'r')
+    if len(checker.readlines()) == 0:
+        checker.close()
+        return True
+    else:
+        with open('cart.csv','r') as checker:
+            reader = csv.reader(checker)
+            for row in reader:
+                if number == row[0]:
+                    print("This item already added to cart :  ",end="")
+                    print(row[3], "(", row[4], ")x", row[6])
+                    return False
+            return True
+
+
 def add_():
     number, quantity = input("enter item number and quantity :").split()
-    l = []
-    with open('data1.csv', 'r') as item_retriever:
-        reader = csv.reader(item_retriever)
-        for row in reader:
-            if number == row[0]:
-                l = row.copy()
-        l.append(quantity)
-        item_retriever.close()
-    with open('cart.csv','a',newline='') as adder:
-        adding=csv.writer(adder)
-        adding.writerow(l)
-    adder.close()
-    print(l[3],"("+str(l[4])+")has been added to cart")
+    r = check_if_in_cart(number)
+    if r:
+        l = []
+        with open('data1.csv', 'r') as item_retriever:
+            reader = csv.reader(item_retriever)
+            for row in reader:
+                if number == row[0]:
+                    l = row.copy()
+            l.append(quantity)
+            item_retriever.close()
+        with open('cart.csv', 'a', newline='') as adder:
+            adding = csv.writer(adder)
+            adding.writerow(l)
+        adder.close()
+        print(l[3], "(" + str(l[4]) + ") x", l[6], "has been added to cart")
+        print("---------------------------")
+    else:
+        print("---------------------------")
     selection()
 
 
 def view_cart():
-    c = 0
     with open('cart.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
         for row in reader:
-            if c%2==0:
-                print(row[3], "(", row[4], ") --> Quantity : ", row[6])
-            else:
-                pass
+            print(row[3], "(", row[4], ") x", row[6])
         print("---------------------------")
         item_retriever.close()
     selection()
@@ -103,14 +120,11 @@ def command(select__):
         sys.exit()
     elif select__ == 'search':
         search(input("search : ").lower())
-    elif select__ == 'print commands':
-        print_commands()
     else:
         print("incorrect command")
         selection()
 
-def print_commands():
-    print("COMMANDS:\n-add\n-view cart\n-search\n-print commands\n-exit\n")
+
 def menu():
     print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
     choice = (input("Enter your choice:")).upper()
@@ -118,14 +132,10 @@ def menu():
 
 
 def selection():
-    select_ = input("enter command : ").lower()
+    print("COMMANDS:| add | view cart | search | menu | exit |")
+    select_ = input("enter command : ").lower().strip()
     command(select_)
 
 
-print_commands()
+print("COMMANDS:\n-add\n-view cart\n-search\n-print commands\n-exit\n")
 menu()
-
-
-
-
-
