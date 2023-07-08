@@ -53,27 +53,27 @@ def view_cart():
 
 
 def print_section(choice):
-    if choice not in range(7):
+    if choice not in ['A','B','C','D','E','F','G']:
         b = wrong_choice(choice)
         print(b)
         print_section(b)
         selection()
-    elif choice == A:
+    elif choice == 'A':
         search(input("search : ").lower())
         selection()
-    elif choice == B:
+    elif choice == 'B':
         retriever("kirana")
         selection()
-    elif choice == C:
+    elif choice == 'C':
         retriever("instant and frozen foods")
         selection()
-    elif choice == D:
+    elif choice == 'D':
         retriever('juices and cold drinks')
         selection()
-    elif choice == E:
+    elif choice == 'E':
         retriever('dairy bread and eggs')
         selection()
-    elif choice == F:
+    elif choice == 'F':
         retriever('snacks')
         selection()
     else:
@@ -83,9 +83,9 @@ def print_section(choice):
 
 def wrong_choice(choice):
 
-    while choice > 7:
+    while choice not in['A','B','C','D','E','F','G'] :
         print("Wrong Input")
-        choice = int(input("Enter your choice:"))
+        choice = (input("Enter your choice:"))
     return choice
 
 
@@ -106,7 +106,7 @@ def command(selection):
         print("incorrect command")
 
 def print_commands():
-    print("-add\n-view cart\n-search\n-print commands\n-exit")
+    print("COMMANDS:\n-add\n-view cart\n-search\n-print commands\n-exit\n")
 def menu():
     print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
     choice = (input("Enter your choice:"))
@@ -117,8 +117,11 @@ def selection():
     select_ = input("enter command : ").lower()
     command(select_)
 
-menu()
+
 print_commands()
+menu()
+
+
 
 
 
