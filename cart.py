@@ -38,6 +38,7 @@ def add_():
         adding=csv.writer(adder)
         adding.writerow(l)
         adder.close()
+        print(l[3],"("+str(l[4])+")has been added to cart")
     selection()
 
 
@@ -55,7 +56,6 @@ def view_cart():
 def print_section(choice):
     if choice not in ['A','B','C','D','E','F','G']:
         b = wrong_choice(choice)
-        print(b)
         print_section(b)
         selection()
     elif choice == 'A':
