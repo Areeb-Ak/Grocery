@@ -1,18 +1,18 @@
 item number,section,subsection,item,type,price
-1,kirana ,rice,basmati rice,1kg,191
+1,kirana,rice,basmati rice,1kg,191
 2,kirana,rice,basmati rice ,500g,100
-3,kirana ,rice,sona masouri rice,1kg,85
-4,kirana ,rice,sona masouri rice,500g,50
-5,kirana ,rice,brown rice,1kg,80
-6,kirana ,rice,brown rice,500g,40
-7,kirana ,flours,multigrain atta,1kg
-8,kirana ,flours,multigrain atta,500g
-9,kirana ,flours,maida,1kg,46
-10,kirana ,flours,maida,500g,33
-11,kirana ,flours,atta,1kg,65
-12,kirana ,flours,atta,500g,45
-13,kirana ,flours,besan,1kg,160
-14,kirana ,flours,besan,500g,85
+3,kirana,rice,sona masouri rice,1kg,85
+4,kirana,rice,sona masouri rice,500g,50
+5,kirana,rice,brown rice,1kg,80
+6,kirana,rice,brown rice,500g,40
+7,kirana,flours,multigrain atta,1kg,50
+8,kirana,flours,multigrain atta,500g,30
+9,kirana,flours,maida,1kg,46
+10,kirana,flours,maida,500g,33
+11,kirana,flours,atta,1kg,65
+12,kirana,flours,atta,500g,45
+13,kirana,flours,besan,1kg,160
+14,kirana,flours,besan,500g,85
 15,kirana,flours,ragi flour,500g,30
 16,kirana,flours,ragi flour,250g,20
 17,kirana,dal,tuar dal,1kg,230
@@ -25,26 +25,26 @@ item number,section,subsection,item,type,price
 24,kirana,dal,chana dal,250g,35
 25,kirana,dal,urad dal,500g,112
 26,kirana,dal,urad dal,250g,60
-27,instant and frozen foods,fries,1kg,330
-28,instant and frozen foods,fries,500g,126
-29,instant and frozen foods,fries,250g,50
-30,instant and frozen foods,potato shots,1kg,200
-31,instant and frozen foods,potato shots,500g,100
-32,instant and frozen foods,potato shots,250g,50
-33,instant and frozen foods,momos,12pc pack,300
-34,instant and frozen foods,momos,8pc pack,200
-35,instant and frozen foods,chicken momos,12pc pack,200
-36,instant and frozen foods,chicken momos,8pc pack,150
-37,instant and frozen foods,instant noodles,8pc pack,96
-38,instant and frozen foods,instant noodles,4pc pack,48
-39,instant and frozen foods,instant noodles,2pc pack,24
-40,instant and frozen foods,insant noodles,1pc pack,12
-41,instant and frozen foods,cup noodles,1 cup,48
-42,instant and frozen foods,dosa and idle batter,750g
-43,instant and frozen foods,dosa and idle batter,500g
-44,instant and frozen foods,sweet corn soup,42gm,55
-45,instant and frozen foods,manchow soup,42g,55
-46,instant and frozen foods,tomato soup,42g,55
+27,instant and frozen foods,frozen food,fries,1kg,330
+28,instant and frozen foods,frozen food,fries,500g,126
+29,instant and frozen foods,frozen food,fries,250g,50
+30,instant and frozen foods,frozen food,potato shots,1kg,200
+31,instant and frozen foods,frozen food,potato shots,500g,100
+32,instant and frozen foods,frozen food,potato shots,250g,50
+33,instant and frozen foods,frozen food,momos,12pc pack,300
+34,instant and frozen foods,frozen food,momos,8pc pack,200
+35,instant and frozen foods,frozen food,chicken momos,12pc pack,200
+36,instant and frozen foods,frozen food,chicken momos,8pc pack,150
+37,instant and frozen foods,instant food,instant noodles,8pc pack,96
+38,instant and frozen foods,instant food,instant noodles,4pc pack,48
+39,instant and frozen foods,instant food,instant noodles,2pc pack,24
+40,instant and frozen foods,instant food,insant noodles,1pc pack,12
+41,instant and frozen foods,instant food,cup noodles,1 cup,48
+42,instant and frozen foods,instant food,dosa and idly batter,750g,71
+43,instant and frozen foods,instant food,dosa and idly batter,500g,50
+44,instant and frozen foods,instant food,sweet corn soup,42gm,55
+45,instant and frozen foods,instant food,manchow soup,42g,55
+46,instant and frozen foods,instant food,tomato soup,42g,55
 47,juices and cold drinks,cold drink,thumps up,250ml,35
 48,juices and cold drinks,cold drink,coco cola,250mk,35
 49,juices and cold drinks,cold drink,mountain dew,250ml,40
@@ -78,18 +78,18 @@ item number,section,subsection,item,type,price
 77,snacks,chips,banana chips,20g,25
 78,snacks,chips,nachos,100g,44
 79,snacks,chips,nachos,50g,36
-80,dry fruits oils and masalas,dry fruits,almonds,250,277
-81,dry fruits oils and masalas,dry fruits,almonds,100,150
-82,dry fruits oils and masalas,dry fruits,pista,250,396
-83,dry fruits oils and masalas,dry fruits,pista,100,200
-84,dry fruits oils and masalas,dry fruits,cashews,250,221
-85,dry fruits oils and masalas,dry fruits,cashews,100,100
+80,dry fruits oils and masalas,dry fruits,almonds,250g,277
+81,dry fruits oils and masalas,dry fruits,almonds,100g,150
+82,dry fruits oils and masalas,dry fruits,pista,250g,396
+83,dry fruits oils and masalas,dry fruits,pista,100g,200
+84,dry fruits oils and masalas,dry fruits,cashews,250g,221
+85,dry fruits oils and masalas,dry fruits,cashews,100g,100
 86,dry fruits oils and masalas,oil,sunflower oil,1L,115
 87,dry fruits oils and masalas,oil,sunflower oil,500ml,55
 88,dry fruits oils and masalas,oil,groundnut oil,1L,181
 89,dry fruits oils and masalas,oil,groundnut oil,500ml,90
-90,dry fruits oils and masalas,oil,palm oil,100
-91,dry fruits oils and masalas,oil,palm oil,50
+90,dry fruits oils and masalas,oil,palm oil,1L,100
+91,dry fruits oils and masalas,oil,palm oil,500ml,50
 92,dry fruits oils and masalas,masala,red chilli,100g,81
 93,dry fruits oils and masalas,masala,tumeric,100g,40
 94,dry fruits oils and masalas,masala,dhaniya,100g,37
