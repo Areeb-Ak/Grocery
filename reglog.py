@@ -63,6 +63,16 @@ def register():
                 id[i] = input(f"{i}: \033[31m")
                 print("\033[0m", end="")
             if i == "Email Id":
+                while check_id(id[i]):
+                    print("You already have an account with this gmail")
+                    x = input("Enter '\033[32mlogin\033[0m' to go to login page\nEnter '\033[32mcontinue\033[0m' to create new id\nEnter: \033[31m")
+                    print("\033[0m", end="")
+                    if x == "login":
+                        login()
+                    else:
+                        print("Please enter another Email id: ")
+                        id[i] = input(f"{i}: \033[31m")
+                        print("\033[0m", end="")
                 while not validate_email(id[i]):
                     print("\033[0mInvalid Email")
                     print("Email format: user123@example.com\n")
@@ -111,7 +121,10 @@ def register():
                 flag = False
     with open(file) as fh:
         temp = json.load(fh)
-    temp["users"].append(id)
+    x = random.randint(0,999999)
+    while x in temp["users"]:
+        x = random.randit(0,999999)
+    temp["users"][f"{x:06}"] = id
     with open(file, "w") as fh:
         json.dump(temp, fh, indent=4)
     print("\033[33mRegistrations Successful\033[0m")
@@ -192,24 +205,24 @@ def login():
         email = input("Enter your Email Id: \033[36m")
         print("\033[0m")
         if check_id(email):
-            with open(file, "r+") as fh:
+            with open(file) as fh:
                 temp = json.load(fh)["users"]
-                for i in temp:
-                    if i["Email Id"] == email:
-                        passw = i["Password"]
+                for i in temp.keys():
+                    if temp[i]["Email Id"] == email:
+                        passw = temp[i]["Password"]
                         for _ in range(3):
                             password = input("Enter your Password: \033[36m")
                             print("\033[0m")
                             if password == "forgot":
-                                print(i["Security Question"])
+                                print(temp[i]["Security Question"])
                                 for _ in range(3):
                                     ans = input("Answer: ")
-                                    if ans == i["Answer"]:
+                                    if ans == temp[i]["Answer"]:
                                         sleep(2)
                                         clear_screen()
                                         print("Create new password: ")
-                                        create_password(i)
-                                        change(i)
+                                        create_password(temp[i])
+                                        change(i,temp[i])
                                         print("Password Changed")
                                         sleep(2)
                                         clear_screen()
@@ -263,14 +276,15 @@ def captcha():
         captcha()
 
 
-def change(id):
+def change(key,id):
     with open(file) as fh:
         temp = json.load(fh)
-        u = []
-    for i in temp["users"]:
-        if i["Email Id"] != id["Email Id"]:
-            u.append(i)
-    u.append(id)
+        u = {}
+    for i in temp["users"].keys():
+        if temp["users"][i]["Email Id"] != id["Email Id"]:
+            u[i] = temp["users"][i]
+    
+    u[key] = id
     temp["users"] = u
     with open(file, "w") as fh:
         json.dump(temp, fh, indent=4)
@@ -283,8 +297,10 @@ def check_id(email):
     """
     flag = False
     with open(file) as fh:
-        for i in json.load(fh)["users"]:
-            if i["Email Id"] == email:
+        t = json.load(fh)
+        m = t["users"]
+        for i in m.keys():
+            if m[i]["Email Id"] == email:
                 flag = True
     return flag
 
