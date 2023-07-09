@@ -2,6 +2,7 @@ import csv
 import sys
 
 
+
 def search(item):
     print("Item no.         Item             : Price")
     with open('data1.csv', 'r') as item_retriever:
@@ -127,16 +128,17 @@ def command(select__):
 
 
 def menu():
-    print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
+    print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and "
+          "Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
     choice = (input("Enter your choice:")).upper()
     print()
     print_section(choice)
 
 
 def selection():
+
     print("COMMANDS:| add | view cart | search | menu | exit |")
     select_ = input("enter command : ").lower().strip()
     command(select_)
 
 
-menu()

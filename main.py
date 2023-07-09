@@ -1,6 +1,18 @@
 import grocery_logo
 import reglog
 from time import sleep
+import cart
+import os
+
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(" GROCERY ".center(70, "_"))
+    print(f"USER ID :- {is_login}")
+    print(f"~{email}")
+    print("*"*70)
+
+
 
 """
 importing grocery logo from the grocery_animation file
@@ -21,7 +33,6 @@ print(
 Registration and Login
 ~Areeb 
 """
-
 
 email = ""
 is_login = False
@@ -62,4 +73,12 @@ while not is_login:
         else:
             exit("Thanks for signing up")
 
-print(is_login, email)
+# print(is_login, email)
+# Here returning the login_id and email from the login if login is successful
+"""
+classifying add collecting information regarding goods (currently 100 items are available)
+searching and adding grocery to cart
+returning cart for billing
+~ Darsh
+"""
+cart.menu()
