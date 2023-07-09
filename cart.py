@@ -1,7 +1,20 @@
 import csv
 import sys
+import os
+
+with open('temp.txt', 'r') as f:
+    data = f.readlines()
+    is_login = data[0]
+    email = data[1]
+    f.close()
 
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(" GROCERY ".center(70, "_"))
+    print(f"USER ID :- {is_login}")
+    print(f"~{email}")
+    print("_"*70)
 
 def search(item):
     print("Item no.         Item             : Price")
@@ -12,7 +25,8 @@ def search(item):
                 print("{:3}. {:20} ({:5}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
         print("------------------------------------------------------------------------------")
         item_retriever.close()
-    selection()
+    if selection():
+        return True
 
 
 def retriever(item):
@@ -58,11 +72,14 @@ def add_():
             adding = csv.writer(adder)
             adding.writerow(l)
         adder.close()
+        clear_screen()
         print(l[3], "(" + str(l[4]) + ") x", l[6], "has been added to cart")
         print("---------------------------")
     else:
         print("---------------------------")
-    selection()
+        clear_screen()
+    if selection():
+        return True
 
 
 def view_cart():
@@ -72,35 +89,32 @@ def view_cart():
             print(row[3], "(", row[4], ") x", row[6])
         print("---------------------------")
         item_retriever.close()
-    selection()
+    if selection():
+        return True
 
 
 def print_section(choice):
     if choice not in ['A','B','C','D','E','F','G']:
         b = wrong_choice(choice)
         print_section(b)
-        selection()
     elif choice == 'A':
-        search(input("search : ").lower())
-        selection()
+        clear_screen()
+        if search(input("search : ").lower()):
+            return True
     elif choice == 'B':
         retriever("kirana")
-        selection()
     elif choice == 'C':
         retriever("instant and frozen foods")
-        selection()
     elif choice == 'D':
         retriever('juices and cold drinks')
-        selection()
     elif choice == 'E':
         retriever('dairy bread and eggs')
-        selection()
     elif choice == 'F':
         retriever('snacks')
-        selection()
     else:
         retriever('dry fruits oils and masalas')
-        selection()
+    if selection():
+        return True
 
 
 def wrong_choice(choice):
@@ -113,32 +127,40 @@ def wrong_choice(choice):
 
 def command(select__):
     if select__ == 'add':
-        add_()
+        if add_():
+            return True
     elif select__ == 'view cart':
-        view_cart()
+        if view_cart():
+            return True
     elif select__ == 'menu':
-        menu()
-    elif select__ == 'exit':
-        sys.exit()
+        if menu():
+            return True
+    elif select__ == 'place order':
+        return True
     elif select__ == 'search':
-        search(input("search : ").lower())
+        if search(input("search : ").lower()):
+            return True
     else:
         print("incorrect command")
-        selection()
+        if selection():
+            return True
 
 
 def menu():
+    clear_screen()
     print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and "
           "Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
     choice = (input("Enter your choice:")).upper()
     print()
-    print_section(choice)
+    if print_section(choice):
+        return True
 
 
 def selection():
 
-    print("COMMANDS:| add | view cart | search | menu | exit |")
+    print("COMMANDS:| add | view cart | search | menu | place order |")
     select_ = input("enter command : ").lower().strip()
-    command(select_)
 
+    if command(select_):
+        return True
 

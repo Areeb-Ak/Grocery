@@ -27,6 +27,15 @@ with open("cart.csv", 'r') as items:
         total_price += price
 
 
+def conform_order():
+    print(str(bill))
+    print('\n' + f"TOTAL PRICE :- {total_price}".center(100))
+
+    if input("Do You want to confirm order ?(Yes/No)").lower == 'yes':
+        return True
+    return False
+
+
 def generate_bill():
     global bill_in_string
     bill_in_string += "--------------------------------------------------------------\n"
@@ -39,4 +48,3 @@ def generate_bill():
 
 
 generate_bill()
-print(bill_in_string)
