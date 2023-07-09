@@ -26,15 +26,23 @@ email = ''
 is_login = False
 while not is_login :
     if choice == 1:
-        is_login,email = reglog.login()
+        try:
+            is_login,email = reglog.login()
+        except TypeError:
+            print("Unable to Login")
+            break
     elif choice == 2:
-        reglog.register()
+        if not reglog.register():
+            print("Unable to register")
+            break
         sleep(2)
         reglog.clear_screen()
         # add a print statement to greet like great thanks for sigining up
-        choice = input("\n\nDo you want to login now?(yes/no) ")
+        choice = input("\n\nDo you want to login now?(yes/no): ")
         if choice.lower() == "yes":
             reglog.clear_screen()
             is_login, eamil = reglog.login()
+        else:
+            print("Thanks for signing up")
 
 print(email)

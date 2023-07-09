@@ -231,6 +231,8 @@ def login():
                                         clear_screen()
                                         login()
                                     print("Invalid Answer")
+                                    if _ == 2:
+                                        return False
                             elif password == passw:
                                 figlet.setFont(font="short")
                                 for j in figlet.renderText("Captcha").splitlines():
@@ -263,25 +265,25 @@ def captcha():
         ":keycap_8:",
         ":keycap_9:",
     ]
-    x = numbers.index(random.choice(numbers))
-    y = numbers.index(random.choice(numbers))
-    z = x + y
-    print(f"\n{emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = ", end="")
-    if len(str(z)) == 1:
-        print(emoji.emojize(numbers[z]))
-    else:
-        z = str(z)
-        print(
-            emoji.emojize(numbers[int(z[0])]),
-            emoji.emojize(numbers[int(z[1])]),
-            sep=" ",
-        )
-    ans = input(f" {x}  + {y} = \033[031m")
-    print("\033[0m")
-    if ans == str(z):
-        return True
-    else:
-        captcha()
+    for _ in range(3):
+        x = numbers.index(random.choice(numbers))
+        y = numbers.index(random.choice(numbers))
+        z = x + y
+        print(f"\n{emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = ", end="")
+        if len(str(z)) == 1:
+            print(emoji.emojize(numbers[z]))
+        else:
+            z = str(z)
+            print(
+                emoji.emojize(numbers[int(z[0])]),
+                emoji.emojize(numbers[int(z[1])]),
+                sep=" ",
+            )
+        ans = input(f" {x}  + {y} = \033[031m")
+        print("\033[0m")
+        if ans == str(z):
+            return True
+    return False
 
 
 def change(key, id):
@@ -311,26 +313,4 @@ def check_id(email):
             if m[i]["Email Id"] == email:
                 flag = True
     return flag
-
-
-def reglog():
-    clear_screen()
-    choice = display()
-    clear_screen()
-    if choice == 1:
-        return (login())
-    elif choice == 2:
-        if not register():
-            return False
-        sleep(2)
-        choice = input("\n\nDo you want to login now?(yes/no) ")
-        if choice.lower() == "yes":
-            clear_screen()
-            if not login():
-                return False
-            else :
-                return(login())
-        else:
-            print("Thanks for Signing up")
-            return False
 
