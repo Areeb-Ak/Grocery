@@ -14,9 +14,6 @@ print(grocery_logo.logo)
 print(
     """
 **************************** WELCOME TO GROCERY APP *******************************
-                                1==>LOGIN
-                                2==>SIGNUP
-                                
 """
 )
 
@@ -24,21 +21,32 @@ print(
 Registration and Login
 ~Areeb 
 """
-choice = reglog.display()
-reglog.clear_screen()
+
+
 email = ""
 is_login = False
 while not is_login:
+    print(
+        """
+                                1==>LOGIN
+                                2==>SIGNUP
+        """
+    )
+
+    choice = reglog.display()
+    reglog.clear_screen()
     if choice == 1:
         try:
             is_login, email = reglog.login()
         except TypeError:
+            reglog.clear_screen()
             print("Unable to Login")
-            break
+            continue
     elif choice == 2:
         if not reglog.register():
+            reglog.clear_screen()
             print("Unable to register")
-            break
+            continue
         sleep(2)
         reglog.clear_screen()
         # add a print statement to greet like great thanks for sigining up
@@ -48,10 +56,10 @@ while not is_login:
             try:
                 is_login, email = reglog.login()
             except TypeError:
+                reglog.clear_screen()
                 print("Unable to Login")
-                break
+                continue
         else:
-            print("Thanks for signing up")
-            break
+            exit("Thanks for signing up")
 
-print(email)
+print(is_login, email)
