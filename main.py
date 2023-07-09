@@ -72,7 +72,7 @@ x.write('\n')
 x.write(email)
 x.close()
 
-# print(is_login, email)
+print(is_login, email)
 # Here returning the login_id and email from the login if login is successful
 f = open("cart.csv", "w")
 f.close()
@@ -100,7 +100,6 @@ def payment(amount):
 def add_to_successful_orders(id):
     fp = open("cart.csv", 'r')
     order_items = csv.DictReader(fp, ["item_id", 'category', 'sub_cat', "item_name", 'type', 'cost', "quantity"])
-    fp.close()
 
     order_details = []
     for item in order_items:

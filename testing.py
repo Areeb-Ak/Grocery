@@ -1,1 +1,2 @@
-email = input("Enter your Email Id: \033[36m")
+from main import add_to_successful_orders
+add_to_successful_orders(1)
