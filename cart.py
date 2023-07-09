@@ -3,6 +3,7 @@ import sys
 
 
 def search(item):
+    print("Item no.         Item             : Price")
     with open('data1.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
         for row in reader:
