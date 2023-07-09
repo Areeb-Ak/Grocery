@@ -325,4 +325,3 @@ def reglog():
             login()
 
 
-reglog()
