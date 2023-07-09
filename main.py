@@ -8,6 +8,7 @@ it is the combination of list, pause and clearing screen
 """
 
 grocery_logo.print_animation()
+# print the creators name
 print(grocery_logo.logo)
 print("""
 **************************** WELCOME TO GROCERY APP *******************************
@@ -24,7 +25,7 @@ choice = reglog.display()
 reglog.clear_screen()
 email = ''
 is_login = False
-while not is_login :
+while not is_login:
     if choice == 1:
         is_login,email = reglog.login()
     elif choice == 2:
@@ -35,6 +36,6 @@ while not is_login :
         choice = input("\n\nDo you want to login now?(yes/no) ")
         if choice.lower() == "yes":
             reglog.clear_screen()
-            is_login, eamil = reglog.login()
+            is_login, email = reglog.login()
 
 print(email)

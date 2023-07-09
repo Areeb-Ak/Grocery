@@ -9,7 +9,7 @@ def search(item):
         for row in reader:
             if item in row:
                 print("{:3}. {:20} ({:5}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
-        print("---------------------------")
+        print("------------------------------------------------------------------------------")
         item_retriever.close()
     selection()
 
