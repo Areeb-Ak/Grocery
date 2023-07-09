@@ -288,8 +288,8 @@ def change(key, id):
     for i in temp["users"].keys():
         if temp["users"][i]["Email Id"] != id["Email Id"]:
             u[i] = temp["users"][i]
-
-    u[key] = id
+        else:
+            u[key] = id
     temp["users"] = u
     with open(file, "w") as fh:
         json.dump(temp, fh, indent=4)
