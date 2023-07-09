@@ -3,7 +3,7 @@ import json
 import grocery_logo
 import reglog
 from time import sleep
-import cart
+
 
 import csv
 
@@ -76,6 +76,8 @@ print(is_login, email)
 # Here returning the login_id and email from the login if login is successful
 f = open("cart.csv", "w")
 f.close()
+
+import cart
 """
 classifying add collecting information regarding goods (currently 100 items are available)
 searching and adding grocery to cart
@@ -103,14 +105,17 @@ def add_to_successful_orders(id):
 
     order_details = []
     for item in order_items:
-        order_details.append([item['item_id'], item['cost'], item['quantity']])
-    temp = {'order_id': id,
-            'order_details': order_details,
-            'total_price': billing.total_price,
-            'payment_type': payment_type}
+        order_details.append([item['item_id'], item["item_name"], item['cost'], item['quantity']])
+    with open('successful_orders.json') as fp:
+        temp = json.load(fp)
+    temp["orders"][is_login] = temp["orders"].get(is_login, []) + [{'order_id':id,
+                       'order_details': order_details,
+                        'total_price': billing.total_price,
+                        'payment_type': payment_type}]
+    with open('successful_orders.json','w') as fp:
+        json.dump(temp, fp,indent=4)
+    
 
-    fp = open('successful_orders.json', 'a')
-    json.dump(temp, fp)
 
 
 if billing.conform_order():
