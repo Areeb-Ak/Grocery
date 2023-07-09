@@ -4,7 +4,7 @@ import grocery_logo
 import reglog
 from time import sleep
 import cart
-import billing
+
 import csv
 
 """
@@ -89,23 +89,23 @@ accessing data from cart and representing it in a bill
 generating a uniques order number consisting of date and time and the order id 
 ~Akshay
 """
-
+import billing
 payment_type = 'cash'
 
 
 def payment(amount):
-    pass
+    return True
 
 
-def add_to_successful_orders():
+def add_to_successful_orders(id):
     fp = open("cart.csv", 'r')
     order_items = csv.DictReader(fp, ["item_id", 'category', 'sub_cat', "item_name", 'type', 'cost', "quantity"])
     fp.close()
 
-    order_details = ()
+    order_details = []
     for item in order_items:
-        order_details += ((item['item_id'], item['cost'], item['quantity']))
-    temp = {'order_id': billing.order_id,
+        order_details.append([item['item_id'], item['cost'], item['quantity']])
+    temp = {'order_id': id,
             'order_details': order_details,
             'total_price': billing.total_price,
             'payment_type': payment_type}
@@ -118,7 +118,7 @@ if billing.conform_order():
     if payment(billing.total_price):
         cart.clear_screen()
         print("Thank you !")
-        billing.generate_bill()
-        add_to_successful_orders()
+        order_id = billing.generate_bill()
+        add_to_successful_orders(order_id)
     else:
         print('COME BACK AGAIN ')

@@ -4,12 +4,6 @@ the cart data is in the cart.csv
 import datetime
 import csv
 import prettytable
-
-no = 1  # need to import the order number from the successful orders list
-date_time = datetime.datetime.now()
-
-order_id = date_time.strftime("%d%m%Y%H%M%S") + str(no).zfill(4)
-print(order_id)
 bill_in_string = ""
 
 with open("cart.csv", 'r') as items:
@@ -31,12 +25,19 @@ def conform_order():
     print(str(bill))
     print('\n' + f"TOTAL PRICE :- {total_price}".center(100))
 
-    if input("Do You want to confirm order ?(Yes/No)").lower == 'yes':
+    if input("Do You want to confirm order ?(Yes/No)").lower() == 'yes':
         return True
     return False
 
 
 def generate_bill():
+    # generating order number
+    fp = open('successful_orders.json', 'r')
+    no = len(fp.readlines()) + 1
+
+    date_time = datetime.datetime.now()
+    global order_id
+    order_id = date_time.strftime("%d%m%Y%H%M%S") + str(no).zfill(4)
     global bill_in_string
     bill_in_string += "--------------------------------------------------------------\n"
     bill_in_string += '|' + "GROCERY MART".center(61) + '|\n'
@@ -45,6 +46,6 @@ def generate_bill():
     bill_in_string += f"Order ID:-{order_id}\n"
     bill_in_string += str(bill)
     bill_in_string += '\n' + f"TOTAL PRICE :- {total_price}".center(100)
+    print(bill_in_string)
+    return order_id
 
-
-generate_bill()
