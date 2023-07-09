@@ -1,0 +1,1 @@
+email = input("Enter your Email Id: \033[36m")

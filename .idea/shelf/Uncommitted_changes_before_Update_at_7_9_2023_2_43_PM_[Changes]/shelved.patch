@@ -1,0 +1,188 @@
+Index: grocery_logo.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># starting page\r\nanimation = [\"\"\"\r\n ██████╗         \r\n██╔════╝         \r\n██║  ███╗      \r\n██║   ██║        \r\n╚██████╔╝         \r\n ╚═════╝         \r\n                                                                                \r\n\"\"\",\r\n             \"\"\"\r\n██████╗     ██████╗     \r\n██╔════╝     ██╔══██╗       \r\n██║  ███╗    ██████╔╝        \r\n██║   ██║    ██╔══██╗       \r\n╚██████╔╝    ██║  ██║        \r\n ╚═════╝     ╚═╝  ╚═╝    \r\n\"\"\",\r\n             \"\"\"\r\n██████╗     ██████╗      ██████╗         \r\n██╔════╝     ██╔══██╗    ██╔═══██╗    \r\n██║  ███╗    ██████╔╝    ██║   ██║        \r\n██║   ██║    ██╔══██╗    ██║   ██║         \r\n╚██████╔╝    ██║  ██║    ╚██████╔╝          \r\n ╚═════╝     ╚═╝  ╚═╝     ╚═════╝     \r\n\"\"\",\r\n             \"\"\"\r\n██████╗     ██████╗      ██████╗      ██████╗      \r\n██╔════╝     ██╔══██╗    ██╔═══██╗    ██╔════╝    \r\n██║  ███╗    ██████╔╝    ██║   ██║    ██║              \r\n██║   ██║    ██╔══██╗    ██║   ██║    ██║         \r\n╚██████╔╝    ██║  ██║    ╚██████╔╝    ╚██████╗          \r\n ╚═════╝     ╚═╝  ╚═╝     ╚═════╝      ╚═════╝       \r\n\"\"\",\r\n             \"\"\"\r\n██████╗     ██████╗      ██████╗      ██████╗    ███████╗       \r\n██╔════╝     ██╔══██╗    ██╔═══██╗    ██╔════╝    ██╔════╝     \r\n██║  ███╗    ██████╔╝    ██║   ██║    ██║         █████╗         \r\n██║   ██║    ██╔══██╗    ██║   ██║    ██║         ██╔══╝       \r\n╚██████╔╝    ██║  ██║    ╚██████╔╝    ╚██████╗    ███████╗    \r\n ╚═════╝     ╚═╝  ╚═╝     ╚═════╝      ╚═════╝    ╚══════╝     \r\n\"\"\",\r\n             \"\"\"\r\n██████╗     ██████╗      ██████╗      ██████╗    ███████╗    ██████╗        \r\n██╔════╝     ██╔══██╗    ██╔═══██╗    ██╔════╝    ██╔════╝    ██╔══██╗      \r\n██║  ███╗    ██████╔╝    ██║   ██║    ██║         █████╗      ██████╔╝          \r\n██║   ██║    ██╔══██╗    ██║   ██║    ██║         ██╔══╝      ██╔══██╗          \r\n╚██████╔╝    ██║  ██║    ╚██████╔╝    ╚██████╗    ███████╗    ██║  ██║         \r\n ╚═════╝     ╚═╝  ╚═╝     ╚═════╝      ╚═════╝    ╚══════╝    ╚═╝  ╚═╝     \r\n\"\"\",\r\n             \"\"\" \r\n██████╗     ██████╗      ██████╗      ██████╗    ███████╗    ██████╗     ██╗   ██╗    \r\n██╔════╝     ██╔══██╗    ██╔═══██╗    ██╔════╝    ██╔════╝    ██╔══██╗    ╚██╗ ██╔╝    \r\n██║  ███╗    ██████╔╝    ██║   ██║    ██║         █████╗      ██████╔╝     ╚████╔╝     \r\n██║   ██║    ██╔══██╗    ██║   ██║    ██║         ██╔══╝      ██╔══██╗      ╚██╔╝      \r\n╚██████╔╝    ██║  ██║    ╚██████╔╝    ╚██████╗    ███████╗    ██║  ██║       ██║       \r\n ╚═════╝     ╚═╝  ╚═╝     ╚═════╝      ╚═════╝    ╚══════╝    ╚═╝  ╚═╝       ╚═╝     \"\"\"]\r\n\r\nfrom time import sleep\r\nimport os\r\n\r\n\r\ndef clear_screen():\r\n    os.system('cls' if os.name == 'nt' else 'clear')\r\n\r\n\r\ndef print_animation():\r\n    for i in animation:\r\n        print(i)\r\n        sleep(0.3)\r\n        clear_screen()\r\n\r\n\r\nlogo = animation[-1]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grocery_logo.py b/grocery_logo.py
+--- a/grocery_logo.py	(revision 3a95618c3e2717a8c42950c5e149d6f6feed3afa)
++++ b/grocery_logo.py	(date 1688893351695)
+@@ -9,7 +9,7 @@
+                                                                                 
+ """,
+              """
+-██████╗     ██████╗     
++ ██████╗     ██████╗     
+ ██╔════╝     ██╔══██╗       
+ ██║  ███╗    ██████╔╝        
+ ██║   ██║    ██╔══██╗       
+@@ -17,7 +17,7 @@
+  ╚═════╝     ╚═╝  ╚═╝    
+ """,
+              """
+-██████╗     ██████╗      ██████╗         
++ ██████╗     ██████╗      ██████╗         
+ ██╔════╝     ██╔══██╗    ██╔═══██╗    
+ ██║  ███╗    ██████╔╝    ██║   ██║        
+ ██║   ██║    ██╔══██╗    ██║   ██║         
+@@ -25,7 +25,7 @@
+  ╚═════╝     ╚═╝  ╚═╝     ╚═════╝     
+ """,
+              """
+-██████╗     ██████╗      ██████╗      ██████╗      
++ ██████╗     ██████╗      ██████╗      ██████╗      
+ ██╔════╝     ██╔══██╗    ██╔═══██╗    ██╔════╝    
+ ██║  ███╗    ██████╔╝    ██║   ██║    ██║              
+ ██║   ██║    ██╔══██╗    ██║   ██║    ██║         
+@@ -33,7 +33,7 @@
+  ╚═════╝     ╚═╝  ╚═╝     ╚═════╝      ╚═════╝       
+ """,
+              """
+-██████╗     ██████╗      ██████╗      ██████╗    ███████╗       
++ ██████╗     ██████╗      ██████╗      ██████╗    ███████╗       
+ ██╔════╝     ██╔══██╗    ██╔═══██╗    ██╔════╝    ██╔════╝     
+ ██║  ███╗    ██████╔╝    ██║   ██║    ██║         █████╗         
+ ██║   ██║    ██╔══██╗    ██║   ██║    ██║         ██╔══╝       
+@@ -41,7 +41,7 @@
+  ╚═════╝     ╚═╝  ╚═╝     ╚═════╝      ╚═════╝    ╚══════╝     
+ """,
+              """
+-██████╗     ██████╗      ██████╗      ██████╗    ███████╗    ██████╗        
++ ██████╗     ██████╗      ██████╗      ██████╗    ███████╗    ██████╗        
+ ██╔════╝     ██╔══██╗    ██╔═══██╗    ██╔════╝    ██╔════╝    ██╔══██╗      
+ ██║  ███╗    ██████╔╝    ██║   ██║    ██║         █████╗      ██████╔╝          
+ ██║   ██║    ██╔══██╗    ██║   ██║    ██║         ██╔══╝      ██╔══██╗          
+@@ -49,7 +49,7 @@
+  ╚═════╝     ╚═╝  ╚═╝     ╚═════╝      ╚═════╝    ╚══════╝    ╚═╝  ╚═╝     
+ """,
+              """ 
+-██████╗     ██████╗      ██████╗      ██████╗    ███████╗    ██████╗     ██╗   ██╗    
++ ██████╗     ██████╗      ██████╗      ██████╗    ███████╗    ██████╗     ██╗   ██╗    
+ ██╔════╝     ██╔══██╗    ██╔═══██╗    ██╔════╝    ██╔════╝    ██╔══██╗    ╚██╗ ██╔╝    
+ ██║  ███╗    ██████╔╝    ██║   ██║    ██║         █████╗      ██████╔╝     ╚████╔╝     
+ ██║   ██║    ██╔══██╗    ██║   ██║    ██║         ██╔══╝      ██╔══██╗      ╚██╔╝      
+Index: reglog.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import emoji\r\nimport json\r\nimport os\r\nfrom pyfiglet import Figlet\r\nimport random\r\nimport re\r\nfrom time import sleep\r\n\r\nfile = \"grocery.json\"\r\n\r\nfiglet = Figlet()\r\n\r\nosname = os.name\r\n\r\n\r\ndef clear_screen():\r\n    os.system(\"cls\" if osname == \"nt\" else \"clear\")\r\n\r\n\r\ndef display():\r\n    \"\"\"\r\n    Gets whether the user wants to login or register\r\n    \"\"\"\r\n    while True:\r\n        x = input(\"Enter choice: \")\r\n        try:\r\n            x = int(x)\r\n            if x != 1 and x != 2:\r\n                raise Exception\r\n            break\r\n        except:\r\n            clear_screen()\r\n            print(\r\n                \"\"\"Invalid choice can only Enter 1 or 2\r\n                                1==>LOGIN\r\n                                2==>SIGNUP\r\n                \"\"\"\r\n            )\r\n    return x\r\n\r\n\r\ndef register():\r\n    figlet.setFont(font=\"slant\")\r\n    for i in figlet.renderText(\"Sign up\").splitlines():\r\n        if i.strip() == \"\":\r\n            continue\r\n        print(\"\\t\\t\\t\\t\\033[95m\\033[40m\" + i + \"\\033[0m\")\r\n    id = {}\r\n    details = [\r\n        \"Name\",\r\n        \"Email Id\",\r\n        \"Phone Number\",\r\n        \"Security Question\",\r\n        \"Answer\",\r\n        \"Password\",\r\n    ]\r\n    figlet.setFont(font=\"cybermedium\")\r\n    for i in details:\r\n        flag = True\r\n        while flag:\r\n            if i == \"Name\":\r\n                print(\"\\tPersonal Information\")\r\n            if details.index(i) < 3:\r\n                id[i] = input(f\"{i}: \\033[92m\")\r\n                print(\"\\033[0m\", end=\"\")\r\n            if i == \"Email Id\":\r\n                id[i] = id[i].lower().strip()\r\n                while check_id(id[i]):\r\n                    print(\"You already have an account with this email\")\r\n                    x = input(\r\n                        \"Enter '\\033[31mlogin\\033[0m' to go to login page\\nEnter '\\033[31mcontinue\\033[0m' to create new id\\nEnter: \\033[92m\"\r\n                    )\r\n                    print(\"\\033[0m\", end=\"\")\r\n                    if x == \"login\":\r\n                        clear_screen()\r\n                        login()\r\n                    else:\r\n                        print(\"Please enter another Email id: \")\r\n                        id[i] = input(f\"{i}: \\033[92m\").lstrip().lower()\r\n                        print(\"\\033[0m\", end=\"\")\r\n                while not validate_email(id[i]):\r\n                    print(\"\\033[0mInvalid Email\")\r\n                    print(\"Email format: user123@example.com\\n\")\r\n                    id[i] = input(f\"{i}: \\033[92m\")\r\n                print(\"\\033[0m\", end=\"\")\r\n                flag = False\r\n                break\r\n            elif i == \"Phone Number\":\r\n                while not re.search(r\"^[0-9]{10}$\", id[i]):\r\n                    print(\"Invalid Phone number. Enter a valid number\")\r\n                    id[i] = input(f\"{i}: \\033[92m\")\r\n                    print(\"\\033[0m\", end=\"\")\r\n            elif i == \"Security Question\":\r\n                sleep(2)\r\n                clear_screen()\r\n                print(\"\\tSecurity Key\")\r\n                print(\r\n                    \"Choose a \\033[93mSecurity Question\\033[0m and provide the corresponding \\033[93mAnswer\\033[0m.\\nThis information will be used for identity verification during the password recovery process.\"\r\n                )\r\n                # print(\r\n                #     \"Select a security question that is easy for you to remember but difficult for others to guess.\"\r\n                # )\r\n                # print(\r\n                #     \"The answer should be something known only to you, avoiding easily discoverable information.\"\r\n                # )\r\n                id[i] = input(f\"{i}: \\033[93m\")\r\n                print(\"\\033[0m\", end=\"\")\r\n            elif i == \"Answer\":\r\n                id[i] = input(f\"{i}: \\033[93m\")\r\n                print(\"\\033[0m\", end=\"\")\r\n            elif i == \"Password\":\r\n                sleep(2)\r\n                clear_screen()\r\n                print(\"\\tPassword\")\r\n                if not create_password(id):\r\n                    return False\r\n                break\r\n            if id[i].strip() == \"\":\r\n                print(\"This field is compulsory\")\r\n            else:\r\n                flag = False\r\n    with open(file) as fh:\r\n        temp = json.load(fh)\r\n    x = random.randint(0, 999999)\r\n    while x in temp[\"users\"]:\r\n        x = random.randit(0, 999999)\r\n    temp[\"users\"][f\"{x:06}\"] = id\r\n    with open(file, \"w\") as fh:\r\n        json.dump(temp, fh, indent=4)\r\n    print(\"\\033[33mRegistrations Successful\\033[0m\")\r\n    return True\r\n\r\n\r\ndef create_password(id):\r\n    i = \"Password\"\r\n    id[i] = input(f\"{i}: \\033[91m\")\r\n    print(\"\\033[0m\", end=\"\")\r\n    while not validate_password(id[i]):\r\n        id[i] = input(f\"\\033[0m\\n{i}: \\033[91m\")\r\n        print(\"\\033[0m\", end=\"\")\r\n    c = input(\"Confirm Password: \\033[91m\")\r\n    print(\"\\033[0m\", end=\"\")\r\n    if c != id[i]:\r\n        print(\"\\033[0mPassword should be same as previous password\")\r\n        q = input(\"Confirm Password: \\033[91m\")\r\n        print(\"\\033[0m\", end=\"\")\r\n        if q != id[i]:\r\n            print(\"Wrong Password\")\r\n            return False\r\n    return True\r\n\r\n\r\ndef validate_password(password):\r\n    \"\"\"\r\n    Validates the password returns False if the password is validated(correct)\r\n    or else returns false and also outputs the requirements of the password\r\n    which it does not have.\r\n    \"\"\"\r\n    if password == \"\":\r\n        print(\"Password must contain atleast 8 character\")\r\n        return False\r\n    elif len(password) >= 8 and password[0].isupper():\r\n        num = False\r\n        sp = False\r\n        for i in password:\r\n            if i.isnumeric():\r\n                num = True\r\n            if not i.isalnum():\r\n                sp = True\r\n        if not num:\r\n            if not sp:\r\n                print(\"Password must contain atlest 1 digit and 1 special character\")\r\n            else:\r\n                print(\"Password must contain atleat 1 digit\")\r\n        elif not sp:\r\n            print(\"Password must contain atleast 1 special character\")\r\n        if num and sp:\r\n            return True\r\n    else:\r\n        if not password[0].isupper():\r\n            print(\"Password must start with a capital alphabet\")\r\n        if len(password) < 8:\r\n            print(\"Password must contain atleast 8 character\")\r\n    return False\r\n\r\n\r\nvalidate_email = (\r\n    lambda email: True\r\n    if re.search(r\"^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$\", email)\r\n    else False\r\n)\r\n\r\n\r\ndef login():\r\n    \"\"\"\r\n    Asks the user for username, calls check_id (returns true if the\r\n    username in the file) and it asks for password and checks the\r\n    password from the file if it is correct or not\r\n    \"\"\"\r\n    figlet.setFont(font=\"slant\")\r\n    for i in figlet.renderText(\"Login\").splitlines():\r\n        if i.strip() == \"\":\r\n            break\r\n        print(\"\\t\\t\\t\\t\\033[92m\\033[40m\" + i + \"\\033[0m\")\r\n    print(\"\\033[0m\\n\")\r\n    for _ in range(3):\r\n        email = input(\"Enter your Email Id: \\033[96m\").strip().lower()\r\n        print(\"\\033[0m\")\r\n        if check_id(email):\r\n            with open(file) as fh:\r\n                temp = json.load(fh)[\"users\"]\r\n                for i in temp.keys():\r\n                    if temp[i][\"Email Id\"] == email:\r\n                        passw = temp[i][\"Password\"]\r\n                        for _ in range(3):\r\n                            password = input(\"Enter your Password: \\033[96m\")\r\n                            print(\"\\033[0m\")\r\n                            if password == \"forgot\":\r\n                                print(temp[i][\"Security Question\"])\r\n                                for _ in range(3):\r\n                                    ans = input(\"Answer: \")\r\n                                    if ans == temp[i][\"Answer\"]:\r\n                                        sleep(2)\r\n                                        clear_screen()\r\n                                        print(\"Create new password: \")\r\n                                        if not create_password(temp[i]):\r\n                                            return False\r\n                                        change(i, temp[i])\r\n                                        print(\"Password Changed\")\r\n                                        sleep(2)\r\n                                        clear_screen()\r\n                                        login()\r\n                                    print(\"Invalid Answer\")\r\n                            elif password == passw:\r\n                                figlet.setFont(font=\"short\")\r\n                                for j in figlet.renderText(\"Captcha\").splitlines():\r\n                                    if j.strip() == \"\":\r\n                                        continue\r\n                                    print(\"\\033[96m\" + j + \"  \\033[0m\")\r\n                                captcha()\r\n                                return i,temp[i][\"Name\"]\r\n                            print(\r\n                                \"Invalid password. \\t\\t If you forgot your password enter '\\033[31mforgot\\033[0m'\"\r\n                            )\r\n            print(\"Try again later\")\r\n            return False\r\n        else:\r\n            print(\"username not found\")\r\n    return False\r\n\r\n\r\n\r\ndef captcha():\r\n    numbers = [\r\n        \":keycap_0:\",\r\n        \":keycap_1:\",\r\n        \":keycap_2:\",\r\n        \":keycap_3:\",\r\n        \":keycap_4:\",\r\n        \":keycap_5:\",\r\n        \":keycap_6:\",\r\n        \":keycap_7:\",\r\n        \":keycap_8:\",\r\n        \":keycap_9:\",\r\n    ]\r\n    x = numbers.index(random.choice(numbers))\r\n    y = numbers.index(random.choice(numbers))\r\n    z = x + y\r\n    print(f\"\\n{emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = \", end=\"\")\r\n    if len(str(z)) == 1:\r\n        print(emoji.emojize(numbers[z]))\r\n    else:\r\n        z = str(z)\r\n        print(\r\n            emoji.emojize(numbers[int(z[0])]),\r\n            emoji.emojize(numbers[int(z[1])]),\r\n            sep=\" \",\r\n        )\r\n    ans = input(f\" {x}  + {y} = \\033[031m\")\r\n    print(\"\\033[0m\")\r\n    if ans == str(z):\r\n        return True\r\n    else:\r\n        captcha()\r\n\r\n\r\ndef change(key, id):\r\n    with open(file) as fh:\r\n        temp = json.load(fh)\r\n        u = {}\r\n    for i in temp[\"users\"].keys():\r\n        if temp[\"users\"][i][\"Email Id\"] != id[\"Email Id\"]:\r\n            u[i] = temp[\"users\"][i]\r\n        else:\r\n            u[key] = id\r\n    temp[\"users\"] = u\r\n    with open(file, \"w\") as fh:\r\n        json.dump(temp, fh, indent=4)\r\n\r\n\r\ndef check_id(email):\r\n    \"\"\"\r\n    Checks whether the username is in the file or not\r\n    Return True if it is present or else false\r\n    \"\"\"\r\n    flag = False\r\n    with open(file) as fh:\r\n        t = json.load(fh)\r\n        m = t[\"users\"]\r\n        for i in m.keys():\r\n            if m[i][\"Email Id\"] == email:\r\n                flag = True\r\n    return flag\r\n\r\n\r\ndef reglog():\r\n    clear_screen()\r\n    choice = display()\r\n    clear_screen()\r\n    if choice == 1:\r\n        return (login())\r\n    elif choice == 2:\r\n        if not register():\r\n            return False\r\n        sleep(2)\r\n        choice = input(\"\\n\\nDo you want to login now?(yes/no) \")\r\n        if choice.lower() == \"yes\":\r\n            clear_screen()\r\n            if not login():\r\n                return False\r\n            else :\r\n                return(login())\r\n        else:\r\n            print(\"Thanks for Signing up\")\r\n            return False\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/reglog.py b/reglog.py
+--- a/reglog.py	(revision 3a95618c3e2717a8c42950c5e149d6f6feed3afa)
++++ b/reglog.py	(date 1688892993999)
+@@ -224,7 +224,7 @@
+                                         clear_screen()
+                                         print("Create new password: ")
+                                         if not create_password(temp[i]):
+-                                            return False
++                                            return False, ''
+                                         change(i, temp[i])
+                                         print("Password Changed")
+                                         sleep(2)
+@@ -243,10 +243,10 @@
+                                 "Invalid password. \t\t If you forgot your password enter '\033[31mforgot\033[0m'"
+                             )
+             print("Try again later")
+-            return False
++            return False, ""
+         else:
+             print("username not found")
+-    return False
++    return False, ""
+ 
+ 
+ 
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import grocery_logo\r\nimport reglog\r\nfrom time import sleep\r\n\"\"\"\r\nimporting grocery logo from the grocery_animation file\r\nit is the combination of list, pause and clearing screen\r\n~Akshay\r\n\"\"\"\r\n\r\ngrocery_logo.print_animation()\r\n# print the creators name\r\nprint(grocery_logo.logo)\r\nprint(\"\"\"\r\n**************************** WELCOME TO GROCERY APP *******************************\r\n                                1==>LOGIN\r\n                                2==>SIGNUP\r\n                                \r\n\"\"\")\r\n\r\n\"\"\"\r\nRegistration and Login\r\n~Areeb \r\n\"\"\"\r\nchoice = reglog.display()\r\nreglog.clear_screen()\r\nemail = ''\r\nis_login = False\r\nwhile not is_login:\r\n    if choice == 1:\r\n        is_login,email = reglog.login()\r\n    elif choice == 2:\r\n        reglog.register()\r\n        sleep(2)\r\n        reglog.clear_screen()\r\n        # add a print statement to greet like great thanks for sigining up\r\n        choice = input(\"\\n\\nDo you want to login now?(yes/no) \")\r\n        if choice.lower() == \"yes\":\r\n            reglog.clear_screen()\r\n            is_login, email = reglog.login()\r\n\r\nprint(email)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	(revision 3a95618c3e2717a8c42950c5e149d6f6feed3afa)
++++ b/main.py	(date 1688893982525)
+@@ -27,7 +27,7 @@
+ is_login = False
+ while not is_login:
+     if choice == 1:
+-        is_login,email = reglog.login()
++         is_login, email = reglog.login()
+     elif choice == 2:
+         reglog.register()
+         sleep(2)
+Index: grocery.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n    \"users\": {\r\n        \"303199\": {\r\n            \"Name\": \"Darsh\",\r\n            \"Email Id\": \"darsh@gmail.com\",\r\n            \"Phone Number\": \"1234567890\",\r\n            \"Security Question\": \"Hello\",\r\n            \"Answer\": \"Hi\",\r\n            \"Password\": \"Blueflame.14\"\r\n        },\r\n        \"881643\": {\r\n            \"Name\": \"Akshay\",\r\n            \"Email Id\": \"akshay@gmail.com\",\r\n            \"Phone Number\": \"9876543210\",\r\n            \"Security Question\": \"helo how are you?\",\r\n            \"Answer\": \"noice..\",\r\n            \"Password\": \"Topper.1\"\r\n        },\r\n        \"367297\": {\r\n            \"Name\": \"asdfg\",\r\n            \"Email Id\": \"user123@gmail.com\",\r\n            \"Phone Number\": \"1234567890\",\r\n            \"Security Question\": \"who are you?\",\r\n            \"Answer\": \"me\",\r\n            \"Password\": \"Yoyo123@\"\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grocery.json b/grocery.json
+--- a/grocery.json	(revision 3a95618c3e2717a8c42950c5e149d6f6feed3afa)
++++ b/grocery.json	(date 1688893463377)
+@@ -1,5 +1,5 @@
+ {
+-    "users": {
++    "users": {no
+         "303199": {
+             "Name": "Darsh",
+             "Email Id": "darsh@gmail.com",
+@@ -23,6 +23,14 @@
+             "Security Question": "who are you?",
+             "Answer": "me",
+             "Password": "Yoyo123@"
++        },
++        "498266": {
++            "Name": "Ayush",
++            "Email Id": "handsomehunk@gmail.com",
++            "Phone Number": "9898989898",
++            "Security Question": "are you human?",
++            "Answer": "no im god",
++            "Password": "HandsomeHunk1@"
+         }
+     }
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3c45789d-7dc7-46fa-ac84-481494ec8fd2\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/cart.csv\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/cart.csv\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/cart.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/cart.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/main.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2SCmwH8R5hJ9LHvw5p53rFZXTst\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Python.main\">\r\n    <configuration name=\"cart\" type=\"PythonConfigurationType\" factoryName=\"Python\" singleton=\"true\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Grocery\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"C:\\Users\\aksha\\anaconda3\\python.exe\" />\r\n      <option name=\"SDK_NAME\" value=\"Python 3.10\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/cart.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"grocery_logo\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Grocery\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/grocery_logo.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Grocery\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"reglog\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Grocery\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"D:\\PYTHON\\GroceryApp\\Grocery\\venv\\Scripts\\python.exe\" />\r\n      <option name=\"SDK_NAME\" value=\"Python 3.11 (Grocery)\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/reglog.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"testing\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Grocery\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/testing.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.main\" />\r\n        <item itemvalue=\"Python.grocery_logo\" />\r\n        <item itemvalue=\"Python.reglog\" />\r\n        <item itemvalue=\"Python.testing\" />\r\n        <item itemvalue=\"Python.cart\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3c45789d-7dc7-46fa-ac84-481494ec8fd2\" name=\"Changes\" comment=\"\" />\r\n      <created>1688659174862</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1688659174862</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3a95618c3e2717a8c42950c5e149d6f6feed3afa)
++++ b/.idea/workspace.xml	(date 1688893668655)
+@@ -6,9 +6,10 @@
+   <component name="ChangeListManager">
+     <list default="true" id="3c45789d-7dc7-46fa-ac84-481494ec8fd2" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/cart.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cart.csv" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grocery.json" beforeDir="false" afterPath="$PROJECT_DIR$/grocery.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grocery_logo.py" beforeDir="false" afterPath="$PROJECT_DIR$/grocery_logo.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/reglog.py" beforeDir="false" afterPath="$PROJECT_DIR$/reglog.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -170,4 +171,15 @@
+     </task>
+     <servers />
+   </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
++          <url>file://$PROJECT_DIR$/reglog.py</url>
++          <line>227</line>
++          <option name="timeStamp" value="1" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
++  </component>
+ </project>
+\ No newline at end of file
