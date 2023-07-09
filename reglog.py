@@ -229,10 +229,12 @@ def login():
                                         print("Password Changed")
                                         sleep(2)
                                         clear_screen()
-                                        login()
+                                        _ = -1
+                                        break
                                     print("Invalid Answer")
                                     if _ == 2:
                                         return False
+                                    
                             elif password == passw:
                                 figlet.setFont(font="short")
                                 for j in figlet.renderText("Captcha").splitlines():
@@ -241,14 +243,25 @@ def login():
                                     print("\033[96m" + j + "  \033[0m")
                                 captcha()
                                 return i,temp[i]["Name"]
+                            if _ == -1:
+                                break
                             print(
                                 "Invalid password. \t\t If you forgot your password enter '\033[31mforgot\033[0m'"
                             )
+                    if _ == -1:
+                        break
+                if _ == -1:
+                    break
+            if _ == -1:
+                break
             print("Try again later")
             return False
         else:
             print("username not found")
-    return False
+    if _ == -1:
+        return login()
+    else:
+        return False
 
 
 
@@ -312,5 +325,6 @@ def check_id(email):
         for i in m.keys():
             if m[i]["Email Id"] == email:
                 flag = True
+                break
     return flag
 
