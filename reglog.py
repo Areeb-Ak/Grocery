@@ -60,8 +60,7 @@ def register():
         flag = True
         while flag:
             if i == "Name":
-                print("\tPersonal Information"
-                )
+                print("\tPersonal Information")
             if details.index(i) < 3:
                 id[i] = input(f"{i}: \033[92m")
                 print("\033[0m", end="")
@@ -69,7 +68,9 @@ def register():
                 id[i] = id[i].lower().strip()
                 while check_id(id[i]):
                     print("You already have an account with this email")
-                    x = input("Enter '\033[31mlogin\033[0m' to go to login page\nEnter '\033[31mcontinue\033[0m' to create new id\nEnter: \033[92m")
+                    x = input(
+                        "Enter '\033[31mlogin\033[0m' to go to login page\nEnter '\033[31mcontinue\033[0m' to create new id\nEnter: \033[92m"
+                    )
                     print("\033[0m", end="")
                     if x == "login":
                         clear_screen()
@@ -86,15 +87,14 @@ def register():
                 flag = False
                 break
             elif i == "Phone Number":
-                while not re.search(r"^[0-9]{10}$",id[i]):
+                while not re.search(r"^[0-9]{10}$", id[i]):
                     print("Invalid Phone number. Enter a valid number")
                     id[i] = input(f"{i}: \033[92m")
                     print("\033[0m", end="")
             elif i == "Security Question":
                 sleep(2)
                 clear_screen()
-                print("\tSecurity Key"
-                )
+                print("\tSecurity Key")
                 print(
                     "Choose a \033[93mSecurity Question\033[0m and provide the corresponding \033[93mAnswer\033[0m.\nThis information will be used for identity verification during the password recovery process."
                 )
@@ -108,12 +108,11 @@ def register():
                 print("\033[0m", end="")
             elif i == "Answer":
                 id[i] = input(f"{i}: \033[93m")
-                print("\033[0m", end="")   
+                print("\033[0m", end="")
             elif i == "Password":
                 sleep(2)
                 clear_screen()
-                print("\tPassword"
-                )
+                print("\tPassword")
                 create_password(id)
                 break
             if id[i].strip() == "":
@@ -122,9 +121,9 @@ def register():
                 flag = False
     with open(file) as fh:
         temp = json.load(fh)
-    x = random.randint(0,999999)
+    x = random.randint(0, 999999)
     while x in temp["users"]:
-        x = random.randit(0,999999)
+        x = random.randit(0, 999999)
     temp["users"][f"{x:06}"] = id
     with open(file, "w") as fh:
         json.dump(temp, fh, indent=4)
@@ -222,7 +221,7 @@ def login():
                                         clear_screen()
                                         print("Create new password: ")
                                         create_password(temp[i])
-                                        change(i,temp[i])
+                                        change(i, temp[i])
                                         print("Password Changed")
                                         sleep(2)
                                         clear_screen()
@@ -242,11 +241,11 @@ def login():
             exit("Try again later")
         else:
             print("username not found")
-    
-    
-    return [False,""]
 
-    return [False,""]
+    return [False, ""]
+
+    return [False, ""]
+
 
 def captcha():
     numbers = [
@@ -270,7 +269,9 @@ def captcha():
     else:
         z = str(z)
         print(
-            emoji.emojize(numbers[int(z[0])]), emoji.emojize(numbers[int(z[1])]), sep=" "
+            emoji.emojize(numbers[int(z[0])]),
+            emoji.emojize(numbers[int(z[1])]),
+            sep=" ",
         )
     ans = input(f" {x}  + {y} = \033[031m")
     print("\033[0m")
@@ -280,15 +281,15 @@ def captcha():
         captcha()
 
 
-def change(key,id):
+def change(key, id):
     with open(file) as fh:
         temp = json.load(fh)
         u = {}
     for i in temp["users"].keys():
         if temp["users"][i]["Email Id"] != id["Email Id"]:
             u[i] = temp["users"][i]
-    
-    u[key] = id
+        else:
+            u[key] = id
     temp["users"] = u
     with open(file, "w") as fh:
         json.dump(temp, fh, indent=4)
@@ -324,4 +325,3 @@ def reglog():
             login()
 
 
-reglog()
