@@ -4,7 +4,6 @@ import os
 from pyfiglet import Figlet
 import random
 import re
-from sys import exit
 from time import sleep
 
 file = "grocery.json"
@@ -113,7 +112,8 @@ def register():
                 sleep(2)
                 clear_screen()
                 print("\tPassword")
-                create_password(id)
+                if not create_password(id):
+                    return False
                 break
             if id[i].strip() == "":
                 print("This field is compulsory")
@@ -128,6 +128,7 @@ def register():
     with open(file, "w") as fh:
         json.dump(temp, fh, indent=4)
     print("\033[33mRegistrations Successful\033[0m")
+    return True
 
 
 def create_password(id):
@@ -144,7 +145,9 @@ def create_password(id):
         q = input("Confirm Password: \033[91m")
         print("\033[0m", end="")
         if q != id[i]:
-            exit("Wrong Password")
+            print("Wrong Password")
+            return False
+    return True
 
 
 def validate_password(password):
@@ -220,7 +223,8 @@ def login():
                                         sleep(2)
                                         clear_screen()
                                         print("Create new password: ")
-                                        create_password(temp[i])
+                                        if not create_password(temp[i]):
+                                            return False
                                         change(i, temp[i])
                                         print("Password Changed")
                                         sleep(2)
@@ -229,22 +233,21 @@ def login():
                                     print("Invalid Answer")
                             elif password == passw:
                                 figlet.setFont(font="short")
-                                for i in figlet.renderText("Captcha").splitlines():
-                                    if i.strip() == "":
+                                for j in figlet.renderText("Captcha").splitlines():
+                                    if j.strip() == "":
                                         continue
-                                    print("\033[96m" + i + "  \033[0m")
+                                    print("\033[96m" + j + "  \033[0m")
                                 captcha()
-                                exit("Logged in")
+                                return i,temp[i]["Name"]
                             print(
                                 "Invalid password. \t\t If you forgot your password enter '\033[31mforgot\033[0m'"
                             )
-            exit("Try again later")
+            print("Try again later")
+            return False
         else:
             print("username not found")
+    return False
 
-    return [False, ""]
-
-    return [False, ""]
 
 
 def captcha():
@@ -315,13 +318,19 @@ def reglog():
     choice = display()
     clear_screen()
     if choice == 1:
-        login()
+        return (login())
     elif choice == 2:
-        register()
+        if not register():
+            return False
         sleep(2)
         choice = input("\n\nDo you want to login now?(yes/no) ")
         if choice.lower() == "yes":
             clear_screen()
-            login()
-
+            if not login():
+                return False
+            else :
+                return(login())
+        else:
+            print("Thanks for Signing up")
+            return False
 
