@@ -229,7 +229,7 @@ def login():
                                         print("Password Changed")
                                         sleep(2)
                                         clear_screen()
-                                        login()
+                                        return login()
                                     print("Invalid Answer")
                                     if _ == 2:
                                         return False
@@ -240,7 +240,7 @@ def login():
                                         continue
                                     print("\033[96m" + j + "  \033[0m")
                                 captcha()
-                                return i,temp[i]["Name"]
+                                return i, temp[i]["Name"]
                             print(
                                 "Invalid password. \t\t If you forgot your password enter '\033[31mforgot\033[0m'"
                             )
@@ -248,8 +248,8 @@ def login():
             return False
         else:
             print("username not found")
-    return False
 
+    return False
 
 
 def captcha():
@@ -269,7 +269,9 @@ def captcha():
         x = numbers.index(random.choice(numbers))
         y = numbers.index(random.choice(numbers))
         z = x + y
-        print(f"\n{emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = ", end="")
+        print(
+            f"\n{emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = ", end=""
+        )
         if len(str(z)) == 1:
             print(emoji.emojize(numbers[z]))
         else:
@@ -312,5 +314,5 @@ def check_id(email):
         for i in m.keys():
             if m[i]["Email Id"] == email:
                 flag = True
+                break
     return flag
-
