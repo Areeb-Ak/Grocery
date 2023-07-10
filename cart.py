@@ -23,24 +23,41 @@ def clear_screen():
     print("_"*70)
 
 def search(item):
+    print("\033[0m",end="")
+    clear_screen()
     item_present = False
-    with open('data1.csv', 'r') as item_retriever:
+    with open("data1.csv", "r") as item_retriever:
         reader = csv.reader(item_retriever)
-        for row in reader:
+        while True:
+            try:
+                row = next(reader)
+            except StopIteration:
+                break
             if item in row:
                 item_present = True
-                break
     if item_present:
-        print("Item no.         Item             : Price")
-        with open('data1.csv', 'r') as item_retriever:
+        x = item.title()
+        figlet.setFont(font="smslant")
+        for i in figlet.renderText(x).splitlines():
+            print("  \033[95m",i,"\033[0m")
+        print(
+            "\033[0mItem |                    |           |      \nno.  |  Item              | Item Desc | Price "
+        )
+        print("-----|--------------------|-----------|------")
+        with open("data1.csv") as item_retriever:
             reader = csv.reader(item_retriever)
-            for row in reader:
+            while True:
+                try:
+                    row = next(reader)
+                except StopIteration:
+                    break
                 if item in row:
-                    print("{:3}. {:20} ({:5}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
-            print("------------------------------------------------------------------------------")
-            item_retriever.close()
+                        print(
+                            f"\033[36m{row[0]:5}\033[0m|\033[33m{row[3]:20}\033[0m|{row[4]:11}|\033[32m{row[5]:6}\033[0m"
+                        )
+            print("--------------------------------------------", end="\n\n")
     else:
-        print("No matches found...")
+        print("\033[91mNo matches found...\033[0m\n")
     if selection():
         return True
 
@@ -48,11 +65,10 @@ def search(item):
 def retriever(item):
     clear_screen()
     print()
-    figlet = Figlet()
     x = item.title()
     figlet.setFont(font="smslant")
     for i in figlet.renderText(x).splitlines():
-        print("\t\033[95m",i,"\033[0m")
+        print("  \033[95m",i,"\033[0m")
     print(
         "\033[0mItem |                    |           |      \nno.  |  Item              | Item Desc | Price "
     )
@@ -73,18 +89,17 @@ def retriever(item):
 
 
 def check_if_in_cart(number):
-    ans = ""
     if len(cart) == 0:
         return True
     else:
         for row in cart:
-            if number == row[0]:
+            if row[0] == number:
                 print("This item already added to cart :  ", end="")
                 print(row[3], "(", row[4], ")x", row[6])
                 ans = input("Would you like to a.'Continue' or b.'Change Quantity' :  ").lower().strip()
                 if ans == 'a' or ans == 'continue':
                     return False
-                elif ans == 'b' or 'change quantity':
+                elif ans == 'b' or ans == 'change quantity':
                     qty = int(input("Enter Quantity : "))
                     row[6] = str(qty)
                     print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
@@ -98,7 +113,7 @@ def check_if_in_cart(number):
                     else:
                         qty = int(input("Enter Quantity : "))
                         row[6] = str(qty)
-                        print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
+                        print(row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
                         return False
             return True
 
@@ -138,7 +153,7 @@ def add_():
 def view_cart():
     figlet.setFont(font='rounded')
     for i in figlet.renderText("Cart").splitlines():
-        print("\t\t\t\t\033[96m",i,"\033[0m")
+        print("\t\t\033[96m",i,"\033[0m")
     reader = iter(cart)
     s = ["Item No.","Item Name","Item Desc","Quant"]
     print("----------------------------------------------------")
@@ -179,7 +194,7 @@ def change_cart():
         for row in cart:
             if row[0] == item:
                 row[6]=quantity
-                print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
+                print(row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
     else:
         while key not in ['a','b']:
             print("Wrong Input")
@@ -204,7 +219,7 @@ def print_section(choice):
         print_section(b)
     elif choice == 'A':
         clear_screen()
-        if search(input("search : ").lower()):
+        if search(input("Search : \033[95m").lower()):
             return True
     elif choice == 'B':
         retriever("kirana")
@@ -226,7 +241,8 @@ def wrong_choice(choice):
 
     while choice not in['A','B','C','D','E','F','G'] :
         print("Wrong Input")
-        choice = (input("Enter your choice:"))
+        choice = (input("Enter your choice: \033[95m"))
+        print("\033[0m",end="")
     return choice
 
 
@@ -251,7 +267,7 @@ def command(select__):
 
         return True
     elif select__ == 'search':
-        if search(input("search : ").lower()):
+        if search(input("Search : \033[95m").lower()):
             return True
     else:
         print("incorrect command")
@@ -289,4 +305,3 @@ def selection():
 
     if command(select_):
         return True
-

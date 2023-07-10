@@ -162,29 +162,63 @@ def validate_password(password):
     if password == "":
         print("Password must contain atleast 8 character")
         return False
-    elif len(password) >= 8 and password[0].isupper():
-        num = False
-        sp = False
-        for i in password:
-            if i.isnumeric():
-                num = True
-            if not i.isalnum():
-                sp = True
-        if not num and not sp:
-            print("Password must contain atlest 1 digit and 1 special character")
-        elif not num:
-                print("Password must contain atleat 1 digit")
-        elif not sp:
-            print("Password must contain atleast 1 special character")
-        if num and sp:
-            return True
-    else:
-        if not password[0].isupper() and len(password) < 8:
-            print("Password must start with a capital alphabet and must contain atleast 8 characters")
-        elif len(password) < 8:
-            print("Password must contain atleast 8 character")
-        else:
-            print("Password must start with a capital letter")
+    l = True if len(password) >= 8 else False
+    cp = False
+    num = False
+    sp = False
+    for i in password:
+        if i.isupper():
+            cp = True
+        if i.isnumeric():
+            num = True
+        if not i.isalnum():
+            sp = True
+    if not num and not sp and not cp and not l:
+        print(
+            "Password must contain atleast 8 characters, 1 digit, 1 special character and 1 capital alphabet"
+        )  # FFFF
+    elif not num and not sp and not cp and l:
+        print(
+            "Password must contain atleast 1 digit, 1 special character and 1 capital alphabet"
+        )  # FFFT
+    elif not num and not sp and cp and not l:
+        print(
+            "Password must contain atleast 8 characters, 1 digit and 1 special character"
+        )  # FFTF
+    elif not num and sp and not cp and not l:
+        print(
+            "Password must contain atleast 8 characters, 1 capital alphabet and 1 digit"
+        )  # FTFF
+    elif not num and sp and not cp and l:
+        print("Password must contain 1 capital alphabet and 1 digit")  # FTFT
+    elif not num and sp and cp and not l:
+        print("Password must contain atleast 8 characters  and 1 digit")  # FTTF
+    elif not num and sp and cp and l:
+        print("Password must contain 1 digit")  # FTTT
+    elif num and sp and cp and not l:
+        print("Password must contain atleast 8 characters")  # TTTF
+    elif num and not sp and not cp and not l:
+        print(
+            "Password must have atleast 8 characters, 1 special character and 1 capital alphabet"
+        )  # TFFF
+    elif num and sp and not cp and not l:
+        print(
+            "Password must contain atleast 8 characters  and 1 capital alphabet"
+        )  # TTFF
+    elif num and not sp and cp and not l:
+        print("Password must have atleast 8 characters and 1 special character")  # TFTF
+    elif not num and not sp and cp and l:
+        print("Password must contain 1 digit  and 1 special character")  # FFTT
+    elif num and sp and not cp and not l:
+        print(
+            "Password must contain atleast 8 characters  and 1 capital alphabet"
+        )  # TTFF
+    elif num and not sp and cp and l:
+        print("Password must contain 1 special character")  # TFTT
+    elif num and sp and not cp and l:
+        print("Password must contain 1 capital character")  # TTFT
+    if num and sp and cp and l:  # TTTT
+        return True
     return False
 
 
