@@ -245,6 +245,7 @@ def command(select__):
             return True
     else:
         print("incorrect command")
+        clear_screen()
         if selection():
             return True
 

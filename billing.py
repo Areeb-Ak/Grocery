@@ -4,6 +4,7 @@ the cart data is in the cart.csv
 import datetime
 import csv
 import prettytable
+import os
 bill_in_string = ""
 
 with open("cart.csv", 'r') as items:
@@ -20,8 +21,15 @@ with open("cart.csv", 'r') as items:
         s_no += 1
         total_price += price
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(" GROCERY ".center(70, "_"))
+    print(f"USER ID :- {is_login}")
+    print(f"~{email}")
+    print("_"*70)
 
 def conform_order():
+    clear_screen()
     print(str(bill))
     print('\n' + f"TOTAL PRICE :- {total_price}".center(100))
 
