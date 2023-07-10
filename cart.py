@@ -35,14 +35,29 @@ def search(item):
 
 
 def retriever(item):
-    print("Item no.         Item             : Price")
-    with open('data1.csv', 'r') as item_retriever:
+    print()
+    figlet = Figlet()
+    x = item.title()
+    figlet.setFont(font="smslant")
+    for i in figlet.renderText(x).splitlines():
+        print("\t\033[95m",i,"\033[0m")
+    print(
+        "\033[0mItem |                    |           |      \nno.  |  Item              | Item Desc | Price "
+    )
+    print("-----|--------------------|-----------|------")
+    with open("data1.csv", "r") as item_retriever:
         reader = csv.reader(item_retriever)
-        for row in reader:
+        row = next(reader)
+        while True:
+            try:
+                row = next(reader)
+            except StopIteration:
+                break
             if item == row[1]:
-                print("{:3}. {:20} ({:5}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
-        print("---------------------------")
-        item_retriever.close()
+                print(
+                    f"\033[36m{row[0]:5}\033[0m|\033[33m{row[3]:20}\033[0m|{row[4]:11}|\033[32m{row[5]:6}\033[0m"
+                )
+        print("--------------------------------------------", end="\n\n")
 
 
 def check_if_in_cart(number):
@@ -253,5 +268,3 @@ def selection():
 
     if command(select_):
         return True
-
-menu()
