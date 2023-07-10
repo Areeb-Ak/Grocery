@@ -45,12 +45,6 @@ def retriever(item):
         item_retriever.close()
 
 
-def wrong_input(ans):
-    while ans not in ['a','b','continue','change quantity']:
-        ans = input("Would you like to a.'Continue' or b.'Change Quantity' ").lower().strip()
-    return ans
-
-
 def check_if_in_cart(number):
     ans = ""
     if len(cart) == 0:
@@ -69,8 +63,16 @@ def check_if_in_cart(number):
                     print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
                     return False
                 else:
-                    print("Wrong Input")
-                    wrong_input(ans)
+                    while ans not in ['a', 'b', 'continue', 'change quantity']:
+                        print("Wrong Input")
+                        ans = input("Would you like to a.'Continue' or b.'Change Quantity' ").lower().strip()
+                    if ans == 'a' or ans == 'continue':
+                        return False
+                    else:
+                        qty = int(input("Enter Quantity : "))
+                        row[6] = str(qty)
+                        print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
+                        return False
             return True
 
 
@@ -122,8 +124,51 @@ def view_cart():
         print("|---------------------|------------|------|")
         print(f"| \033[91m{row[3]:20}\033[0m| {row[4]:10} | \033[92m{row[6]:4} \033[0m|")
     print("-------------------------------------------")
+    answer = input("Would you like to make changes in cart (yes/no) : ").lower().strip()
+    if answer == 'yes':
+        change_cart()
+    elif answer == 'no':
+        pass
+    else:
+        while answer not in ['yes', 'no']:
+            answer = input("Would you like to make changes in cart (yes/no) : ").lower().strip()
+
     if selection():
         return True
+
+def change_cart():
+    print("a.Delete item in cart\nb.Update quantity of an item")
+    key = input("Enter your choice : ").lower().strip()
+    name = ""
+    if key == 'a':
+        item = input("Enter Item Number : ")
+        for row in cart:
+            if item == row[0]:
+                name = row[3]
+                cart.remove(row)
+        print(name,"has been removed from cart")
+    elif key =='b':
+        item , quantity = input("Enter Item Number and Quantity : ")
+        for row in cart:
+            if row[0] == item:
+                row[6]=quantity
+                print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
+    else:
+        while key not in ['a','b']:
+            print("Wrong Input")
+        if key == 'a':
+            item = input("Enter Item Number : ")
+            for row in cart:
+                if item == row[0]:
+                    name = row[3]
+                    cart.remove(row)
+            print(name, "has been removed from cart")
+        else:
+            item, quantity = input("Enter Item Number and Quantity : ")
+            for row in cart:
+                if row[0] == item:
+                    row[6] = quantity
+                    print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
 
 
 def print_section(choice):
