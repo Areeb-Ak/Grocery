@@ -153,7 +153,7 @@ def add_():
 def view_cart():
     figlet.setFont(font='rounded')
     for i in figlet.renderText("Cart").splitlines():
-        print("\t\t\t\033[96m",i,"\033[0m")
+        print("\t\t\033[96m",i,"\033[0m")
     reader = iter(cart)
     s = ["Item No.","Item Name","Item Desc","Quant"]
     print("----------------------------------------------------")

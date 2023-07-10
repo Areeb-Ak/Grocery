@@ -43,15 +43,19 @@ def generate_bill():
             for j in temp[i]:    
                 no = int(j["order_id"][-4:]) + 1
     date_time = datetime.datetime.now()
+    x = len(str(bill).splitlines()[0])
+    print(x)
     global order_id
     order_id = date_time.strftime("%d%m%Y%H%M%S") + str(no).zfill(4)
     global bill_in_string
-    bill_in_string += "\033[47m\033[30m------------------------------------------------------------------\n"
-    bill_in_string += '|' + " \033[34m\033[47mGROCERY MART\033[30m\033[47m  ".center(84) + '|\n'
-    bill_in_string += "------------------------------------------------------------------\n"
-    bill_in_string += f"|Date :- {date_time.date().strftime('%d-%m-%Y')}                                              |\n"
-    bill_in_string += f"|Order ID:-{order_id}                                    |\n"
+    bill_in_string += "\033[47m\033[30m"+"-"*x+"\n"
+    bill_in_string += '|' + "\033[34mGROCERY MART\033[30m".center(x+8) + '|\n'
+    bill_in_string += "|"+"-"*(x-2)+"|\n"
+    bill_in_string += f"|Date :- {date_time.date().strftime('%d-%m-%Y')}"+" "*(x-20)+"|\n"
+    bill_in_string += f"|Order ID:-{order_id}"+" "*(x-30)+"|\n"
     bill_in_string += str(bill)
-    bill_in_string += '\n' + f"                                           TOTAL PRICE :- {total_price}   "
+    bill_in_string += '\n' +" "*(x-20) + f" TOTAL PRICE :- {total_price}   "
     print(bill_in_string)
     return order_id
+
+generate_bill()
