@@ -35,6 +35,7 @@ def search(item):
 
 
 def retriever(item):
+    clear_screen()
     print()
     figlet = Figlet()
     x = item.title()
@@ -229,6 +230,10 @@ def command(select__):
         if menu():
             return True
     elif select__ == 'place order':
+        with open('cart.csv','a',newline="") as putter:
+            writer = csv.writer(putter)
+            for row in cart:
+                writer.writerow(row)
         return True
     elif select__ == 'search':
         if search(input("search : ").lower()):
