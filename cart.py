@@ -3,6 +3,7 @@ import sys
 import os
 import emoji
 from pyfiglet import Figlet
+from time import sleep
 
 cart = []
 figlet = Figlet()
@@ -234,6 +235,10 @@ def command(select__):
             writer = csv.writer(putter)
             for row in cart:
                 writer.writerow(row)
+        clear_screen()
+        print("Placing your order....")
+        sleep(2)
+
         return True
     elif select__ == 'search':
         if search(input("search : ").lower()):
