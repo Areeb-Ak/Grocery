@@ -269,4 +269,3 @@ def selection():
     if command(select_):
         return True
 
-menu()
