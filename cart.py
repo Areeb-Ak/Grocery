@@ -163,7 +163,7 @@ def change_cart():
                 cart.remove(row)
         print(name,"has been removed from cart")
     elif key =='b':
-        item , quantity = input("Enter Item Number and Quantity : ")
+        item , quantity = input("Enter Item Number and Quantity : ").split()
         for row in cart:
             if row[0] == item:
                 row[6]=quantity
