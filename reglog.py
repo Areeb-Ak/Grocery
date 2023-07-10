@@ -271,19 +271,21 @@ def captcha():
             z = str(z)
             s = emoji.emojize(numbers[int(z[0])])
             s = s + " " + emoji.emojize(numbers[int(z[1])])
-        for k, j in enumerate(figlet.renderText("Captcha").splitlines(),start =1):
+        for k, j in enumerate(figlet.renderText("Captcha").splitlines(), start=1):
             if k == 2 or k == 3:
                 if k == 3:
-                    print("\033[96m",j,"\033[0m"," .",end="   ")
-                    print(f"  {emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = {s}")
+                    print("\033[96m", j, "\033[0m", " .", end="   ")
+                    print(
+                        f"  {emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = {s}"
+                    )
                 else:
-                    print("\033[96m",j,"\033[0m"," .")
+                    print("\033[96m", j, "\033[0m", " .")
             elif k == 5:
-                print("\033[96m",j,"\033[0m",end="   ")
+                print("\033[96m", j, "\033[0m", end="   ")
                 ans = input(f"      {x}  + {y} = \033[031m")
                 print("\033[0m")
             else:
-                print("\033[96m",j,"\033[0m")
+                print("\033[96m", j, "\033[0m")
         if ans == str(z):
             return True
     return False
