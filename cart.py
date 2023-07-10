@@ -89,18 +89,17 @@ def retriever(item):
 
 
 def check_if_in_cart(number):
-    ans = ""
     if len(cart) == 0:
         return True
     else:
         for row in cart:
-            if number == row[0]:
+            if row[0] == number:
                 print("This item already added to cart :  ", end="")
                 print(row[3], "(", row[4], ")x", row[6])
                 ans = input("Would you like to a.'Continue' or b.'Change Quantity' :  ").lower().strip()
                 if ans == 'a' or ans == 'continue':
                     return False
-                elif ans == 'b' or 'change quantity':
+                elif ans == 'b' or ans == 'change quantity':
                     qty = int(input("Enter Quantity : "))
                     row[6] = str(qty)
                     print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
@@ -114,7 +113,7 @@ def check_if_in_cart(number):
                     else:
                         qty = int(input("Enter Quantity : "))
                         row[6] = str(qty)
-                        print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
+                        print(row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
                         return False
             return True
 
@@ -195,7 +194,7 @@ def change_cart():
         for row in cart:
             if row[0] == item:
                 row[6]=quantity
-                print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
+                print(row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
     else:
         while key not in ['a','b']:
             print("Wrong Input")
