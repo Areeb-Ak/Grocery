@@ -52,6 +52,7 @@ def wrong_input(ans):
 
 
 def check_if_in_cart(number):
+    ans = ""
     if len(cart) == 0:
         return True
     else:
@@ -60,11 +61,11 @@ def check_if_in_cart(number):
                 print("This item already added to cart :  ", end="")
                 print(row[3], "(", row[4], ")x", row[6])
                 ans = input("Would you like to a.'Continue' or b.'Change Quantity' :  ").lower().strip()
-                if ans == 'a' or 'continue':
+                if ans == 'a' or ans == 'continue':
                     return False
                 elif ans == 'b' or 'change quantity':
                     qty = int(input("Enter Quantity : "))
-                    row[6] = qty
+                    row[6] = str(qty)
                     print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
                     return False
                 else:
@@ -100,7 +101,7 @@ def add_():
         print("---------------------------")
     else:
         print("---------------------------")
-        clear_screen()
+
     if selection():
         return True
 
@@ -109,20 +110,18 @@ def view_cart():
     figlet.setFont(font='rounded')
     for i in figlet.renderText("Cart").splitlines():
         print("\t\t\t\t\033[96m",i,"\033[0m")
-    with open('cart.csv', 'r') as item_retriever:
-        reader = csv.reader(item_retriever)
-        s = ["Item Name","Item Desc","Quant"]
-        print("-------------------------------------------")
-        print(f"| {s[0]:20}| {s[1]:10} | {s[2]:4}|")
-        while True:
-            try:
-                row = next(reader)
-            except StopIteration:
-                    break
-            print("|---------------------|------------|------|")
-            print(f"| \033[91m{row[3]:20}\033[0m| {row[4]:10} | \033[92m{row[6]:4} \033[0m|")
-        print("-------------------------------------------")
-        item_retriever.close()
+    reader = iter(cart)
+    s = ["Item Name","Item Desc","Quant"]
+    print("-------------------------------------------")
+    print(f"| {s[0]:20}| {s[1]:10} | {s[2]:4}|")
+    while True:
+        try:
+            row = next(reader)
+        except StopIteration:
+                break
+        print("|---------------------|------------|------|")
+        print(f"| \033[91m{row[3]:20}\033[0m| {row[4]:10} | \033[92m{row[6]:4} \033[0m|")
+    print("-------------------------------------------")
     if selection():
         return True
 
