@@ -59,41 +59,43 @@ def register():
         flag = True
         while flag:
             if i == "Name":
-                print("\tPersonal Information")
+                print("\033[92mPersonal Information\033[0m")
+                print("\033[91m-------- -----------\033[0m")
             if details.index(i) < 3:
-                id[i] = input(f"{i}: \033[92m")
-                print("\033[0m", end="")
+                id[i] = input(f"{i}: \033[95m")
+                print("\033[0m")
             if i == "Email Id":
                 id[i] = id[i].lower().strip()
                 while check_id(id[i]):
                     print("You already have an account with this email")
                     x = input(
-                        "Enter '\033[31mlogin\033[0m' to go to login page\nEnter '\033[31mcontinue\033[0m' to create new id\nEnter: \033[92m"
+                        "Enter '\033[31mlogin\033[0m' to go to login page\nEnter '\033[31mcontinue\033[0m' to create new id\nEnter: \033[95m"
                     )
-                    print("\033[0m", end="")
+                    print("\033[0m")
                     if x == "login":
                         clear_screen()
                         login()
                     else:
                         print("Please enter another Email id: ")
-                        id[i] = input(f"{i}: \033[92m").lstrip().lower()
-                        print("\033[0m", end="")
+                        id[i] = input(f"{i}: \033[95m").lstrip().lower()
+                        print("\033[0m")
                 while not validate_email(id[i]):
                     print("\033[0mInvalid Email")
                     print("Email format: user123@example.com\n")
-                    id[i] = input(f"{i}: \033[92m")
-                print("\033[0m", end="")
+                    id[i] = input(f"{i}: \033[95m")
+                    print("\033[0m")
                 flag = False
                 break
             elif i == "Phone Number":
                 while not re.search(r"^[0-9]{10}$", id[i]):
                     print("Invalid Phone number. Enter a valid number")
-                    id[i] = input(f"{i}: \033[92m")
-                    print("\033[0m", end="")
+                    id[i] = input(f"{i}: \033[95m")
+                    print("\033[0m")
             elif i == "Security Question":
                 sleep(2)
                 clear_screen()
-                print("\tSecurity Key")
+                print("\033[92mSecurity Key\033[0m")
+                print("\033[91m-------- ---\033[0m")
                 print(
                     "Choose a \033[93mSecurity Question\033[0m and provide the corresponding \033[93mAnswer\033[0m.\nThis information will be used for identity verification during the password recovery process."
                 )
@@ -104,14 +106,15 @@ def register():
                 #     "The answer should be something known only to you, avoiding easily discoverable information."
                 # )
                 id[i] = input(f"{i}: \033[93m")
-                print("\033[0m", end="")
+                print("\033[0m")
             elif i == "Answer":
                 id[i] = input(f"{i}: \033[93m")
                 print("\033[0m", end="")
             elif i == "Password":
                 sleep(2)
                 clear_screen()
-                print("\tPassword")
+                print("\033[92mPassword\033[0m")
+                print("\033[91m--------\033[0m")
                 if not create_password(id):
                     return False
                 break
@@ -134,10 +137,10 @@ def register():
 def create_password(id):
     i = "Password"
     id[i] = input(f"{i}: \033[91m")
-    print("\033[0m", end="")
+    print("\033[0m")
     while not validate_password(id[i]):
         id[i] = input(f"\033[0m\n{i}: \033[91m")
-        print("\033[0m", end="")
+        print("\033[0m")
     c = input("Confirm Password: \033[91m")
     print("\033[0m", end="")
     if c != id[i]:
@@ -265,24 +268,14 @@ def captcha():
         x = numbers.index(random.choice(numbers))
         y = numbers.index(random.choice(numbers))
         z = x + y
-        if len(str(z)) == 1:
-            s = emoji.emojize(numbers[z])
-        else:
-            z = str(z)
-            s = emoji.emojize(numbers[int(z[0])])
-            s = s + " " + emoji.emojize(numbers[int(z[1])])
         for k, j in enumerate(figlet.renderText("Captcha").splitlines(), start=1):
             if k == 2 or k == 3:
-                if k == 3:
-                    print("\033[96m", j, "\033[0m", " .", end="   ")
-                    print(
-                        f"  {emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = {s}"
-                    )
-                else:
-                    print("\033[96m", j, "\033[0m", " .")
+                print("\033[96m", j, "\033[0m", " .")
             elif k == 5:
                 print("\033[96m", j, "\033[0m", end="   ")
-                ans = input(f"      {x}  + {y} = \033[031m")
+                ans = input(
+                    f"  {emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  =  \033[92m"
+                )
                 print("\033[0m")
             else:
                 print("\033[96m", j, "\033[0m")
