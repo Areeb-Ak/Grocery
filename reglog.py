@@ -234,11 +234,6 @@ def login():
                                     if _ == 2:
                                         return False
                             elif password == passw:
-                                figlet.setFont(font="short")
-                                for j in figlet.renderText("Captcha").splitlines():
-                                    if j.strip() == "":
-                                        continue
-                                    print("\033[96m" + j + "  \033[0m")
                                 captcha()
                                 return i, temp[i]["Name"]
                             print(
@@ -265,24 +260,32 @@ def captcha():
         ":keycap_8:",
         ":keycap_9:",
     ]
+    figlet.setFont(font="small")
     for _ in range(3):
         x = numbers.index(random.choice(numbers))
         y = numbers.index(random.choice(numbers))
         z = x + y
-        print(
-            f"\n{emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = ", end=""
-        )
         if len(str(z)) == 1:
-            print(emoji.emojize(numbers[z]))
+            s = emoji.emojize(numbers[z])
         else:
             z = str(z)
-            print(
-                emoji.emojize(numbers[int(z[0])]),
-                emoji.emojize(numbers[int(z[1])]),
-                sep=" ",
-            )
-        ans = input(f" {x}  + {y} = \033[031m")
-        print("\033[0m")
+            s = emoji.emojize(numbers[int(z[0])])
+            s = s + " " + emoji.emojize(numbers[int(z[1])])
+        for k, j in enumerate(figlet.renderText("Captcha").splitlines(), start=1):
+            if k == 2 or k == 3:
+                if k == 3:
+                    print("\033[96m", j, "\033[0m", " .", end="   ")
+                    print(
+                        f"  {emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  = {s}"
+                    )
+                else:
+                    print("\033[96m", j, "\033[0m", " .")
+            elif k == 5:
+                print("\033[96m", j, "\033[0m", end="   ")
+                ans = input(f"      {x}  + {y} = \033[031m")
+                print("\033[0m")
+            else:
+                print("\033[96m", j, "\033[0m")
         if ans == str(z):
             return True
     return False
