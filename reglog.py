@@ -170,20 +170,21 @@ def validate_password(password):
                 num = True
             if not i.isalnum():
                 sp = True
-        if not num:
-            if not sp:
-                print("Password must contain atlest 1 digit and 1 special character")
-            else:
+        if not num and not sp:
+            print("Password must contain atlest 1 digit and 1 special character")
+        elif not num:
                 print("Password must contain atleat 1 digit")
         elif not sp:
             print("Password must contain atleast 1 special character")
         if num and sp:
             return True
     else:
-        if not password[0].isupper():
-            print("Password must start with a capital alphabet")
-        if len(password) < 8:
+        if not password[0].isupper() and len(password) < 8:
+            print("Password must start with a capital alphabet and must contain atleast 8 characters")
+        elif len(password) < 8:
             print("Password must contain atleast 8 character")
+        else:
+            print("Password must start with a capital letter")
     return False
 
 
