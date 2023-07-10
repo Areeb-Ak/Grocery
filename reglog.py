@@ -97,7 +97,7 @@ def register():
                 print("\033[92mSecurity Key\033[0m")
                 print("\033[91m-------- ---\033[0m")
                 print(
-                    "Choose a \033[93mSecurity Question\033[0m and provide the corresponding \033[93mAnswer\033[0m.\nThis information will be used for identity verification during the password recovery process."
+                    "Choose a \033[93mSecurity Question\033[0m and provide the corresponding \033[93mAnswer\033[0m.\nThis information will be used for identity verification during the password recovery process.\n"
                 )
                 # print(
                 #     "Select a security question that is easy for you to remember but difficult for others to guess."
