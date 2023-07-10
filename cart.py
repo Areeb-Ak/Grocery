@@ -57,7 +57,7 @@ def search(item):
                         )
             print("--------------------------------------------", end="\n\n")
     else:
-        print("No matches found...")
+        print("\033[91mNo matches found...\033[0m\n")
     if selection():
         return True
 
