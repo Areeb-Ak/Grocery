@@ -57,7 +57,16 @@ def check_if_in_cart(number):
 
 
 def add_():
-    number, quantity = input("enter item number and quantity :").split()
+    try:
+        number, quantity = input("enter item number and quantity :").split()
+    except ValueError:
+        print("Invalid input item number and quantity must be separated")
+        return add_()
+    try:
+        int(quantity)
+    except ValueError:
+        print("Quantity must be an integer")
+        return add_()
     r = check_if_in_cart(number)
     if r:
         l = []
