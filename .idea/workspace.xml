@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c45789d-7dc7-46fa-ac84-481494ec8fd2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.testing">
+  <component name="RunManager" selected="Python.cart">
     <configuration name="billing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Grocery" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,7 +69,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\aksha\anaconda3\python.exe" />
-      <option name="SDK_NAME" value="Python 3.10" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -148,9 +147,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.cart" />
         <item itemvalue="Python.testing" />
         <item itemvalue="Python.billing" />
-        <item itemvalue="Python.cart" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.grocery_logo" />
       </list>
