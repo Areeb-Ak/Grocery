@@ -4,6 +4,7 @@ the cart data is in the cart.csv
 import datetime
 import csv
 import prettytable
+import os
 bill_in_string = ""
 
 with open("cart.csv", 'r') as items:
@@ -19,6 +20,7 @@ with open("cart.csv", 'r') as items:
                       each_order['cost'], price])
         s_no += 1
         total_price += price
+
 
 
 def conform_order():

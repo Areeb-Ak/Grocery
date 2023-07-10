@@ -3,6 +3,7 @@ import sys
 import os
 import emoji
 from pyfiglet import Figlet
+from time import sleep
 
 cart = []
 figlet = Figlet()
@@ -22,14 +23,24 @@ def clear_screen():
     print("_"*70)
 
 def search(item):
-    print("Item no.         Item             : Price")
+    item_present = False
     with open('data1.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
         for row in reader:
             if item in row:
-                print("{:3}. {:20} ({:5}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
-        print("------------------------------------------------------------------------------")
-        item_retriever.close()
+                item_present = True
+                break
+    if item_present:
+        print("Item no.         Item             : Price")
+        with open('data1.csv', 'r') as item_retriever:
+            reader = csv.reader(item_retriever)
+            for row in reader:
+                if item in row:
+                    print("{:3}. {:20} ({:5}) : Rs {:3}".format(row[0], row[3], row[4], row[5]))
+            print("------------------------------------------------------------------------------")
+            item_retriever.close()
+    else:
+        print("No matches found...")
     if selection():
         return True
 
@@ -234,12 +245,17 @@ def command(select__):
             writer = csv.writer(putter)
             for row in cart:
                 writer.writerow(row)
+        clear_screen()
+        print("Placing your order....")
+        sleep(2)
+
         return True
     elif select__ == 'search':
         if search(input("search : ").lower()):
             return True
     else:
         print("incorrect command")
+        clear_screen()
         if selection():
             return True
 
