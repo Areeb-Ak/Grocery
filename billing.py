@@ -2,6 +2,7 @@
 the cart data is in the cart.csv
 """
 import datetime
+import json
 import csv
 import prettytable
 import os
@@ -35,8 +36,12 @@ def conform_order():
 def generate_bill():
     # generating order number
     fp = open('successful_orders.json', 'r')
-    no = len(fp.readlines()) + 1
-
+    no = 0
+    with open("successful_orders.json") as fh:
+        temp = json.load(fh)
+        for i in temp.keys():
+            for j in temp[i]:    
+                no = int(j["order_id"][-4:]) + 1
     date_time = datetime.datetime.now()
     global order_id
     order_id = date_time.strftime("%d%m%Y%H%M%S") + str(no).zfill(4)
