@@ -1,6 +1,10 @@
 import csv
 import sys
 import os
+import emoji
+from pyfiglet import Figlet
+
+figlet = Figlet()
 
 with open('temp.txt', 'r') as f:
     data = f.readlines()
@@ -92,11 +96,22 @@ def add_():
 
 
 def view_cart():
+    figlet.setFont(font='rounded')
+    for i in figlet.renderText("Cart").splitlines():
+        print("\t\t\t\t\033[96m",i,"\033[0m")
     with open('cart.csv', 'r') as item_retriever:
         reader = csv.reader(item_retriever)
-        for row in reader:
-            print(row[3], "(", row[4], ") x", row[6])
-        print("---------------------------")
+        s = ["Item Name","Item Desc","Quant"]
+        print("-------------------------------------------")
+        print(f"| {s[0]:20}| {s[1]:10} | {s[2]:4}|")
+        while True:
+            try:
+                row = next(reader)
+            except StopIteration:
+                    break
+            print("|---------------------|------------|------|")
+            print(f"| \033[91m{row[3]:20}\033[0m| {row[4]:10} | \033[92m{row[6]:4} \033[0m|")
+        print("-------------------------------------------")
         item_retriever.close()
     if selection():
         return True
@@ -157,10 +172,22 @@ def command(select__):
 
 def menu():
     clear_screen()
-    print("MENU:\nA.Search\nB.Kirana\nC.Instant and Frozen Foods\nD.Juices and Cold drinks\nE.Dairy , Bread and "
-          "Eggs\nF.Snacks\nG.Dry Fruits , Oils and Masalas\n")
-    choice = (input("Enter your choice:")).upper()
-    print()
+    figlet = Figlet()
+    figlet.setFont(font="standard")
+    for i in figlet.renderText("Menu").splitlines():
+        print("\t\t\t\t\033[93m",i,"\033[0m")
+    print("\t\t\t     -------------------------------")
+    print("\t\t\33[95m  A. \033[91mSearch\033[0m",end=" ")
+    print("|                           ",emoji.emojize(":magnifying_glass_tilted_left:"),"| ",)
+    print("\t\t\t     -------------------------------")
+    print("\t     \033[95mB. \033[96mKirana\033[0m")
+    print("\n\t     \033[95mC. \033[96mInstant and Frozen Foods\033[0m")
+    print("\n\t     \033[95mD. \033[96mJuices and Cold drinks\033[0m")
+    print("\n\t     \033[95mE. \033[96mDairy , Bread and Eggs\033[0m")
+    print("\n\t     \033[95mF. \033[96mSnacks\033[0m")
+    print("\n\t     \033[95mG. \033[96mDry Fruits , Oils and Masalas\033[0m")
+    choice = (input("\nEnter your choice: \033[95m")).upper()
+    print("\033[0m")
     if print_section(choice):
         return True
 
@@ -173,3 +200,4 @@ def selection():
     if command(select_):
         return True
 
+menu()
