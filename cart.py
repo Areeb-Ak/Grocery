@@ -128,17 +128,17 @@ def view_cart():
     for i in figlet.renderText("Cart").splitlines():
         print("\t\t\t\t\033[96m",i,"\033[0m")
     reader = iter(cart)
-    s = ["Item Name","Item Desc","Quant"]
-    print("-------------------------------------------")
-    print(f"| {s[0]:20}| {s[1]:10} | {s[2]:4}|")
+    s = ["Item No.","Item Name","Item Desc","Quant"]
+    print("----------------------------------------------------")
+    print(f"|{s[0]:8}| {s[1]:20}| {s[2]:10} | {s[3]:4}|")
     while True:
         try:
             row = next(reader)
         except StopIteration:
                 break
-        print("|---------------------|------------|------|")
-        print(f"| \033[91m{row[3]:20}\033[0m| {row[4]:10} | \033[92m{row[6]:4} \033[0m|")
-    print("-------------------------------------------")
+        print("|--------|---------------------|------------|------|")
+        print(f"|\033[93m{row[0]:8}\033[0m| \033[91m{row[3]:20}\033[0m| {row[4]:10} | \033[92m{row[6]:4} \033[0m|")
+    print("----------------------------------------------------")
     answer = input("Would you like to make changes in cart (yes/no) : ").lower().strip()
     if answer == 'yes':
         change_cart()
@@ -268,3 +268,5 @@ def selection():
 
     if command(select_):
         return True
+
+menu()
