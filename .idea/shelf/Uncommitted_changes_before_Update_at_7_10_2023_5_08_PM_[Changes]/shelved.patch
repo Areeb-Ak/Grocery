@@ -1,0 +1,209 @@
+Index: cart.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>1,kirana,rice,basmati rice,1kg,191,1\r\n12,kirana,flours,atta,500g,45,2\r\n23,kirana,dal,chana dal,500g,70,3\r\n34,instant and frozen foods,frozen food,momos,8pc pack,200,4\r\n45,instant and frozen foods,instant food,manchow soup,42g,55,5\r\n56,juices and cold drinks,juice,orange juice,1L,110,6\r\n67,dairy bread and eggs,dairy,curd,500g,45,7\r\n78,snacks,chips,nachos,100g,44,8\r\n89,dry fruits oils and masalas,oil,groundnut oil,500ml,90,9\r\n90,dry fruits oils and masalas,oil,palm oil,1L,100,1\r\n100,dry fruits oils and masalas,fruits,watermelon,5kg,75,100\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cart.csv b/cart.csv
+--- a/cart.csv	(revision f491883173eb1cfd025b6d8a88e8f9d3f4cf137b)
++++ b/cart.csv	(date 1688968533515)
+@@ -1,11 +1,2 @@
+-1,kirana,rice,basmati rice,1kg,191,1
+-12,kirana,flours,atta,500g,45,2
+-23,kirana,dal,chana dal,500g,70,3
+-34,instant and frozen foods,frozen food,momos,8pc pack,200,4
+-45,instant and frozen foods,instant food,manchow soup,42g,55,5
+-56,juices and cold drinks,juice,orange juice,1L,110,6
+-67,dairy bread and eggs,dairy,curd,500g,45,7
+-78,snacks,chips,nachos,100g,44,8
+-89,dry fruits oils and masalas,oil,groundnut oil,500ml,90,9
+-90,dry fruits oils and masalas,oil,palm oil,1L,100,1
+-100,dry fruits oils and masalas,fruits,watermelon,5kg,75,100
++75,snacks,chips,potato chips,20g,10,6
++79,snacks,chips,nachos,50g,36,2
+Index: successful_orders.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n    \"orders\": {\r\n        \"303199\": [\r\n            {\r\n                \"order_id\": \"090720232208370056\",\r\n                \"order_details\": [\r\n                    [\r\n                        \"12\",\r\n                        \"atta\",\r\n                        \"45\",\r\n                        \"10\"\r\n                    ],\r\n                    [\r\n                        \"13\",\r\n                        \"besan\",\r\n                        \"160\",\r\n                        \"8\"\r\n                    ],\r\n                    [\r\n                        \"25\",\r\n                        \"urad dal\",\r\n                        \"112\",\r\n                        \"12\"\r\n                    ],\r\n                    [\r\n                        \"50\",\r\n                        \"pepsi\",\r\n                        \"40\",\r\n                        \"12\"\r\n                    ],\r\n                    [\r\n                        \"69\",\r\n                        \"sandwich bread\",\r\n                        \"50\",\r\n                        \"12\"\r\n                    ],\r\n                    [\r\n                        \"34\",\r\n                        \"momos\",\r\n                        \"200\",\r\n                        \"10\"\r\n                    ],\r\n                    [\r\n                        \"23\",\r\n                        \"chana dal\",\r\n                        \"70\",\r\n                        \"3\"\r\n                    ],\r\n                    [\r\n                        \"56\",\r\n                        \"orange juice\",\r\n                        \"110\",\r\n                        \"10\"\r\n                    ],\r\n                    [\r\n                        \"67\",\r\n                        \"curd\",\r\n                        \"45\",\r\n                        \"12\"\r\n                    ],\r\n                    [\r\n                        \"78\",\r\n                        \"nachos\",\r\n                        \"44\",\r\n                        \"1\"\r\n                    ],\r\n                    [\r\n                        \"89\",\r\n                        \"groundnut oil\",\r\n                        \"90\",\r\n                        \"1\"\r\n                    ],\r\n                    [\r\n                        \"99\",\r\n                        \"orange\",\r\n                        \"60\",\r\n                        \"1\"\r\n                    ]\r\n                ],\r\n                \"total_price\": 8198,\r\n                \"payment_type\": \"cash\"\r\n            },\r\n            {\r\n                \"order_id\": \"090720232212530086\",\r\n                \"order_details\": [\r\n                    [\r\n                        \"1\",\r\n                        \"basmati rice\",\r\n                        \"191\",\r\n                        \"1\"\r\n                    ],\r\n                    [\r\n                        \"12\",\r\n                        \"atta\",\r\n                        \"45\",\r\n                        \"2\"\r\n                    ],\r\n                    [\r\n                        \"23\",\r\n                        \"chana dal\",\r\n                        \"70\",\r\n                        \"3\"\r\n                    ],\r\n                    [\r\n                        \"34\",\r\n                        \"momos\",\r\n                        \"200\",\r\n                        \"4\"\r\n                    ],\r\n                    [\r\n                        \"45\",\r\n                        \"manchow soup\",\r\n                        \"55\",\r\n                        \"5\"\r\n                    ],\r\n                    [\r\n                        \"56\",\r\n                        \"orange juice\",\r\n                        \"110\",\r\n                        \"6\"\r\n                    ],\r\n                    [\r\n                        \"67\",\r\n                        \"curd\",\r\n                        \"45\",\r\n                        \"7\"\r\n                    ],\r\n                    [\r\n                        \"78\",\r\n                        \"nachos\",\r\n                        \"44\",\r\n                        \"8\"\r\n                    ],\r\n                    [\r\n                        \"89\",\r\n                        \"groundnut oil\",\r\n                        \"90\",\r\n                        \"9\"\r\n                    ],\r\n                    [\r\n                        \"90\",\r\n                        \"palm oil\",\r\n                        \"100\",\r\n                        \"1\"\r\n                    ],\r\n                    [\r\n                        \"100\",\r\n                        \"watermelon\",\r\n                        \"75\",\r\n                        \"100\"\r\n                    ]\r\n                ],\r\n                \"total_price\": 11303,\r\n                \"payment_type\": \"cash\"\r\n            }\r\n        ]\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/successful_orders.json b/successful_orders.json
+--- a/successful_orders.json	(revision f491883173eb1cfd025b6d8a88e8f9d3f4cf137b)
++++ b/successful_orders.json	(date 1688968547865)
+@@ -155,4 +155,4 @@
+             }
+         ]
+     }
+-}
+\ No newline at end of file
++}{"order_id": "090720232228500159", "order_details": [["5", "80", "20"]], "total_price": 1600, "payment_type": "cash"}{"order_id": "090720232240570159", "order_details": [["73", "50", "2"], ["75", "10", "3"], ["6", "40", "4"]], "total_price": 290, "payment_type": "cash"}{"order_id": "100720231125470159", "order_details": [["75", "10", "6"], ["79", "36", "2"]], "total_price": 132, "payment_type": "cash"}
+\ No newline at end of file
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import json\r\n\r\nimport grocery_logo\r\nimport reglog\r\nfrom time import sleep\r\n\r\n\r\nimport csv\r\n\r\n\"\"\"\r\nimporting grocery logo from the grocery_animation file\r\nit is the combination of list, pause and clearing screen\r\n~Akshay\r\n\"\"\"\r\n\r\ngrocery_logo.print_animation()\r\n# print the creators name\r\nprint(grocery_logo.logo)\r\nprint(\r\n    \"\"\"\r\n**************************** WELCOME TO GROCERY APP *******************************\r\n\"\"\"\r\n)\r\n\r\n\"\"\"\r\nRegistration and Login\r\n~Areeb \r\n\"\"\"\r\n\r\nemail = \"\"\r\nis_login = False\r\nwhile not is_login:\r\n    print(\r\n        \"\"\"\r\n                                1==>LOGIN\r\n                                2==>SIGNUP\r\n        \"\"\"\r\n    )\r\n\r\n    choice = reglog.display()\r\n    reglog.clear_screen()\r\n    if choice == 1:\r\n        try:\r\n            is_login, email = reglog.login()\r\n        except TypeError:\r\n            reglog.clear_screen()\r\n            print(\"Unable to Login\")\r\n            continue\r\n    elif choice == 2:\r\n        if not reglog.register():\r\n            reglog.clear_screen()\r\n            print(\"Unable to register\")\r\n            continue\r\n        sleep(2)\r\n        reglog.clear_screen()\r\n        # add a print statement to greet like great thanks for sigining up\r\n        choice = input(\"\\n\\nDo you want to login now?(yes/no): \")\r\n        if choice.lower() == \"yes\":\r\n            reglog.clear_screen()\r\n            try:\r\n                is_login, email = reglog.login()\r\n            except TypeError:\r\n                reglog.clear_screen()\r\n                print(\"Unable to Login\")\r\n                continue\r\n        else:\r\n            exit(\"Thanks for signing up\")\r\n\r\nx = open(\"temp.txt\", 'w')\r\nx.write(is_login)\r\nx.write('\\n')\r\nx.write(email)\r\nx.close()\r\n\r\nprint(is_login, email)\r\n# Here returning the login_id and email from the login if login is successful\r\nf = open(\"cart.csv\", \"w\")\r\nf.close()\r\n\r\nimport cart\r\n\"\"\"\r\nclassifying add collecting information regarding goods (currently 100 items are available)\r\nsearching and adding grocery to cart\r\nreturning cart for billing\r\n~ Darsh\r\n\"\"\"\r\ncart.menu()\r\n\r\n\"\"\"\r\naccessing data from cart and representing it in a bill\r\ngenerating a uniques order number consisting of date and time and the order id \r\n~Akshay\r\n\"\"\"\r\nimport billing\r\npayment_type = 'cash'\r\n\r\n\r\ndef payment(amount):\r\n    return True\r\n\r\n\r\ndef add_to_successful_orders(id):\r\n    fp = open(\"cart.csv\", 'r')\r\n    order_items = csv.DictReader(fp, [\"item_id\", 'category', 'sub_cat', \"item_name\", 'type', 'cost', \"quantity\"])\r\n\r\n    order_details = []\r\n    for item in order_items:\r\n        order_details.append([item['item_id'], item[\"item_name\"], item['cost'], item['quantity']])\r\n    with open('successful_orders.json') as fp:\r\n        temp = json.load(fp)\r\n    temp[\"orders\"][is_login] = temp[\"orders\"].get(is_login, []) + [{'order_id':id,\r\n                       'order_details': order_details,\r\n                        'total_price': billing.total_price,\r\n                        'payment_type': payment_type}]\r\n    with open('successful_orders.json','w') as fp:\r\n        json.dump(temp, fp,indent=4)\r\n    \r\n\r\n\r\n\r\nif billing.conform_order():\r\n    if payment(billing.total_price):\r\n        cart.clear_screen()\r\n        print(\"Thank you !\")\r\n        order_id = billing.generate_bill()\r\n        add_to_successful_orders(order_id)\r\n    else:\r\n        print('COME BACK AGAIN ')\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	(revision f491883173eb1cfd025b6d8a88e8f9d3f4cf137b)
++++ b/main.py	(date 1688921846041)
+@@ -3,7 +3,7 @@
+ import grocery_logo
+ import reglog
+ from time import sleep
+-
++import cart
+ 
+ import csv
+ 
+@@ -76,8 +76,6 @@
+ # Here returning the login_id and email from the login if login is successful
+ f = open("cart.csv", "w")
+ f.close()
+-
+-import cart
+ """
+ classifying add collecting information regarding goods (currently 100 items are available)
+ searching and adding grocery to cart
+@@ -105,17 +103,14 @@
+ 
+     order_details = []
+     for item in order_items:
+-        order_details.append([item['item_id'], item["item_name"], item['cost'], item['quantity']])
+-    with open('successful_orders.json') as fp:
+-        temp = json.load(fp)
+-    temp["orders"][is_login] = temp["orders"].get(is_login, []) + [{'order_id':id,
+-                       'order_details': order_details,
+-                        'total_price': billing.total_price,
+-                        'payment_type': payment_type}]
+-    with open('successful_orders.json','w') as fp:
+-        json.dump(temp, fp,indent=4)
+-    
++        order_details.append([item['item_id'], item['cost'], item['quantity']])
++    temp = {'order_id': id,
++            'order_details': order_details,
++            'total_price': billing.total_price,
++            'payment_type': payment_type}
+ 
++    fp = open('successful_orders.json', 'a')
++    json.dump(temp, fp)
+ 
+ 
+ if billing.conform_order():
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3c45789d-7dc7-46fa-ac84-481494ec8fd2\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/main.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/testing.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/testing.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2SCmwH8R5hJ9LHvw5p53rFZXTst\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"settings.editor.selected.configurable\": \"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\" selected=\"Python.testing\">\r\n    <configuration name=\"billing\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Grocery\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/billing.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"cart\" type=\"PythonConfigurationType\" factoryName=\"Python\" singleton=\"true\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Grocery\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"C:\\Users\\aksha\\anaconda3\\python.exe\" />\r\n      <option name=\"SDK_NAME\" value=\"Python 3.10\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/cart.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"grocery_logo\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Grocery\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/grocery_logo.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Grocery\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"testing\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Grocery\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/testing.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.testing\" />\r\n        <item itemvalue=\"Python.billing\" />\r\n        <item itemvalue=\"Python.cart\" />\r\n        <item itemvalue=\"Python.main\" />\r\n        <item itemvalue=\"Python.grocery_logo\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3c45789d-7dc7-46fa-ac84-481494ec8fd2\" name=\"Changes\" comment=\"\" />\r\n      <created>1688659174862</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1688659174862</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f491883173eb1cfd025b6d8a88e8f9d3f4cf137b)
++++ b/.idea/workspace.xml	(date 1688989109452)
+@@ -5,8 +5,12 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="3c45789d-7dc7-46fa-ac84-481494ec8fd2" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cart.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cart.csv" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/grocery.json" beforeDir="false" afterPath="$PROJECT_DIR$/grocery.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/successful_orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/successful_orders.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/temp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/temp.txt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -31,14 +35,14 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "main",
+-    "ignore.virus.scanning.warn.message": "true",
+-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RunManager" selected="Python.testing">
+     <configuration name="billing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="Grocery" />
+@@ -167,4 +171,15 @@
+     </task>
+     <servers />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+ </project>
+\ No newline at end of file
+Index: grocery.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n    \"users\": {\r\n        \"303199\": {\r\n            \"Name\": \"Darsh\",\r\n            \"Email Id\": \"darsh@gmail.com\",\r\n            \"Phone Number\": \"1234567890\",\r\n            \"Security Question\": \"Hello\",\r\n            \"Answer\": \"Hi\",\r\n            \"Password\": \"Blueflame.14\"\r\n        },\r\n        \"881643\": {\r\n            \"Name\": \"Akshay\",\r\n            \"Email Id\": \"akshay@gmail.com\",\r\n            \"Phone Number\": \"9876543210\",\r\n            \"Security Question\": \"helo how are you?\",\r\n            \"Answer\": \"noice..\",\r\n            \"Password\": \"Topper.1\"\r\n        },\r\n        \"367297\": {\r\n            \"Name\": \"asdfg\",\r\n            \"Email Id\": \"user123@gmail.com\",\r\n            \"Phone Number\": \"1234567890\",\r\n            \"Security Question\": \"who are you?\",\r\n            \"Answer\": \"me\",\r\n            \"Password\": \"Yoyo123@\"\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/grocery.json b/grocery.json
+--- a/grocery.json	(revision f491883173eb1cfd025b6d8a88e8f9d3f4cf137b)
++++ b/grocery.json	(date 1688968229596)
+@@ -23,6 +23,22 @@
+             "Security Question": "who are you?",
+             "Answer": "me",
+             "Password": "Yoyo123@"
++        },
++        "735923": {
++            "Name": "vardhan",
++            "Email Id": "var123@gmail.com",
++            "Phone Number": "8767655100",
++            "Security Question": "favourite dish",
++            "Answer": "palakura poppu",
++            "Password": "Invalid@123"
++        },
++        "063509": {
++            "Name": "hemanth",
++            "Email Id": "hemanth@gmail.com",
++            "Phone Number": "7093131119",
++            "Security Question": "MY date of birth",
++            "Answer": "21/02/2005",
++            "Password": "Hemanth@2005"
+         }
+     }
+ }
+\ No newline at end of file
+Index: temp.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>303199\r\nDarsh
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/temp.txt b/temp.txt
+--- a/temp.txt	(revision f491883173eb1cfd025b6d8a88e8f9d3f4cf137b)
++++ b/temp.txt	(date 1688968469880)
+@@ -1,2 +1,2 @@
+-303199
+-Darsh
+\ No newline at end of file
++063509
++hemanth
+\ No newline at end of file
