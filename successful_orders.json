@@ -238,6 +238,12 @@
       ],
       "total_price": 922,
       "payment_type": "cash"
+    },
+    {
+      "order_id": "110720230157550478",
+      "order_details": [],
+      "total_price": 0,
+      "payment_type": "cash"
     }
   ],
   "881643": [
@@ -471,6 +477,116 @@
         ]
       ],
       "total_price": 135,
+      "payment_type": "cash"
+    },
+    {
+      "order_id": "110720230210020484",
+      "order_details": [
+        [
+          "23",
+          "chana dal",
+          "70",
+          "44"
+        ],
+        [
+          "69",
+          "sandwich bread",
+          "50",
+          "69"
+        ],
+        [
+          "12",
+          "atta",
+          "45",
+          "10"
+        ],
+        [
+          "99",
+          "orange",
+          "60",
+          "80"
+        ],
+        [
+          "56",
+          "orange juice",
+          "110",
+          "75"
+        ],
+        [
+          "44",
+          "sweet corn soup",
+          "55",
+          "33"
+        ],
+        [
+          "2",
+          "basmati rice ",
+          "100",
+          "11"
+        ]
+      ],
+      "total_price": 22945,
+      "payment_type": "cash"
+    },
+    {
+      "order_id": "110720230226590533",
+      "order_details": [
+        [
+          "54",
+          "apple juice",
+          "104",
+          "23"
+        ],
+        [
+          "51",
+          "red bull",
+          "125",
+          "10"
+        ],
+        [
+          "88",
+          "groundnut oil",
+          "181",
+          "90"
+        ],
+        [
+          "23",
+          "chana dal",
+          "70",
+          "10"
+        ],
+        [
+          "23",
+          "chana dal",
+          "70",
+          "23"
+        ],
+        [
+          "23",
+          "chana dal",
+          "70",
+          "44"
+        ],
+        [
+          "44",
+          "sweet corn soup",
+          "55",
+          "6"
+        ],
+        [
+          "73",
+          "potato chips",
+          "50",
+          "22"
+        ],
+        [
+          "74",
+          "potato chips",
+          "25",
+          "12"
+        ]
+      ],
+      "total_price": 27052,
       "payment_type": "cash"
     }
   ]

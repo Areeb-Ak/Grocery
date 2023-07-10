@@ -24,7 +24,7 @@ with open("cart.csv", 'r') as items:
 
 
 def conform_order():
-    print(str(bill))
+    print(f"\033[47m\033[30m{str(bill)}\033[0m")
     print('\n' + f"TOTAL PRICE :- {total_price}".center(100))
 
     if input("Do You want to confirm order ?(Yes/No)").lower() == 'yes':
@@ -41,13 +41,12 @@ def generate_bill():
     global order_id
     order_id = date_time.strftime("%d%m%Y%H%M%S") + str(no).zfill(4)
     global bill_in_string
-    bill_in_string += "--------------------------------------------------------------\n"
-    bill_in_string += '|' + "GROCERY MART".center(61) + '|\n'
-    bill_in_string += "--------------------------------------------------------------\n"
-    bill_in_string += f"Date :- {date_time.date().strftime('%d-%m-%Y')}\n"
-    bill_in_string += f"Order ID:-{order_id}\n"
+    bill_in_string += "\033[47m\033[30m------------------------------------------------------------------\n"
+    bill_in_string += '|' + " \033[34m\033[47mGROCERY MART\033[30m\033[47m  ".center(84) + '|\n'
+    bill_in_string += "------------------------------------------------------------------\n"
+    bill_in_string += f"|Date :- {date_time.date().strftime('%d-%m-%Y')}                                              |\n"
+    bill_in_string += f"|Order ID:-{order_id}                                    |\n"
     bill_in_string += str(bill)
-    bill_in_string += '\n' + f"TOTAL PRICE :- {total_price}".center(100)
+    bill_in_string += '\n' + f"                                           TOTAL PRICE :- {total_price}   "
     print(bill_in_string)
     return order_id
-
