@@ -4,6 +4,7 @@ import os
 import emoji
 from pyfiglet import Figlet
 
+cart = []
 figlet = Figlet()
 
 with open('temp.txt', 'r') as f:
@@ -44,19 +45,31 @@ def retriever(item):
         item_retriever.close()
 
 
+def wrong_input(ans):
+    while ans not in ['a','b','continue','change quantity']:
+        ans = input("Would you like to a.'Continue' or b.'Change Quantity' ").lower().strip()
+    return ans
+
+
 def check_if_in_cart(number):
-    checker = open('cart.csv', 'r')
-    if len(checker.readlines()) == 0:
-        checker.close()
+    if len(cart) == 0:
         return True
     else:
-        with open('cart.csv','r') as checker:
-            reader = csv.reader(checker)
-            for row in reader:
-                if number == row[0]:
-                    print("This item already added to cart :  ",end="")
-                    print(row[3], "(", row[4], ")x", row[6])
+        for row in cart:
+            if number == row[0]:
+                print("This item already added to cart :  ", end="")
+                print(row[3], "(", row[4], ")x", row[6])
+                ans = input("Would you like to a.'Continue' or b.'Change Quantity' :  ").lower().strip()
+                if ans == 'a' or 'continue':
                     return False
+                elif ans == 'b' or 'change quantity':
+                    qty = int(input("Enter Quantity : "))
+                    row[6] = qty
+                    print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
+                    return False
+                else:
+                    print("Wrong Input")
+                    wrong_input(ans)
             return True
 
 
@@ -81,10 +94,7 @@ def add_():
                     l = row.copy()
             l.append(quantity)
             item_retriever.close()
-        with open('cart.csv', 'a', newline='') as adder:
-            adding = csv.writer(adder)
-            adding.writerow(l)
-        adder.close()
+        cart.append(l)
         clear_screen()
         print(l[3], "(" + str(l[4]) + ") x", l[6], "has been added to cart")
         print("---------------------------")
