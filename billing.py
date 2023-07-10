@@ -40,11 +40,10 @@ def generate_bill():
     with open("successful_orders.json") as fh:
         temp = json.load(fh)
         for i in temp.keys():
-            for j in temp[i]:    
-                no = int(j["order_id"][-4:]) + 1
+            no = no + len(temp[i])
+    no += 1
     date_time = datetime.datetime.now()
     x = len(str(bill).splitlines()[0])
-    print(x)
     global order_id
     order_id = date_time.strftime("%d%m%Y%H%M%S") + str(no).zfill(4)
     global bill_in_string
