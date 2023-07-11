@@ -421,6 +421,19 @@
       ],
       "total_price": 4101,
       "payment_type": "cash"
+    },
+    {
+      "order_id": "110720230842200021",
+      "order_details": [
+        [
+          "1",
+          "basmati rice",
+          "191",
+          "9"
+        ]
+      ],
+      "total_price": 1719,
+      "payment_type": "cash"
     }
   ],
   "367297": [
@@ -548,6 +561,21 @@
         ]
       ],
       "total_price": 135,
+      "payment_type": "cash"
+    }
+  ],
+  "404023": [
+    {
+      "order_id": "110720230833430020",
+      "order_details": [
+        [
+          "73",
+          "potato chips",
+          "50",
+          "500"
+        ]
+      ],
+      "total_price": 25000,
       "payment_type": "cash"
     }
   ]

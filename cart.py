@@ -158,6 +158,7 @@ def add_():
 
 
 def view_cart():
+    clear_screen()
     print()
     figlet.setFont(font='rounded')
     for i in figlet.renderText("Cart").splitlines():
