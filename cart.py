@@ -125,7 +125,7 @@ def check_if_in_cart(number):
 
 def add_():
     try:
-        number, quantity = input("enter item number and quantity :").split()
+        number, quantity = input("Enter item Number and Quantity (Ex:- 1 2):").split()
     except ValueError:
         print("Invalid input item number and quantity must be separated")
         return add_()
