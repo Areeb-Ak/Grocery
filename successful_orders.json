@@ -447,6 +447,19 @@
       ],
       "total_price": 1719,
       "payment_type": "cash"
+    },
+    {
+      "order_id": "110720231132510023",
+      "order_details": [
+        [
+          "73",
+          "potato chips",
+          "50",
+          "3"
+        ]
+      ],
+      "total_price": 150,
+      "payment_type": "cash"
     }
   ],
   "367297": [

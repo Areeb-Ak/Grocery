@@ -98,7 +98,7 @@ def register():
                 flag = False
                 break
             elif i == "Phone Number":
-                while not re.search(r"^[0-9]{10}$", id[i]):
+                while not re.search(r"^[789][0-9]{9}$", id[i]):
                     print("Invalid Phone number. Enter a valid number")
                     id[i] = input(f"{i}: \033[95m")
                     print("\033[0m")
