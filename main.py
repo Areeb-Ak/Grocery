@@ -18,7 +18,12 @@ grocery_logo.print_animation()
 print(grocery_logo.logo)
 print(
     """
-**************************** WELCOME TO GROCERY APP *******************************
+             _     ___   ____ ___ _   _                     ____ ___ ____ _   _ ___ _   _ 
+            | |   / _ \\ / ___|_ _| \\ | |                   / ___|_ _/ ___| \\ | |_ _| \\ | | 
+ENTER 1 for | |  | | | | |  _ | ||  \\| |     ENTER 2 for   \\___ \\| | |  _|  \\| || ||  \\| |
+            | |__| |_| | |_| || || |\\  |                    ___) | | |_| | |\\  || || |\\  |
+            |_____\\___/ \\____|___|_| \\_|                   |____|___\\____|_| \\_|___|_| \\_|
+
 """
 )
 
@@ -30,12 +35,6 @@ Registration and Login
 email = ""
 is_login = False
 while not is_login:
-    print(
-        """
-                                1==>LOGIN
-                                2==>SIGNUP
-        """
-    )
 
     choice = reglog.display()
     reglog.clear_screen()

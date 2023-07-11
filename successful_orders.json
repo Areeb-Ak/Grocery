@@ -313,6 +313,44 @@
       ],
       "total_price": 3105,
       "payment_type": "cash"
+    },
+    {
+      "order_id": "110720230514530013",
+      "order_details": [
+        [
+          "69",
+          "sandwich bread",
+          "50",
+          "69"
+        ],
+        [
+          "47",
+          "thumps up",
+          "35",
+          "22"
+        ]
+      ],
+      "total_price": 4220,
+      "payment_type": "cash"
+    },
+    {
+      "order_id": "110720230532040014",
+      "order_details": [
+        [
+          "73",
+          "potato chips",
+          "50",
+          "11"
+        ]
+      ],
+      "total_price": 550,
+      "payment_type": "cash"
+    },
+    {
+      "order_id": "110720230546290015",
+      "order_details": [],
+      "total_price": 0,
+      "payment_type": "cash"
     }
   ],
   "367297": [

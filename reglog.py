@@ -22,7 +22,7 @@ def display():
     Gets whether the user wants to login or register
     """
     while True:
-        x = input("Enter choice: ")
+        x = input("ENTER YOUR CHOICE: ")
         try:
             x = int(x)
             if x != 1 and x != 2:

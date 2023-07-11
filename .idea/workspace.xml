@@ -7,9 +7,10 @@
     <list default="true" id="3c45789d-7dc7-46fa-ac84-481494ec8fd2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cart.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grocery_logo.py" beforeDir="false" afterPath="$PROJECT_DIR$/grocery_logo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reglog.py" beforeDir="false" afterPath="$PROJECT_DIR$/reglog.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/successful_orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/successful_orders.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/temp.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.cart">
+  <component name="RunManager" selected="Python.grocery_logo">
     <configuration name="billing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Grocery" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.grocery_logo" />
         <item itemvalue="Python.cart" />
         <item itemvalue="Python.testing" />
         <item itemvalue="Python.billing" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.grocery_logo" />
       </list>
     </recent_temporary>
   </component>
