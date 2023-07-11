@@ -351,6 +351,25 @@
       "order_details": [],
       "total_price": 0,
       "payment_type": "cash"
+    },
+    {
+      "order_id": "110720230641480016",
+      "order_details": [
+        [
+          "27",
+          "fries",
+          "330",
+          "10"
+        ],
+        [
+          "69",
+          "sandwich bread",
+          "50",
+          "69"
+        ]
+      ],
+      "total_price": 6750,
+      "payment_type": "cash"
     }
   ],
   "367297": [

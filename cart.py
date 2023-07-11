@@ -11,16 +11,21 @@ figlet = Figlet()
 with open('temp.txt', 'r') as f:
     data = f.readlines()
     is_login = data[0]
-    email = data[1]
+    name = data[1].upper()
     f.close()
 
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(" GROCERY ".center(70, "_"))
-    print(f"USER ID :- {is_login}")
-    print(f"~{email}")
-    print("_"*70)
+    print("""
+                              ___   ___    ___      ___    ___  ___   __   _ 
+                             / __| | _ \\   / _ \\   / __| | __| | _ \\  \\ \\ / / 
+  --------------------------| (_ | |   /  | (_) | | (__  | _|  |   /   \\ V /  ---------------------------------
+                             \\___| |_|_\\   \\___/   \\___| |___| |_|_\\    |_|   
+    """)
+    print(f"CURRENT USER :- {name}".center(110))
+    print()
+    print()
 
 def search(item):
     print("\033[0m",end="")
