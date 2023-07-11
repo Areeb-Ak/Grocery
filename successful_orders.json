@@ -214,6 +214,19 @@
       ],
       "total_price": 241,
       "payment_type": "cash"
+    },
+    {
+      "order_id": "110720230936340022",
+      "order_details": [
+        [
+          "1",
+          "basmati rice",
+          "191",
+          "2"
+        ]
+      ],
+      "total_price": 382,
+      "payment_type": "cash"
     }
   ],
   "881643": [
