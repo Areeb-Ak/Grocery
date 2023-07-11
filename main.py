@@ -1,10 +1,7 @@
 import json
-
 import grocery_logo
 import reglog
 from time import sleep
-
-
 import csv
 
 """
@@ -77,6 +74,7 @@ f = open("cart.csv", "w")
 f.close()
 
 import cart
+
 """
 classifying add collecting information regarding goods (currently 100 items are available)
 searching and adding grocery to cart
@@ -91,6 +89,7 @@ generating a uniques order number consisting of date and time and the order id
 ~Akshay
 """
 import billing
+
 payment_type = 'cash'
 
 
@@ -107,20 +106,19 @@ def add_to_successful_orders(id):
         order_details.append([item['item_id'], item["item_name"], item['cost'], item['quantity']])
     with open('successful_orders.json') as fp:
         temp = json.load(fp)
-    temp[is_login] = temp.get(is_login, []) + [{'order_id':id,
-                       'order_details': order_details,
-                        'total_price': billing.total_price,
-                        'payment_type': payment_type}]
-    with open('successful_orders.json','w') as fp:
-        json.dump(temp, fp,indent=2)
-    
-
+    temp[is_login] = temp.get(is_login, []) + [{'order_id': id,
+                                                'order_details': order_details,
+                                                'total_price': billing.total_price,
+                                                'payment_type': payment_type}]
+    with open('successful_orders.json', 'w') as fp:
+        json.dump(temp, fp, indent=2)
 
 
 if billing.conform_order():
     if payment(billing.total_price):
         cart.clear_screen()
-        print("Thank you !")
+        print("THANK YOU !🙂 PLEASE VISIT AGAIN".center(100))
+        print('\n')
         order_id = billing.generate_bill()
         add_to_successful_orders(order_id)
     else:
