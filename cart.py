@@ -107,7 +107,7 @@ def check_if_in_cart(number):
                 elif ans == 'b' or ans == 'change quantity':
                     qty = int(input("Enter Quantity : "))
                     row[6] = str(qty)
-                    print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
+                    print("\t\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
                     return False
                 else:
                     while ans not in ['a', 'b', 'continue', 'change quantity']:
@@ -118,14 +118,14 @@ def check_if_in_cart(number):
                     else:
                         qty = int(input("Enter Quantity : "))
                         row[6] = str(qty)
-                        print(row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
+                        print("\t\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
                         return False
             return True
 
 
 def add_():
     try:
-        number, quantity = input("Enter item Number and Quantity (Ex:- 1 2):").split()
+        number, quantity = input("Enter Item Number and Quantity :").split()
     except ValueError:
         print("Invalid input item number and quantity must be separated")
         return add_()
@@ -146,16 +146,17 @@ def add_():
             item_retriever.close()
         cart.append(l)
         clear_screen()
-        print(l[3], "(" + str(l[4]) + ") x", l[6], "has been added to cart")
-        print("---------------------------")
+        print("\t\t\t"l[3], "(" + str(l[4]) + ") x", l[6], "has been added to cart")
+
     else:
-        print("---------------------------")
+        pass
 
     if selection():
         return True
 
 
 def view_cart():
+    print()
     figlet.setFont(font='rounded')
     for i in figlet.renderText("Cart").splitlines():
         print("\t\t\033[96m",i,"\033[0m")
@@ -193,13 +194,13 @@ def change_cart():
             if item == row[0]:
                 name = row[3]
                 cart.remove(row)
-        print(name,"has been removed from cart")
+        print("\t\t\t,"name,"has been removed from cart")
     elif key =='b':
         item , quantity = input("Enter Item Number and Quantity : ").split()
         for row in cart:
             if row[0] == item:
                 row[6]=quantity
-                print(row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
+                print("\t\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
     else:
         while key not in ['a','b']:
             print("Wrong Input")
@@ -209,13 +210,13 @@ def change_cart():
                 if item == row[0]:
                     name = row[3]
                     cart.remove(row)
-            print(name, "has been removed from cart")
+            print("\t\t\t",name, "has been removed from cart")
         else:
             item, quantity = input("Enter Item Number and Quantity : ")
             for row in cart:
                 if row[0] == item:
                     row[6] = quantity
-                    print(row[3], "(" + str(row[4]) + ") x", row[6], "has been added to cart")
+                    print("\t\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
 
 
 def print_section(choice):
@@ -262,13 +263,28 @@ def command(select__):
         if menu():
             return True
     elif select__ == 'place order':
-        with open('cart.csv','a',newline="") as putter:
-            writer = csv.writer(putter)
-            for row in cart:
-                writer.writerow(row)
-        clear_screen()
-        print("Placing your order....")
-        sleep(2)
+        if len(cart) == 0:
+            print("Your cart is Empty..")
+            option = input("Would You like to a.Continue shopping or b.Exit : ").lower().strip()
+            if option == 'a' or option == 'continue':
+                selection()
+            elif option == 'b' or option == 'exit':
+                sys.exit()
+            else:
+                while option not in ['a','b','continue','exit']:
+                    option = input("Would You like to a.Continue shopping or b.Exit : ").lower().strip()
+                if option == 'a' or option == 'continue':
+                    selection()
+                else:
+                    sys.exit()
+        else:
+            with open('cart.csv','a',newline="") as putter:
+                writer = csv.writer(putter)
+                for row in cart:
+                    writer.writerow(row)
+            clear_screen()
+            print("Placing your order....")
+            sleep(2)
 
         return True
     elif select__ == 'search':
