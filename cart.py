@@ -304,9 +304,14 @@ def menu():
 
 
 def selection():
-
-    print("COMMANDS:| add | view cart | search | menu | place order |")
-    select_ = input("enter command : ").lower().strip()
+    print(" "+"_"*67)
+    print("| (add) ➕| (view cart) 🛒| (search) 🔍| (menu) ☰| (place order) 📦|")
+    print(" "+"_" * 67)
+    print("""
+    TO SELECT OPTION PLEASE ENTER TEXT INSIDE () AND PRESS ENTER
+    """)
+    sleep(0.3)
+    select_ = input("Enter Command : ").lower().strip()
 
     if command(select_):
         return True

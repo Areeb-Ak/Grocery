@@ -7,8 +7,7 @@
     <list default="true" id="3c45789d-7dc7-46fa-ac84-481494ec8fd2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cart.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/successful_orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/successful_orders.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +41,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.grocery_logo">
+  <component name="RunManager" selected="Python.testing">
     <configuration name="billing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Grocery" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,9 +149,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.testing" />
         <item itemvalue="Python.grocery_logo" />
         <item itemvalue="Python.cart" />
-        <item itemvalue="Python.testing" />
         <item itemvalue="Python.billing" />
         <item itemvalue="Python.main" />
       </list>
