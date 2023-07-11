@@ -107,7 +107,8 @@ def check_if_in_cart(number):
                 elif ans == 'b' or ans == 'change quantity':
                     qty = int(input("Enter Quantity : "))
                     row[6] = str(qty)
-                    print("\t\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
+                    print("\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
+                    print()
                     return False
                 else:
                     while ans not in ['a', 'b', 'continue', 'change quantity']:
@@ -118,7 +119,8 @@ def check_if_in_cart(number):
                     else:
                         qty = int(input("Enter Quantity : "))
                         row[6] = str(qty)
-                        print("\t\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
+                        print("\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
+                        print()
                         return False
             return True
 
@@ -146,7 +148,7 @@ def add_():
             item_retriever.close()
         cart.append(l)
         clear_screen()
-        print("\t\t\t"l[3], "(" + str(l[4]) + ") x", l[6], "has been added to cart")
+        print("\t\t",l[3], "(" + str(l[4]) + ") x", l[6], "has been added to cart\n")
 
     else:
         pass
@@ -194,13 +196,13 @@ def change_cart():
             if item == row[0]:
                 name = row[3]
                 cart.remove(row)
-        print("\t\t\t,"name,"has been removed from cart")
+        print("\t\t",name,"has been removed from cart\n")
     elif key =='b':
         item , quantity = input("Enter Item Number and Quantity : ").split()
         for row in cart:
             if row[0] == item:
                 row[6]=quantity
-                print("\t\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
+                print("\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart\n")
     else:
         while key not in ['a','b']:
             print("Wrong Input")
@@ -210,13 +212,13 @@ def change_cart():
                 if item == row[0]:
                     name = row[3]
                     cart.remove(row)
-            print("\t\t\t",name, "has been removed from cart")
+            print("\t\t",name, "has been removed from cart\n")
         else:
             item, quantity = input("Enter Item Number and Quantity : ")
             for row in cart:
                 if row[0] == item:
                     row[6] = quantity
-                    print("\t\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
+                    print("\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart\n")
 
 
 def print_section(choice):
