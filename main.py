@@ -40,12 +40,27 @@ while not is_login:
             is_login, email = reglog.login()
         except TypeError:
             reglog.clear_screen()
-            print("Unable to Login")
+            print("""Unable to Login
+            
+             _     ___   ____ ___ _   _                     ____ ___ ____ _   _ ___ _   _ 
+            | |   / _ \\ / ___|_ _| \\ | |                   / ___|_ _/ ___| \\ | |_ _| \\ | | 
+ENTER 1 for | |  | | | | |  _ | ||  \\| |     ENTER 2 for   \\___ \\| | |  _|  \\| || ||  \\| |
+            | |__| |_| | |_| || || |\\  |                    ___) | | |_| | |\\  || || |\\  |
+            |_____\\___/ \\____|___|_| \\_|                   |____|___\\____|_| \\_|___|_| \\_|
+""")
             continue
     elif choice == 2:
         if not reglog.register():
             reglog.clear_screen()
-            print("Unable to register")
+            print("""Unable to register
+            
+             _     ___   ____ ___ _   _                     ____ ___ ____ _   _ ___ _   _ 
+            | |   / _ \\ / ___|_ _| \\ | |                   / ___|_ _/ ___| \\ | |_ _| \\ | | 
+ENTER 1 for | |  | | | | |  _ | ||  \\| |     ENTER 2 for   \\___ \\| | |  _|  \\| || ||  \\| |
+            | |__| |_| | |_| || || |\\  |                    ___) | | |_| | |\\  || || |\\  |
+            |_____\\___/ \\____|___|_| \\_|                   |____|___\\____|_| \\_|___|_| \\_|
+
+""")
             continue
         sleep(2)
         reglog.clear_screen()
