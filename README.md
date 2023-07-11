@@ -1,6 +1,6 @@
 # Grocery
  
 Prepared by:  
-   ~Akshay Nagamalla.
+   ~Akshay Nagamalla.  
    ~Darsh Agrawal.  
    ~Areeb Akhter.  
