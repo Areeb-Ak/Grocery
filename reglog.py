@@ -85,7 +85,7 @@ def register():
                     print("\033[0m")
                     if x == "login":
                         clear_screen()
-                        login()
+                        return login()
                     else:
                         print("Please enter another Email id: ")
                         id[i] = input(f"{i}: \033[95m").lstrip().lower()
@@ -252,9 +252,12 @@ def login():
             break
         print("\t\t\t\t\033[92m\033[40m" + i + "\033[0m")
     print("\033[0m\n")
-    for _ in range(3):
+    for _ in range(5):
         email = input("Enter your Email Id: \033[96m").strip().lower()
         print("\033[0m")
+        if email == 'signup':
+            clear_screen()
+            return register()
         if check_id(email):
             with open(file) as fh:
                 temp = json.load(fh)["users"]
@@ -291,7 +294,8 @@ def login():
             print("Try again later")
             return False
         else:
-            print("username not found")
+            print("username not found\t\tIf you want to register enter '\033[91msignup\033[0m'.")
+
 
     return False
 
