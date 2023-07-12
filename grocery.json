@@ -55,6 +55,14 @@
             "Security Question": "dob?",
             "Answer": "12",
             "Password": "Akshay@12"
+        },
+        "753104": {
+            "Name": "Akshay Nagamalla",
+            "Email Id": "akshaynagamalla23@gmail.com",
+            "Phone Number": "8340046562",
+            "Security Question": "what is your favarote place ?",
+            "Answer": "KMIT",
+            "Password": "Akshay@12"
         }
     }
 }

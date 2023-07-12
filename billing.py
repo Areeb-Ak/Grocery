@@ -53,7 +53,7 @@ def generate_bill():
     bill_in_string += f"|Date :- {date_time.date().strftime('%d-%m-%Y')}"+" "*(x-20)+"|\n"
     bill_in_string += f"|Order ID:-{order_id}"+" "*(x-30)+"|\n"
     bill_in_string += str(bill)
-    bill_in_string += '\n'+" "*(x-22) + f"TOTAL PRICE  :-  {total_price}  "
+    bill_in_string += '\n'+" "*(x-22) + f"TOTAL PRICE  :- ₹{total_price} "
     print(bill_in_string)
     print("\033[0m")
     return order_id

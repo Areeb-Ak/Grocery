@@ -227,6 +227,19 @@
       ],
       "total_price": 382,
       "payment_type": "cash"
+    },
+    {
+      "order_id": "110720231339420024",
+      "order_details": [
+        [
+          "54",
+          "apple juice",
+          "104",
+          "10"
+        ]
+      ],
+      "total_price": 1040,
+      "payment_type": "cash"
     }
   ],
   "881643": [
@@ -602,6 +615,33 @@
         ]
       ],
       "total_price": 25000,
+      "payment_type": "cash"
+    }
+  ],
+  "753104": [
+    {
+      "order_id": "120720231030590025",
+      "order_details": [
+        [
+          "1",
+          "basmati rice",
+          "191",
+          "22"
+        ],
+        [
+          "2",
+          "basmati rice ",
+          "100",
+          "12"
+        ],
+        [
+          "11",
+          "atta",
+          "65",
+          "12"
+        ]
+      ],
+      "total_price": 6182,
       "payment_type": "cash"
     }
   ]

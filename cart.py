@@ -98,7 +98,7 @@ def check_if_in_cart(number):
         return True
     else:
         for row in cart:
-            if row[0] == number:
+            if number == row[0]:
                 print("This item already added to cart :  ", end="")
                 print(row[3], "(", row[4], ")x", row[6])
                 ans = input("Would you like to a.'Continue' or b.'Change Quantity' :  ").lower().strip()
@@ -122,7 +122,7 @@ def check_if_in_cart(number):
                         print("\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart")
                         print()
                         return False
-            return True
+        return True
 
 
 def add_():
@@ -150,9 +150,6 @@ def add_():
         clear_screen()
         print("\t\t",l[3], "(" + str(l[4]) + ") x", l[6], "has been added to cart\n")
 
-    else:
-        pass
-
     if selection():
         return True
 
@@ -164,17 +161,17 @@ def view_cart():
     for i in figlet.renderText("Cart").splitlines():
         print("\t\t\033[96m",i,"\033[0m")
     reader = iter(cart)
-    s = ["Item No.","Item Name","Item Desc","Quant"]
-    print("----------------------------------------------------")
-    print(f"|{s[0]:8}| {s[1]:20}| {s[2]:10} | {s[3]:4}|")
+    s = ["Item No.","Item Name","Item Desc","Quant","Rate"]
+    print("-----------------------------------------------------------")
+    print(f"|{s[0]:8}| {s[1]:20}| {s[2]:10} | {s[3]:4}| {s[4]:4} |")
     while True:
         try:
             row = next(reader)
         except StopIteration:
                 break
-        print("|--------|---------------------|------------|------|")
-        print(f"|\033[93m{row[0]:8}\033[0m| \033[91m{row[3]:20}\033[0m| {row[4]:10} | \033[92m{row[6]:4} \033[0m|")
-    print("----------------------------------------------------")
+        print("|--------|---------------------|------------|------|------|")
+        print(f"|\033[93m{row[0]:8}\033[0m| \033[91m{row[3]:20}\033[0m| {row[4]:10} | \033[92m{row[6]:4} \033[0m|₹ \033[95m{row[5]:4}\033[0m|")
+    print("-----------------------------------------------------------")
     answer = input("Would you like to make changes in cart (yes/no) : ").lower().strip()
     if answer == 'yes':
         change_cart()
