@@ -63,6 +63,14 @@
             "Security Question": "what is your favarote place ?",
             "Answer": "KMIT",
             "Password": "Akshay@12"
+        },
+        "368469": {
+            "Name": "asha",
+            "Email Id": "asha@kmit.in",
+            "Phone Number": "9985438866",
+            "Security Question": "surname",
+            "Answer": "maddela",
+            "Password": "Asha@1234"
         }
     }
 }

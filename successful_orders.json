@@ -240,6 +240,44 @@
       ],
       "total_price": 1040,
       "payment_type": "cash"
+    },
+    {
+      "order_id": "120720231105550026",
+      "order_details": [
+        [
+          "1",
+          "basmati rice",
+          "191",
+          "2"
+        ]
+      ],
+      "total_price": 382,
+      "payment_type": "cash"
+    },
+    {
+      "order_id": "120720231127500027",
+      "order_details": [
+        [
+          "51",
+          "red bull",
+          "125",
+          "8"
+        ],
+        [
+          "77",
+          "banana chips",
+          "25",
+          "4"
+        ],
+        [
+          "66",
+          "cheese",
+          "140",
+          "33"
+        ]
+      ],
+      "total_price": 5720,
+      "payment_type": "cash"
     }
   ],
   "881643": [

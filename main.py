@@ -130,13 +130,17 @@ def add_to_successful_orders(id):
         json.dump(temp, fp, indent=2)
 
 
+def feedback():
+    pass
+
+
 if billing.conform_order():
     if payment(billing.total_price):
         cart.clear_screen()
+        order_id = billing.generate_bill()
+        feedback()
         print("THANK YOU !🙂 PLEASE VISIT AGAIN".center(100))
         print('\n')
-        order_id = billing.generate_bill()
         add_to_successful_orders(order_id)
     else:
         print('COME BACK AGAIN ')
-
