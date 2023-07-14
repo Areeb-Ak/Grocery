@@ -155,31 +155,34 @@ def add_():
 
 
 def view_cart():
-    clear_screen()
-    print()
-    figlet.setFont(font='rounded')
-    for i in figlet.renderText("Cart").splitlines():
-        print("\t\t\033[96m",i,"\033[0m")
-    reader = iter(cart)
-    s = ["Item No.","Item Name","Item Desc","Quant","Rate"]
-    print("-----------------------------------------------------------")
-    print(f"|{s[0]:8}| {s[1]:20}| {s[2]:10} | {s[3]:4}| {s[4]:4} |")
-    while True:
-        try:
-            row = next(reader)
-        except StopIteration:
-                break
-        print("|--------|---------------------|------------|------|------|")
-        print(f"|\033[93m{row[0]:8}\033[0m| \033[91m{row[3]:20}\033[0m| {row[4]:10} | \033[92m{row[6]:4} \033[0m|₹ \033[95m{row[5]:4}\033[0m|")
-    print("-----------------------------------------------------------")
-    answer = input("Would you like to make changes in cart (yes/no) : ").lower().strip()
-    if answer == 'yes':
-        change_cart()
-    elif answer == 'no':
-        pass
+    if len(cart) == 0 :
+        print("Your Cart is Empty...")
     else:
-        while answer not in ['yes', 'no']:
-            answer = input("Would you like to make changes in cart (yes/no) : ").lower().strip()
+        clear_screen()
+        print()
+        figlet.setFont(font='rounded')
+        for i in figlet.renderText("Cart").splitlines():
+            print("\t\t\033[96m",i,"\033[0m")
+        reader = iter(cart)
+        s = ["Item No.","Item Name","Item Desc","Quant","Rate"]
+        print("-----------------------------------------------------------")
+        print(f"|{s[0]:8}| {s[1]:20}| {s[2]:10} | {s[3]:4}| {s[4]:4} |")
+        while True:
+            try:
+                row = next(reader)
+            except StopIteration:
+                    break
+            print("|--------|---------------------|------------|------|------|")
+            print(f"|\033[93m{row[0]:8}\033[0m| \033[91m{row[3]:20}\033[0m| {row[4]:10} | \033[92m{row[6]:4} \033[0m|₹ \033[95m{row[5]:4}\033[0m|")
+        print("-----------------------------------------------------------")
+        answer = input("Would you like to make changes in cart (yes/no) : ").lower().strip()
+        if answer == 'yes':
+            change_cart()
+        elif answer == 'no':
+            pass
+        else:
+            while answer not in ['yes', 'no']:
+                answer = input("Would you like to make changes in cart (yes/no) : ").lower().strip()
 
     if selection():
         return True
@@ -196,7 +199,18 @@ def change_cart():
                 cart.remove(row)
         print("\t\t",name,"has been removed from cart\n")
     elif key =='b':
-        item , quantity = input("Enter Item Number and Quantity : ").split()
+        while True:
+            try:
+                item, quantity = input("Enter Item Number and Quantity :").split()
+            except ValueError:
+                print("Invalid input item number and quantity must be separated")
+                continue
+            try:
+                int(quantity)
+            except ValueError:
+                print("Quantity must be an integer")
+                continue
+            break
         for row in cart:
             if row[0] == item:
                 row[6]=quantity
@@ -253,16 +267,16 @@ def wrong_choice(choice):
 
 
 def command(select__):
-    if select__ == 'add':
+    if select__ == 'add' or select__ == '1':
         if add_():
             return True
-    elif select__ == 'view cart':
+    elif select__ == 'view cart' or select__ == '2':
         if view_cart():
             return True
-    elif select__ == 'menu':
+    elif select__ == 'menu' or select__=='4':
         if menu():
             return True
-    elif select__ == 'place order':
+    elif select__ == 'place order' or select__ == '5':
         if len(cart) == 0:
             print("Your cart is Empty..")
             option = input("Would You like to a.Continue shopping or b.Exit : ").lower().strip()
@@ -287,11 +301,12 @@ def command(select__):
             sleep(2)
 
         return True
-    elif select__ == 'search':
+    elif select__ == 'search' or select__ == '3':
         if search(input("Search : \033[95m").lower()):
             return True
     else:
         print("incorrect command")
+        sleep(1)
         clear_screen()
         if selection():
             return True
@@ -321,7 +336,7 @@ def menu():
 
 def selection():
     print(" "+"_"*67)
-    print("| (add) ➕| (view cart) 🛒| (search) 🔍| (menu) ☰| (place order) 📦|")
+    print("| 1.(add) ➕| 2.(view cart) 🛒| 3.(search) 🔍| 4.(menu) ☰| 5.(place order) 📦|")
     print(" "+"_" * 67)
     print("""
     TO SELECT OPTION PLEASE ENTER TEXT INSIDE () AND PRESS ENTER

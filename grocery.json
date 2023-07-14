@@ -71,6 +71,22 @@
             "Security Question": "surname",
             "Answer": "maddela",
             "Password": "Asha@1234"
+        },
+        "559887": {
+            "Name": "shahed",
+            "Email Id": "shahed@yahoo.com",
+            "Phone Number": "9503545687",
+            "Security Question": "areeb",
+            "Answer": "akhter",
+            "Password": "Althaf@22"
+        },
+        "679294": {
+            "Name": "Mustafa",
+            "Email Id": "mustafatopper@gmail.com",
+            "Phone Number": "9087654321",
+            "Security Question": "Who do you admire?",
+            "Answer": "David Laid",
+            "Password": "Gymbro4l."
         }
     }
 }
