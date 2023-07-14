@@ -130,19 +130,21 @@ def add_to_successful_orders(id):
         json.dump(temp, fp, indent=2)
 
 
-# def feedback(id):
-#     with open("feedback.json") as fh:
-#         temp = json.load(fh)
-#     temp[id] = input("Enter your feedback: ")
-#     with open("feedback.json","w") as fh:
-#         json.dump(temp,fh)
+def feedback(id):
+    with open("feedback.json") as fh:
+        temp = json.load(fh)
+    temp[id] = input("Enter your feedback: ")
+    with open("feedback.json","w") as fh:
+        json.dump(temp,fh)
 
 
 if billing.conform_order():
     if payment(billing.total_price):
         cart.clear_screen()
         order_id = billing.generate_bill()
-        # feedback(order_id)
+        x = input("Do you want to give feedback(yes/no): ")
+        if x.lower() == "yes" or x.lower() == "y":
+            feedback(order_id)
         print("THANK YOU !🙂 PLEASE VISIT AGAIN".center(100))
         print('\n')
         add_to_successful_orders(order_id)

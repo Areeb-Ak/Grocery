@@ -302,16 +302,16 @@ def login():
 
 def captcha():
     numbers = [
-        ":keycap_0:",
-        ":keycap_1:",
-        ":keycap_2:",
-        ":keycap_3:",
-        ":keycap_4:",
-        ":keycap_5:",
-        ":keycap_6:",
-        ":keycap_7:",
-        ":keycap_8:",
-        ":keycap_9:",
+        "0\ufe0f\u20e3",
+        "1\ufe0f\u20e3",
+        "2\ufe0f\u20e3",
+        "3\ufe0f\u20e3",
+        "4\ufe0f\u20e3",
+        "5\ufe0f\u20e3",
+        "6\ufe0f\u20e3",
+        "7\ufe0f\u20e3",
+        "8\ufe0f\u20e3",
+        "9\ufe0f\u20e3",
     ]
     figlet.setFont(font="small")
     for _ in range(3):
@@ -324,7 +324,7 @@ def captcha():
             elif k == 5:
                 print("\033[96m", j, "\033[0m", end="   ")
                 ans = input(
-                    f"  {emoji.emojize(numbers[x])}  + {emoji.emojize(numbers[y])}  =  \033[92m"
+                    f"  {numbers[x]}  + {numbers[y]}  =  \033[92m"
                 )
                 print("\033[0m")
             else:
