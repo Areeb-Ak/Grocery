@@ -42,9 +42,9 @@ def search(item):
                 item_present = True
     if item_present:
         x = item.title()
-        figlet.setFont(font="smslant")
-        for i in figlet.renderText(x).splitlines():
-            print("  \033[95m",i,"\033[0m")
+        print("\t   ","-"*(len(x)+14))
+        print("\t   |\033[95m",x," "*7," 🔍 \033[0m|")
+        print("\t   ","-"*(len(x)+14),end="\n\n")
         print(
             "\033[0mItem |                    |           |      \nno.  |  Item              | Item Desc | Price "
         )
