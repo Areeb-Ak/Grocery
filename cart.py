@@ -192,6 +192,7 @@ def change_cart():
     print("a.Delete item in cart\nb.Update quantity of an item")
     key = input("Enter your choice : ").lower().strip()
     name = ""
+    item_present = False
     if key == 'a':
         item = input("Enter Item Number : ")
         for row in cart:
@@ -216,7 +217,15 @@ def change_cart():
         for row in cart:
             if row[0] == item:
                 row[6]=quantity
+                item_present = True
                 print("\t\t",row[3], "(" + str(row[4]) + ") x", row[6], "has been updated in cart\n")
+        if item_present == False:
+            print("Input Item is not present in cart")
+            take = input("Would you like to add it? (yes/no) : ")
+            if take == 'yes':
+                add_()
+            else:
+                pass
     else:
         while key not in ['a','b']:
             print("Wrong Input")
@@ -263,7 +272,7 @@ def wrong_choice(choice):
 
     while choice not in['A','B','C','D','E','F','G'] :
         print("Wrong Input")
-        choice = (input("Enter your choice: \033[95m"))
+        choice = (input("Enter your choice: \033[95m")).upper()
         print("\033[0m",end="")
     return choice
 
