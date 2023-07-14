@@ -146,6 +146,7 @@ def register():
 
 
 def create_password(id):
+    print("\033[93mPassword must have atleast \033[95m8\033[93m characters, \033[95m1\033[93m digit, \033[95m1\033[93m special character and \033[95m1\033[93m capital alphabet\033[0m")
     i = "Password"
     id[i] = input(f"{i}: \033[91m")
     print("\033[0m")
@@ -166,71 +167,27 @@ def create_password(id):
 
 def validate_password(password):
     """
-    Validates the password returns False if the password is validated(correct)
-    or else returns false and also outputs the requirements of the password
-    which it does not have.
+    Validates the password and returns False if the password is valid (meets the requirements),
+    or else returns False and outputs the specific requirements that are not met.
     """
-    if password == "":
-        print("Password must contain atleast 8 character")
+    if len(password) < 8:
+        print("Password must contain at least 8 characters")
         return False
-    l = True if len(password) >= 8 else False
-    cp = False
-    num = False
-    sp = False
-    for i in password:
-        if i.isupper():
-            cp = True
-        if i.isnumeric():
-            num = True
-        if not i.isalnum():
-            sp = True
-    if not num and not sp and not cp and not l:
-        print(
-            "Password must contain atleast 8 characters, 1 digit, 1 special character and 1 capital alphabet"
-        )  # FFFF
-    elif not num and not sp and not cp and l:
-        print(
-            "Password must contain atleast 1 digit, 1 special character and 1 capital alphabet"
-        )  # FFFT
-    elif not num and not sp and cp and not l:
-        print(
-            "Password must contain atleast 8 characters, 1 digit and 1 special character"
-        )  # FFTF
-    elif not num and sp and not cp and not l:
-        print(
-            "Password must contain atleast 8 characters, 1 capital alphabet and 1 digit"
-        )  # FTFF
-    elif not num and sp and not cp and l:
-        print("Password must contain 1 capital alphabet and 1 digit")  # FTFT
-    elif not num and sp and cp and not l:
-        print("Password must contain atleast 8 characters  and 1 digit")  # FTTF
-    elif not num and sp and cp and l:
-        print("Password must contain 1 digit")  # FTTT
-    elif num and sp and cp and not l:
-        print("Password must contain atleast 8 characters")  # TTTF
-    elif num and not sp and not cp and not l:
-        print(
-            "Password must have atleast 8 characters, 1 special character and 1 capital alphabet"
-        )  # TFFF
-    elif num and sp and not cp and not l:
-        print(
-            "Password must contain atleast 8 characters  and 1 capital alphabet"
-        )  # TTFF
-    elif num and not sp and cp and not l:
-        print("Password must have atleast 8 characters and 1 special character")  # TFTF
-    elif not num and not sp and cp and l:
-        print("Password must contain 1 digit  and 1 special character")  # FFTT
-    elif num and sp and not cp and not l:
-        print(
-            "Password must contain atleast 8 characters  and 1 capital alphabet"
-        )  # TTFF
-    elif num and not sp and cp and l:
-        print("Password must contain 1 special character")  # TFTT
-    elif num and sp and not cp and l:
-        print("Password must contain 1 capital character")  # TTFT
-    if num and sp and cp and l:  # TTTT
-        return True
-    return False
+    
+    requirements = []
+    if not any(char.isdigit() for char in password):
+        requirements.append("at least 1 digit")
+    if not any(not char.isalnum() for char in password):
+        requirements.append("at least 1 special character")
+    if not any(char.isupper() for char in password):
+        requirements.append("at least 1 capital letter")
+    
+    if requirements:
+        print("Password must contain " + ", ".join(requirements))
+        return False
+    
+    return True
+
 
 
 validate_email = (
@@ -318,19 +275,19 @@ def captcha():
         x = numbers.index(random.choice(numbers))
         y = numbers.index(random.choice(numbers))
         z = x + y
-        for k, j in enumerate(figlet.renderText("Captcha").splitlines(), start=1):
-            if k == 2 or k == 3:
-                print("\033[96m", j, "\033[0m", " .")
-            elif k == 5:
-                print("\033[96m", j, "\033[0m", end="   ")
-                ans = input(
+        sleep(0.3)
+        clear_screen()
+        print()
+        for j in figlet.renderText("Captcha").splitlines():
+            print("\033[96m", j, "\033[0m")
+        print("\n\033[95mSolve the above equation to prove you are human\033[0m\n")
+        ans = input(
                     f"  {numbers[x]}  + {numbers[y]}  =  \033[92m"
                 )
-                print("\033[0m")
-            else:
-                print("\033[96m", j, "\033[0m")
+        print("\033[0m")
         if ans == str(z):
             return True
+        print("Invalid response")
     return False
 
 
