@@ -135,7 +135,7 @@ def feedback(id):
         temp = json.load(fh)
     temp[id] = input("Enter your feedback: ")
     with open("feedback.json","w") as fh:
-        json.dump(temp,fh)
+        json.dump(temp,fh, indent=2)
 
 
 if billing.conform_order():
