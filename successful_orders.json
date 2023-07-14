@@ -278,6 +278,25 @@
       ],
       "total_price": 5720,
       "payment_type": "cash"
+    },
+    {
+      "order_id": "140720232121060029",
+      "order_details": [
+        [
+          "41",
+          "cup noodles",
+          "48",
+          "4"
+        ],
+        [
+          "44",
+          "sweet corn soup",
+          "55",
+          "1"
+        ]
+      ],
+      "total_price": 247,
+      "payment_type": "cash"
     }
   ],
   "881643": [
