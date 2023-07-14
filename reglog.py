@@ -16,7 +16,7 @@ osname = os.name
 def clear_screen():
     os.system("cls" if osname == "nt" else "clear")
     print("""
-                              ___   ___    ___      ___    ___  ___   __   _ 
+                              ___   ___     ___     ___   ___   ___   __   __ 
                              / __| | _ \\   / _ \\   / __| | __| | _ \\  \\ \\ / / 
   --------------------------| (_ | |   /  | (_) | | (__  | _|  |   /   \\ V /  ---------------------------------
                              \\___| |_|_\\   \\___/   \\___| |___| |_|_\\    |_|   
@@ -103,7 +103,7 @@ def register():
                     id[i] = input(f"{i}: \033[95m")
                     print("\033[0m")
             elif i == "Security Question":
-                sleep(2)
+                sleep(0.5)
                 clear_screen()
                 print("\033[92mSecurity Key\033[0m")
                 print("\033[91m-------- ---\033[0m")
@@ -122,7 +122,7 @@ def register():
                 id[i] = input(f"{i}: \033[93m")
                 print("\033[0m", end="")
             elif i == "Password":
-                sleep(2)
+                sleep(0.5)
                 clear_screen()
                 print("\033[92mPassword\033[0m")
                 print("\033[91m--------\033[0m")
@@ -272,14 +272,14 @@ def login():
                                 for _ in range(3):
                                     ans = input("Answer: ")
                                     if ans == temp[i]["Answer"]:
-                                        sleep(2)
+                                        sleep(0.5)
                                         clear_screen()
                                         print("Create new password: ")
                                         if not create_password(temp[i]):
                                             return False
                                         change(i, temp[i])
                                         print("Password Changed")
-                                        sleep(2)
+                                        sleep(0.5)
                                         clear_screen()
                                         return login()
                                     print("Invalid Answer")
