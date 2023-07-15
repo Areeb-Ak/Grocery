@@ -1,7 +1,6 @@
 import csv
 import sys
 import os
-import emoji
 from pyfiglet import Figlet
 from time import sleep
 
