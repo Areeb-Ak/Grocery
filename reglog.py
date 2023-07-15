@@ -1,4 +1,3 @@
-import emoji
 import json
 import os
 from pyfiglet import Figlet
