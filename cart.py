@@ -184,6 +184,10 @@ def view_cart():
         else:
             while answer not in ['yes', 'no']:
                 answer = input("Would you like to make changes in cart (yes/no) : ").lower().strip()
+            if answer == 'yes':
+                change_cart()
+            else:
+                pass
 
     if selection():
         return True
@@ -196,10 +200,13 @@ def change_cart():
     if key == 'a':
         item = input("Enter Item Number : ")
         for row in cart:
-            if item == row[0]:
+            if row[0]==item:
+                item_present = True
                 name = row[3]
                 cart.remove(row)
-        print("\t\t",name,"has been removed from cart\n")
+                print("\t\t",name,"has been removed from cart\n")
+        if item_present == False:
+            print("Input Item is not present in cart")
     elif key =='b':
         while True:
             try:
@@ -229,6 +236,7 @@ def change_cart():
     else:
         while key not in ['a','b']:
             print("Wrong Input")
+            key = input("Enter your choice : ").lower().strip()
         if key == 'a':
             item = input("Enter Item Number : ")
             for row in cart:
