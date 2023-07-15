@@ -27,8 +27,12 @@ with open("cart.csv", 'r') as items:
 def conform_order():
     print(f"\033[47m\033[30m{str(bill)}\033[0m")
     print('\n' + f"TOTAL PRICE :- {total_price}".center(100))
+    response = input("Do You want to confirm order ?(Yes/No)").lower()
+    while response not in ['yes', 'no']:
+        print("Please Enter Yes or No")
+        response = input("Do You want to confirm order ?(Yes/No)").lower() == 'yes'
 
-    if input("Do You want to confirm order ?(Yes/No)").lower() == 'yes':
+    if response:
         return True
     return False
 
