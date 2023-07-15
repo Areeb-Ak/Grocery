@@ -1,4 +1,3 @@
-import emoji
 import json
 import os
 from pyfiglet import Figlet
@@ -258,18 +257,7 @@ def login():
 
 
 def captcha():
-    numbers = [
-        "0\ufe0f\u20e3",
-        "1\ufe0f\u20e3",
-        "2\ufe0f\u20e3",
-        "3\ufe0f\u20e3",
-        "4\ufe0f\u20e3",
-        "5\ufe0f\u20e3",
-        "6\ufe0f\u20e3",
-        "7\ufe0f\u20e3",
-        "8\ufe0f\u20e3",
-        "9\ufe0f\u20e3",
-    ]
+    numbers = ['0️⃣','1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣']
     figlet.setFont(font="small")
     for _ in range(3):
         x = numbers.index(random.choice(numbers))

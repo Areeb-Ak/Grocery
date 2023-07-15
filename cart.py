@@ -1,7 +1,6 @@
 import csv
 import sys
 import os
-import emoji
 from pyfiglet import Figlet
 from time import sleep
 
@@ -31,6 +30,10 @@ def search(item):
     print("\033[0m",end="")
     clear_screen()
     item_present = False
+    x = item.title()
+    print("\t   ","-"*(len(x)+14))
+    print("\t   |\033[95m",x," "*7," 🔍 \033[0m|")
+    print("\t   ","-"*(len(x)+14),end="\n\n")
     with open("data1.csv", "r") as item_retriever:
         reader = csv.reader(item_retriever)
         while True:
@@ -41,10 +44,6 @@ def search(item):
             if item in row:
                 item_present = True
     if item_present:
-        x = item.title()
-        print("\t   ","-"*(len(x)+14))
-        print("\t   |\033[95m",x," "*7," 🔍 \033[0m|")
-        print("\t   ","-"*(len(x)+14),end="\n\n")
         print(
             "\033[0mItem |                    |           |      \nno.  |  Item              | Item Desc | Price "
         )
@@ -339,7 +338,7 @@ def menu():
         print("\t\t\t\t\033[93m",i,"\033[0m")
     print("\t\t\t     -------------------------------")
     print("\t\t\33[95m  A. \033[91mSearch\033[0m",end=" ")
-    print("|                           ",emoji.emojize(":magnifying_glass_tilted_left:"),"| ",)
+    print("|                           🔍  |")
     print("\t\t\t     -------------------------------")
     print("\t     \033[95mB. \033[96mKirana\033[0m")
     print("\n\t     \033[95mC. \033[96mInstant and Frozen Foods\033[0m")
