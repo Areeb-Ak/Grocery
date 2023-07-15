@@ -297,6 +297,31 @@
       ],
       "total_price": 247,
       "payment_type": "cash"
+    },
+    {
+      "order_id": "140720232353030030",
+      "order_details": [
+        [
+          "73",
+          "potato chips",
+          "50",
+          "73"
+        ],
+        [
+          "48",
+          "coco cola",
+          "35",
+          "12"
+        ],
+        [
+          "28",
+          "fries",
+          "126",
+          "13"
+        ]
+      ],
+      "total_price": 5708,
+      "payment_type": "cash"
     }
   ],
   "881643": [
