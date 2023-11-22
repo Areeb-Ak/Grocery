@@ -317,6 +317,7 @@ def command(select__):
             clear_screen()
             print("Placing your order....")
             sleep(2)
+            return True
 
         return True
     elif select__ == 'search' or select__ == '3':
